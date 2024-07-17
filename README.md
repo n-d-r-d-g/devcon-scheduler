@@ -149,3 +149,7 @@ print();
 ```
 
 3. If you want to, you can copy the text and save it to your favorite notes app so you don't miss any session you're interested in attending.
+
+## Contribute
+
+Feel free to contribute!
