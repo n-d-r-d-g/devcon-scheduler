@@ -12,15 +12,6 @@ So, I wrote a script to give the ability to choose sessions you want to attend.
 
 1. Navigate to [MSCC Developers Conference agenda](https://conference.mscc.mu/agenda) then run the following script in your web browser's console to get the option to add/remove sessions.
 ```js
-// grid-column-start    ->  room index
-// 2                    ->  0
-// 3                    ->  1
-// 4                    ->  2
-// 5                    ->  3
-// 6                    ->  4
-// x                    ->  x - 2
-const GRID_COLUMN_ROOM_INDEX_OFFSET = 2;
-
 function setStyles() {
     const styles = `
         .session-toggler {
@@ -65,8 +56,6 @@ function getRooms() {
 }
 
 function injectToggleButtons() {
-    const rooms = getRooms();
-
     document.querySelectorAll('a.session__wrapper').forEach(session => {
         const toggleBtn = document.createElement("button");
 
@@ -76,7 +65,7 @@ function injectToggleButtons() {
         toggleBtn.dataset["time"] = session.querySelector(".tile_start").textContent.trim();
         toggleBtn.dataset["title"] = session.querySelector("h3").textContent.trim();
         toggleBtn.dataset["authors"] = session.querySelector(".speaker").textContent.trim().replace(/\s\s+/g, ', ');
-        toggleBtn.dataset["room"] = rooms[Number(session.style.gridColumnStart) - GRID_COLUMN_ROOM_INDEX_OFFSET];
+        toggleBtn.dataset["room"] = session.dataset.room;
         toggleBtn.type = "button"
         toggleBtn.classList.add("session-toggler");
 
