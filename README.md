@@ -67,11 +67,7 @@ function getRooms() {
 function injectToggleButtons() {
     const rooms = getRooms();
 
-    document.querySelectorAll('.session__wrapper').forEach(session => {
-        const isRegistrationSession = session.querySelector("h3").textContent === "Registration"
-
-        if (isRegistrationSession) return;
-
+    document.querySelectorAll('a.session__wrapper').forEach(session => {
         const toggleBtn = document.createElement("button");
 
         toggleBtn.appendChild(document.createTextNode("Add"));
