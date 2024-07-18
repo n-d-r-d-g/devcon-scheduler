@@ -48,13 +48,6 @@ function setStyles() {
     document.head.appendChild(styleSheet);
 }
 
-function getRooms() {
-    const rooms = []
-    document.querySelectorAll("#rooms-bar > .track__title").forEach(room => rooms.push(room.textContent.trim()));
-
-    return rooms;
-}
-
 function injectToggleButtons() {
     document.querySelectorAll('a.session__wrapper').forEach(session => {
         const toggleBtn = document.createElement("button");
