@@ -151,7 +151,7 @@ export function Agenda({ dataStr }: Props) {
   });
 
   return (
-    <div className="flex flex-col items-end gap-2 max-w-full">
+    <div className="flex flex-col sm:items-end gap-2 max-w-full">
       <Button
         type="button"
         color="success"
