@@ -164,42 +164,59 @@ export function Agenda({ dataStr }: Props) {
 
   return (
     <div className="flex flex-col sm:items-end gap-2 max-w-full">
-      <Button
-        isDisabled={
-          activeSessions.get("thursday")?.size === 0 &&
-          activeSessions.get("friday")?.size === 0 &&
-          activeSessions.get("saturday")?.size === 0
-        }
-        onClick={() => {
-          const horizontalSeparator = "=================";
-          let nextDisplay = `${horizontalSeparator}\n\n\n\n`;
-          nextDisplay += "------Thursday------";
-          activeSessions.get("thursday")?.forEach((value, key) => {
-            nextDisplay += "\n";
-            nextDisplay += `${value.title}\n`;
-            nextDisplay += `${value.channelUuid}\n`;
-            nextDisplay += `${value.startTime} - ${value.endTime}\n`;
-            nextDisplay += `${value.authors.join(",")}\n`;
-            nextDisplay += "\n\n";
-          });
-          navigator.clipboard.writeText(nextDisplay);
-        }}
-      >
-        Copy
-      </Button>
-      <Button
-        type="button"
-        color="success"
-        onClick={() => console.log("activeSessions :>> ", activeSessions)}
-        isDisabled={
-          activeSessions.get("thursday")?.size === 0 &&
-          activeSessions.get("friday")?.size === 0 &&
-          activeSessions.get("saturday")?.size === 0
-        }
-        className="mb-2"
-      >
-        Export
-      </Button>
+      <div className="max-w-full flex flex-row gap-2">
+        <Button
+          isDisabled={
+            activeSessions.get("thursday")?.size === 0 &&
+            activeSessions.get("friday")?.size === 0 &&
+            activeSessions.get("saturday")?.size === 0
+          }
+          onClick={() => {
+            let nextDisplay = "";
+            let dayIndex = 0;
+            activeSessions.forEach((sessionsByDay, day) => {
+              nextDisplay += `<<<<<<< ${day.toUpperCase()} >>>>>>>\n`;
+              let sessionIndex = 0;
+              sessionsByDay?.forEach((session) => {
+                nextDisplay += "\n";
+                nextDisplay += `${session.title}\n`;
+                nextDisplay += `${session.channelUuid}\n`;
+                nextDisplay += `${session.startTime} - ${session.endTime}\n`;
+                nextDisplay += `${session.authors.join(", ")}`;
+
+                if (sessionIndex < sessionsByDay.size - 1) {
+                  nextDisplay += "\n\n";
+                }
+
+                sessionIndex++;
+              });
+
+              if (dayIndex < activeSessions.size - 1) {
+                nextDisplay += "\n\n\n\n";
+              }
+
+              dayIndex++;
+            });
+            navigator.clipboard.writeText(nextDisplay);
+          }}
+          className="disabled:cursor-not-allowed"
+        >
+          Copy
+        </Button>
+        <Button
+          type="button"
+          color="success"
+          onClick={() => console.log("activeSessions :>> ", activeSessions)}
+          isDisabled={
+            activeSessions.get("thursday")?.size === 0 &&
+            activeSessions.get("friday")?.size === 0 &&
+            activeSessions.get("saturday")?.size === 0
+          }
+          className="mb-2 disabled:cursor-not-allowed"
+        >
+          Export
+        </Button>
+      </div>
       <div className="flex flex-col sm:flex-row gap-2 sm:mx-auto">
         <Button
           type="button"
