@@ -1,5 +1,5 @@
 import { SESSION_WRAPPER_SELECTOR } from "@/constants";
-import * as cheerio from "cheerio";
+import { load as loadWithCheerio } from "cheerio";
 import { Agenda } from "./components/Agenda";
 
 export default async function Home() {
@@ -35,7 +35,7 @@ export default async function Home() {
   };
   const rawData = await fetch("https://conference.mscc.mu/agenda");
   const html = await rawData.text();
-  const $ = cheerio.load(html);
+  const $ = loadWithCheerio(html);
   const thursdaySessions = $(
     `#agenda-thursday ${SESSION_WRAPPER_SELECTOR}`
   ) as any;
@@ -50,7 +50,7 @@ export default async function Home() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center justify-between px-2 py-24">
       <Agenda dataStr={JSON.stringify(sessionsByDay)} />
     </main>
   );
