@@ -26,11 +26,12 @@ export default async function Home() {
 
     return {
       title,
-      startTime,
-      endTime,
+      since: startTime,
+      till: endTime,
       authors,
       room,
       link,
+      isActive: false,
     };
   };
   const rawData = await fetch("https://conference.mscc.mu/agenda");
@@ -50,7 +51,7 @@ export default async function Home() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between px-2 py-24">
+    <main className="flex min-h-screen flex-col items-center justify-between px-2 py-2">
       <Agenda dataStr={JSON.stringify(sessionsByDay)} />
     </main>
   );

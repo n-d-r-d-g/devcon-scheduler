@@ -2,6 +2,7 @@
 
 import { Button } from "@nextui-org/react";
 import { Epg, Layout, useEpg } from "planby";
+import { useRef, useState } from "react";
 import { ChannelItem } from "./ChannelItem";
 import { Program } from "./ProgramItem";
 import { Timeline } from "./Timeline";
@@ -34,16 +35,15 @@ const agendaTheme = {
   },
   gradient: {
     blue: {
-      300: "#002eb3",
-      600: "#002360",
-      900: "#051937",
+      300: "#063",
+      600: "#004d26",
+      900: "#032112",
     },
   },
-
   text: {
     grey: {
       300: "#a0aec0",
-      500: "#718096",
+      500: "#a7b0be;",
     },
   },
 
@@ -54,109 +54,177 @@ const agendaTheme = {
   },
 };
 
+const rooms = [
+  {
+    uuid: "Donkey Kong",
+    type: "channel",
+    title: "Donkey Kong",
+    logo: "",
+  },
+  {
+    uuid: "Tetris",
+    type: "channel",
+    title: "Tetris",
+    logo: "",
+  },
+  {
+    uuid: "Street Fighter",
+    type: "channel",
+    title: "Street Fighter",
+    logo: "",
+  },
+  {
+    uuid: "Pac Man",
+    type: "channel",
+    title: "Pac Man",
+    logo: "",
+  },
+  {
+    uuid: "Space Invaders",
+    type: "channel",
+    title: "Space Invaders",
+    logo: "",
+  },
+];
+
 export function Agenda({ dataStr }: Props) {
   const data = JSON.parse(dataStr);
-
-  const rooms = [
-    {
-      uuid: "donkey-kong",
-      type: "channel",
-      title: "Donkey Kong",
-      logo: "",
-    },
-    {
-      uuid: "tetris",
-      type: "channel",
-      title: "Tetris",
-      logo: "",
-    },
-    {
-      uuid: "street-fighter",
-      type: "channel",
-      title: "Street Fighter",
-      logo: "",
-    },
-    {
-      uuid: "pac-man",
-      type: "channel",
-      title: "Pac Man",
-      logo: "",
-    },
-    {
-      uuid: "space-invaders",
-      type: "channel",
-      title: "Space Invaders",
-      logo: "",
-    },
-  ];
-  const sessionsData = [
-    {
-      id: "6f3caa7f-5b11-4edb-998e-80d4baa03373",
-      description:
-        "Bounty hunter Boba Fett & mercenary Fennec Shand navigate the underworld when they return to Tatooine to claim Jabba the Hutt's old turf.",
-      title: "The Book of Boba Fett",
-      since: "2024-07-19T08:00:00",
-      till: "2024-07-19T08:45:00",
-      channelUuid: "donkey-kong",
-      image: "",
-      authors: ["Bob Marley", "Alice Wonderland"],
-      room: "Donkey Kong",
-      link: "https://google.com/",
-    },
-    {
-      id: "f8fa7e21-6a8a-4ccc-8859-6f61a31f2f55",
-      description:
-        "The series will follow Carrie, Miranda and Charlotte as they navigate the journey from the complicated reality of life and friendship in their 30s to the even more complicated reality of life and friendship in their 50s.",
-      title: "And Just Like That...",
-      since: "2024-07-19T09:00:00",
-      till: "2024-07-19T09:45:00",
-      channelUuid: "donkey-kong",
-      image: "",
-      authors: ["Bob Marley", "Alice Wonderland"],
-      room: "Donkey Kong",
-      link: "https://google.com/",
-    },
-    {
-      id: "a3945c66-4192-44a2-ac30-65e9ddfd9afe",
-      description:
-        "Conan O'Brien, a Harvard Lampoon alumnus, hosts this late-night comedy/talk-show, which is often silly and whimsical.",
-      title: "Late Night with Conan O'Brien",
-      since: "2024-07-19T10:00:00",
-      till: "2024-07-19T10:45:00",
-      channelUuid: "donkey-kong",
-      image: "",
-      authors: ["Bob Marley", "Alice Wonderlandsssssss"],
-      room: "Donkey Kong",
-      link: "https://google.com/",
-    },
-  ];
+  const [activeDay, setActiveDay] = useState<
+    "thursday" | "friday" | "saturday"
+  >("thursday");
+  const [sessionsData, setSessionsData] = useState({
+    thursday: data.thursday.map((session: any, index: number) => ({
+      id: `${session.title}:thursday:${session.since}:${session.till}`,
+      title: session.title,
+      since: `2024-07-18T${session.since}:00`,
+      till: `2024-07-18T${session.till}:00`,
+      channelUuid: session.room,
+      authors: session.authors,
+      room: session.room,
+      link: session.link,
+      isActive: session.isActive,
+      index,
+    })),
+    friday: data.friday.map((session: any, index: number) => ({
+      id: `${session.title}:friday:${session.since}:${session.till}`,
+      title: session.title,
+      since: `2024-07-19T${session.since}:00`,
+      till: `2024-07-19T${session.till}:00`,
+      channelUuid: session.room,
+      authors: session.authors,
+      room: session.room,
+      link: session.link,
+      isActive: session.isActive,
+      index,
+    })),
+    saturday: data.saturday.map((session: any, index: number) => ({
+      id: `${session.title}:saturday:${session.since}:${session.till}`,
+      title: session.title,
+      since: `2024-07-20T${session.since}:00`,
+      till: `2024-07-20T${session.till}:00`,
+      channelUuid: session.room,
+      authors: session.authors,
+      room: session.room,
+      link: session.link,
+      isActive: session.isAcisActive,
+      index,
+    })),
+  });
+  const [activeSessions, setActiveSessions] = useState(new Map<string, any>());
   const { getEpgProps, getLayoutProps } = useEpg({
     channels: rooms,
-    epg: sessionsData,
+    epg: sessionsData[activeDay],
     dayWidth: 3000,
     sidebarWidth: 80,
-    itemHeight: 144,
+    itemHeight: 148,
     isSidebar: true,
     isTimeline: true,
     isLine: true,
-    startDate: "2024-07-19T08:00:00",
-    endDate: "2024-07-19T18:00:00",
+    startDate: `2024-07-${
+      activeDay === "thursday" ? 18 : activeDay === "friday" ? 19 : 20
+    }T09:00:00`,
+    endDate: `2024-07-${
+      activeDay === "thursday" ? 18 : activeDay === "friday" ? 19 : 20
+    }T18:00:00`,
     isBaseTimeFormat: true,
     theme: agendaTheme,
   });
+
   return (
-    <div className="flex flex-col gap-2 max-w-full">
+    <div className="flex flex-col items-end gap-2 max-w-full">
+      <Button
+        type="button"
+        color="success"
+        onClick={() => console.log("activeSessions :>> ", activeSessions)}
+        isDisabled={activeSessions.size === 0}
+        className="mb-2"
+      >
+        Export
+      </Button>
       <div className="flex flex-col sm:flex-row gap-2 sm:mx-auto">
-        <Button color="primary">Thursday</Button>
-        <Button color="default">Friday</Button>
-        <Button color="default">Saturday</Button>
+        <Button
+          type="button"
+          color={activeDay === "thursday" ? "primary" : "default"}
+          variant={activeDay === "thursday" ? "solid" : "light"}
+          onClick={() => setActiveDay("thursday")}
+          className="text-white"
+        >
+          Thursday
+        </Button>
+        <Button
+          type="button"
+          color={activeDay === "friday" ? "primary" : "default"}
+          variant={activeDay === "friday" ? "solid" : "light"}
+          onClick={() => setActiveDay("friday")}
+          className="text-white"
+        >
+          Friday
+        </Button>
+        <Button
+          type="button"
+          color={activeDay === "saturday" ? "primary" : "default"}
+          variant={activeDay === "saturday" ? "solid" : "light"}
+          onClick={() => setActiveDay("saturday")}
+          className="text-white"
+        >
+          Saturday
+        </Button>
       </div>
       <Epg {...getEpgProps()}>
         <Layout
           {...getLayoutProps()}
           renderTimeline={(props) => <Timeline {...props} />}
           renderProgram={({ program, ...rest }) => (
-            <Program key={program.data.id} program={program} {...rest} />
+            <Program
+              key={program.data.id}
+              program={program}
+              onClick={() => {
+                const newSessionsData = { ...sessionsData };
+                const newActiveSessions = new Map(activeSessions);
+
+                newSessionsData[activeDay] = newSessionsData[activeDay].map(
+                  (s: any, i: number) => {
+                    if (i === program.data.index) {
+                      const newIsActive = !s.isActive;
+
+                      if (newIsActive) {
+                        newActiveSessions.set(s.id, s);
+                      } else {
+                        newActiveSessions.delete(s.id);
+                      }
+
+                      return { ...s, isActive: newIsActive };
+                    }
+
+                    return s;
+                  }
+                );
+
+                setActiveSessions(newActiveSessions);
+                setSessionsData(newSessionsData);
+              }}
+              {...rest}
+            />
           )}
           renderChannel={({ channel }) => (
             <ChannelItem key={channel.uuid} channel={channel} />
