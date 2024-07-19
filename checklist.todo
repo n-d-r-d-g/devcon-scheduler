@@ -1,0 +1,7 @@
+// Server
+✔ fetch from https://conference.mscc.mu/agenda
+✔ parse html using lib
+✔ use existing logic to generate json object with sessions
+
+// Client
+☐ Build agenda with data from json
