@@ -1,5 +1,4 @@
 import { SESSION_WRAPPER_SELECTOR } from "@/constants";
-import { Button } from "@nextui-org/react";
 import * as cheerio from "cheerio";
 import { Agenda } from "./components/Agenda";
 
@@ -52,7 +51,6 @@ export default async function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <Button color="primary">NextUI Button</Button>
       <Agenda dataStr={JSON.stringify(sessionsByDay)} />
     </main>
   );
