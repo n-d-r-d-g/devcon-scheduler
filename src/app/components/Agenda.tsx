@@ -2,7 +2,7 @@
 
 import { Button } from "@nextui-org/react";
 import { Epg, Layout, useEpg } from "planby";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { ChannelItem } from "./ChannelItem";
 import { Program } from "./ProgramItem";
 import { Timeline } from "./Timeline";
@@ -96,6 +96,8 @@ export function Agenda({ dataStr }: Props) {
     thursday: data.thursday.map((session: any, index: number) => ({
       id: `${session.title}:thursday:${session.since}:${session.till}`,
       title: session.title,
+      startTime: session.since,
+      endTime: session.till,
       since: `2024-07-18T${session.since}:00`,
       till: `2024-07-18T${session.till}:00`,
       channelUuid: session.room,
@@ -108,6 +110,8 @@ export function Agenda({ dataStr }: Props) {
     friday: data.friday.map((session: any, index: number) => ({
       id: `${session.title}:friday:${session.since}:${session.till}`,
       title: session.title,
+      startTime: session.since,
+      endTime: session.till,
       since: `2024-07-19T${session.since}:00`,
       till: `2024-07-19T${session.till}:00`,
       channelUuid: session.room,
@@ -120,17 +124,25 @@ export function Agenda({ dataStr }: Props) {
     saturday: data.saturday.map((session: any, index: number) => ({
       id: `${session.title}:saturday:${session.since}:${session.till}`,
       title: session.title,
+      startTime: session.since,
+      endTime: session.till,
       since: `2024-07-20T${session.since}:00`,
       till: `2024-07-20T${session.till}:00`,
       channelUuid: session.room,
       authors: session.authors,
       room: session.room,
       link: session.link,
-      isActive: session.isAcisActive,
+      isActive: session.isActive,
       index,
     })),
   });
-  const [activeSessions, setActiveSessions] = useState(new Map<string, any>());
+  const [activeSessions, setActiveSessions] = useState(
+    new Map<"thursday" | "friday" | "saturday", Map<string, any>>([
+      ["thursday", new Map()],
+      ["friday", new Map()],
+      ["saturday", new Map()],
+    ])
+  );
   const { getEpgProps, getLayoutProps } = useEpg({
     channels: rooms,
     epg: sessionsData[activeDay],
@@ -153,10 +165,37 @@ export function Agenda({ dataStr }: Props) {
   return (
     <div className="flex flex-col sm:items-end gap-2 max-w-full">
       <Button
+        isDisabled={
+          activeSessions.get("thursday")?.size === 0 &&
+          activeSessions.get("friday")?.size === 0 &&
+          activeSessions.get("saturday")?.size === 0
+        }
+        onClick={() => {
+          const horizontalSeparator = "=================";
+          let nextDisplay = `${horizontalSeparator}\n\n\n\n`;
+          nextDisplay += "------Thursday------";
+          activeSessions.get("thursday")?.forEach((value, key) => {
+            nextDisplay += "\n";
+            nextDisplay += `${value.title}\n`;
+            nextDisplay += `${value.channelUuid}\n`;
+            nextDisplay += `${value.startTime} - ${value.endTime}\n`;
+            nextDisplay += `${value.authors.join(",")}\n`;
+            nextDisplay += "\n\n";
+          });
+          navigator.clipboard.writeText(nextDisplay);
+        }}
+      >
+        Copy
+      </Button>
+      <Button
         type="button"
         color="success"
         onClick={() => console.log("activeSessions :>> ", activeSessions)}
-        isDisabled={activeSessions.size === 0}
+        isDisabled={
+          activeSessions.get("thursday")?.size === 0 &&
+          activeSessions.get("friday")?.size === 0 &&
+          activeSessions.get("saturday")?.size === 0
+        }
         className="mb-2"
       >
         Export
@@ -208,9 +247,9 @@ export function Agenda({ dataStr }: Props) {
                       const newIsActive = !s.isActive;
 
                       if (newIsActive) {
-                        newActiveSessions.set(s.id, s);
+                        newActiveSessions.get(activeDay)?.set(s.id, s);
                       } else {
-                        newActiveSessions.delete(s.id);
+                        newActiveSessions.get(activeDay)?.delete(s.id);
                       }
 
                       return { ...s, isActive: newIsActive };
