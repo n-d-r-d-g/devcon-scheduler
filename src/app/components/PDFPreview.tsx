@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, CardFooter, CardHeader, Divider, Link } from "@nextui-org/react";
+import { Card, CardBody, Link } from "@nextui-org/react";
 
 type Props = {
   sessionsByDay: Map<"thursday" | "friday" | "saturday", Map<string, any>>;
@@ -39,25 +39,20 @@ export function PDFPreview({ sessionsByDay }: Props) {
               <div className={`flex flex-col items-start gap-4`}>
                 {[...sessions.entries()].map(([id, session]) => (
                   <Card key={id} className="max-w-full border-1" shadow="none">
-                    <CardHeader className="flex gap-3">
-                      <div className="flex flex-col gap-1">
-                        <p className="text-lg font-semibold">{session.title}</p>
+                    <CardBody className="flex flex-col gap-1">
+                      <p className="text-lg font-semibold">{session.title}</p>
+                      <p className="text-small text-default-700">
+                        {session.startTime} - {session.endTime} ~{" "}
+                        <span className="capitalize italic">{day}</span>
+                      </p>
+                      <p className="text-small text-default-700 font-semibold">
+                        {session.room}
+                      </p>
+                      {session.authors.length > 0 && (
                         <p className="text-small text-default-700">
-                          {session.startTime} - {session.endTime} ~{" "}
-                          <span className="capitalize italic">{day}</span>
+                          {session.authors.join(", ")}
                         </p>
-                        <p className="text-small text-default-700 font-semibold">
-                          {session.room}
-                        </p>
-                        {session.authors.length > 0 && (
-                          <p className="text-small text-default-700">
-                            {session.authors.join(", ")}
-                          </p>
-                        )}
-                      </div>
-                    </CardHeader>
-                    <Divider />
-                    <CardFooter>
+                      )}
                       <Link
                         isExternal
                         showAnchorIcon
@@ -66,7 +61,7 @@ export function PDFPreview({ sessionsByDay }: Props) {
                       >
                         View details
                       </Link>
-                    </CardFooter>
+                    </CardBody>
                   </Card>
                 ))}
               </div>
