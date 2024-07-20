@@ -26,6 +26,7 @@ body {
 
 @media print {
   body {
-    @apply bg-white;
+    color: black;
+    background: white;
   }
 }
