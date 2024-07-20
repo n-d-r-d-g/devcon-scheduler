@@ -173,6 +173,8 @@ export function Agenda({ dataStr }: Props) {
               activeSessions.get("friday")?.size === 0 &&
               activeSessions.get("saturday")?.size === 0
             }
+            color="default"
+            variant="light"
             onClick={() => {
               let nextDisplay = "";
               let dayIndex = 0;
@@ -201,7 +203,7 @@ export function Agenda({ dataStr }: Props) {
               });
               navigator.clipboard.writeText(nextDisplay);
             }}
-            className="disabled:cursor-not-allowed"
+            className="disabled:cursor-not-allowed text-white"
           >
             Copy
           </Button>
