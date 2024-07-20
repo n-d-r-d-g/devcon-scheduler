@@ -23,3 +23,9 @@ body {
     text-wrap: balance;
   }
 }
+
+@media print {
+  body {
+    @apply bg-white;
+  }
+}
