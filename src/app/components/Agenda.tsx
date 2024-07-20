@@ -1,8 +1,12 @@
 "use client";
 
-import { Button, Snippet } from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
 import { Epg, Layout, useEpg } from "planby";
 import { useCallback, useState } from "react";
+import {
+  LuCheckCheck as LuCheckCheckIcon,
+  LuCopy as LuCopyIcon,
+} from "react-icons/lu";
 import { ChannelItem } from "./ChannelItem";
 import { PDFPreview } from "./PDFPreview";
 import { Program } from "./ProgramItem";
@@ -144,6 +148,7 @@ export function Agenda({ dataStr }: Props) {
       ["saturday", new Map()],
     ])
   );
+  const [isCopying, setIsCopying] = useState(false);
   const { getEpgProps, getLayoutProps } = useEpg({
     channels: rooms,
     epg: sessionsData[activeDay],
@@ -202,19 +207,31 @@ export function Agenda({ dataStr }: Props) {
     <>
       <div className="print:hidden flex flex-col sm:items-end gap-2 max-w-full">
         <div className="max-w-full flex flex-row gap-2">
-          <Snippet
-            codeString={retrieveTextToCopy()}
-            disableCopy={noSessionsSelected}
+          <Button
+            type="button"
             color="default"
-            variant="bordered"
-            tooltipProps={{ color: "foreground" }}
-            className={`${
-              noSessionsSelected ? "text-default-700" : "text-white"
-            } border-0`}
-            hideSymbol
+            variant="light"
+            onClick={async () => {
+              try {
+                await navigator?.clipboard?.writeText(retrieveTextToCopy());
+
+                setIsCopying(true);
+                setTimeout(() => setIsCopying(false), 2000);
+              } catch (e) {
+                alert("Copy to clipboard is not supported!");
+                console.error(e);
+              }
+            }}
+            isDisabled={noSessionsSelected}
+            endContent={
+              isCopying ? <LuCheckCheckIcon color="#4ade80" /> : <LuCopyIcon />
+            }
+            className={`mb-2 disabled:cursor-not-allowed ${
+              isCopying ? "text-success-400" : "text-white"
+            }`}
           >
-            Copy
-          </Snippet>
+            {isCopying ? "Copied" : "Copy"}
+          </Button>
           <Button
             type="button"
             color="success"
