@@ -162,15 +162,22 @@ export function Agenda({ dataStr }: Props) {
     isBaseTimeFormat: true,
     theme: agendaTheme,
   });
-  const sessionsSelected =
+  const noSessionsSelected =
     activeSessions.get("thursday")?.size === 0 &&
     activeSessions.get("friday")?.size === 0 &&
     activeSessions.get("saturday")?.size === 0;
 
   const retrieveTextToCopy = useCallback(() => {
     let nextDisplay = "";
-    let dayIndex = 0;
+    let isFirstActiveSession = true;
     activeSessions.forEach((sessionsByDay, day) => {
+      if (sessionsByDay.size === 0) return;
+
+      if (!isFirstActiveSession) {
+        nextDisplay += "\n\n\n\n";
+      }
+
+      isFirstActiveSession = false;
       nextDisplay += `<<<<<<< ${day.toUpperCase()} >>>>>>>\n`;
       let sessionIndex = 0;
       sessionsByDay?.forEach((session) => {
@@ -186,12 +193,6 @@ export function Agenda({ dataStr }: Props) {
 
         sessionIndex++;
       });
-
-      if (dayIndex < activeSessions.size - 1) {
-        nextDisplay += "\n\n\n\n";
-      }
-
-      dayIndex++;
     });
 
     return nextDisplay;
@@ -203,12 +204,12 @@ export function Agenda({ dataStr }: Props) {
         <div className="max-w-full flex flex-row gap-2">
           <Snippet
             codeString={retrieveTextToCopy()}
-            disableCopy={!sessionsSelected}
+            disableCopy={noSessionsSelected}
             color="default"
             variant="bordered"
             tooltipProps={{ color: "foreground" }}
             className={`${
-              sessionsSelected ? "text-white" : "text-default-700"
+              noSessionsSelected ? "text-default-700" : "text-white"
             } border-0`}
             hideSymbol
           >
@@ -226,7 +227,7 @@ export function Agenda({ dataStr }: Props) {
                 alert("Printing is not supported by your browser!");
               }
             }}
-            isDisabled={!sessionsSelected}
+            isDisabled={noSessionsSelected}
             className="mb-2 disabled:cursor-not-allowed"
           >
             Save
