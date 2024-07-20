@@ -157,7 +157,7 @@ export function Agenda({ dataStr }: Props) {
     itemHeight: 156,
     isSidebar: true,
     isTimeline: true,
-    isLine: true,
+    isLine: false,
     startDate: `2024-07-${
       activeDay === "thursday" ? 18 : activeDay === "friday" ? 19 : 20
     }T09:00:00`,
