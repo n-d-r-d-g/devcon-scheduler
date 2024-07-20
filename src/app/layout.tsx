@@ -1,7 +1,7 @@
+import { Link } from "@nextui-org/react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Link } from "@nextui-org/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <header className="flex flex-row justify-center p-2">
+        <header className="flex flex-row justify-center p-2 print:hidden">
           <Link
             isExternal
             showAnchorIcon

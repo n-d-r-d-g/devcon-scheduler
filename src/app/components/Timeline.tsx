@@ -1,9 +1,11 @@
+"use client";
+
 import {
-  TimelineWrapper,
   TimelineBox,
-  TimelineTime,
   TimelineDivider,
   TimelineDividers,
+  TimelineTime,
+  TimelineWrapper,
   useTimeline,
 } from "planby";
 

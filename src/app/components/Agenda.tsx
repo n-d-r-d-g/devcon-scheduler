@@ -4,6 +4,7 @@ import { Button } from "@nextui-org/react";
 import { Epg, Layout, useEpg } from "planby";
 import { useState } from "react";
 import { ChannelItem } from "./ChannelItem";
+import { PDFPreview } from "./PDFPreview";
 import { Program } from "./ProgramItem";
 import { Timeline } from "./Timeline";
 
@@ -148,7 +149,7 @@ export function Agenda({ dataStr }: Props) {
     epg: sessionsData[activeDay],
     dayWidth: 3000,
     sidebarWidth: 80,
-    itemHeight: 148,
+    itemHeight: 156,
     isSidebar: true,
     isTimeline: true,
     isLine: true,
@@ -163,130 +164,141 @@ export function Agenda({ dataStr }: Props) {
   });
 
   return (
-    <div className="flex flex-col sm:items-end gap-2 max-w-full">
-      <div className="max-w-full flex flex-row gap-2">
-        <Button
-          isDisabled={
-            activeSessions.get("thursday")?.size === 0 &&
-            activeSessions.get("friday")?.size === 0 &&
-            activeSessions.get("saturday")?.size === 0
-          }
-          onClick={() => {
-            let nextDisplay = "";
-            let dayIndex = 0;
-            activeSessions.forEach((sessionsByDay, day) => {
-              nextDisplay += `<<<<<<< ${day.toUpperCase()} >>>>>>>\n`;
-              let sessionIndex = 0;
-              sessionsByDay?.forEach((session) => {
-                nextDisplay += "\n";
-                nextDisplay += `${session.title}\n`;
-                nextDisplay += `${session.channelUuid}\n`;
-                nextDisplay += `${session.startTime} - ${session.endTime}\n`;
-                nextDisplay += `${session.authors.join(", ")}`;
+    <>
+      <div className="print:hidden flex flex-col sm:items-end gap-2 max-w-full">
+        <div className="max-w-full flex flex-row gap-2">
+          <Button
+            isDisabled={
+              activeSessions.get("thursday")?.size === 0 &&
+              activeSessions.get("friday")?.size === 0 &&
+              activeSessions.get("saturday")?.size === 0
+            }
+            onClick={() => {
+              let nextDisplay = "";
+              let dayIndex = 0;
+              activeSessions.forEach((sessionsByDay, day) => {
+                nextDisplay += `<<<<<<< ${day.toUpperCase()} >>>>>>>\n`;
+                let sessionIndex = 0;
+                sessionsByDay?.forEach((session) => {
+                  nextDisplay += "\n";
+                  nextDisplay += `${session.title}\n`;
+                  nextDisplay += `${session.channelUuid}\n`;
+                  nextDisplay += `${session.startTime} - ${session.endTime}\n`;
+                  nextDisplay += `${session.authors.join(", ")}`;
 
-                if (sessionIndex < sessionsByDay.size - 1) {
-                  nextDisplay += "\n\n";
+                  if (sessionIndex < sessionsByDay.size - 1) {
+                    nextDisplay += "\n\n";
+                  }
+
+                  sessionIndex++;
+                });
+
+                if (dayIndex < activeSessions.size - 1) {
+                  nextDisplay += "\n\n\n\n";
                 }
 
-                sessionIndex++;
+                dayIndex++;
               });
+              navigator.clipboard.writeText(nextDisplay);
+            }}
+            className="disabled:cursor-not-allowed"
+          >
+            Copy
+          </Button>
+          <Button
+            type="button"
+            color="success"
+            onClick={async () => {
+              const isPrintingSupported = typeof window && "print" in window;
 
-              if (dayIndex < activeSessions.size - 1) {
-                nextDisplay += "\n\n\n\n";
+              if (isPrintingSupported) {
+                window.print();
+              } else {
+                alert("Printing is not supported by your browser!");
               }
+            }}
+            isDisabled={
+              activeSessions.get("thursday")?.size === 0 &&
+              activeSessions.get("friday")?.size === 0 &&
+              activeSessions.get("saturday")?.size === 0
+            }
+            className="mb-2 disabled:cursor-not-allowed"
+          >
+            Save
+          </Button>
+        </div>
+        <div className="flex flex-col sm:flex-row gap-2 sm:mx-auto">
+          <Button
+            type="button"
+            color={activeDay === "thursday" ? "primary" : "default"}
+            variant={activeDay === "thursday" ? "solid" : "light"}
+            onClick={() => setActiveDay("thursday")}
+            className="text-white"
+          >
+            Thursday
+          </Button>
+          <Button
+            type="button"
+            color={activeDay === "friday" ? "primary" : "default"}
+            variant={activeDay === "friday" ? "solid" : "light"}
+            onClick={() => setActiveDay("friday")}
+            className="text-white"
+          >
+            Friday
+          </Button>
+          <Button
+            type="button"
+            color={activeDay === "saturday" ? "primary" : "default"}
+            variant={activeDay === "saturday" ? "solid" : "light"}
+            onClick={() => setActiveDay("saturday")}
+            className="text-white"
+          >
+            Saturday
+          </Button>
+        </div>
+        <Epg {...getEpgProps()}>
+          <Layout
+            {...getLayoutProps()}
+            renderTimeline={(props) => <Timeline {...props} />}
+            renderProgram={({ program, ...rest }) => (
+              <Program
+                key={program.data.id}
+                program={program}
+                onClick={() => {
+                  const newSessionsData = { ...sessionsData };
+                  const newActiveSessions = new Map(activeSessions);
 
-              dayIndex++;
-            });
-            navigator.clipboard.writeText(nextDisplay);
-          }}
-          className="disabled:cursor-not-allowed"
-        >
-          Copy
-        </Button>
-        <Button
-          type="button"
-          color="success"
-          onClick={() => console.log("activeSessions :>> ", activeSessions)}
-          isDisabled={
-            activeSessions.get("thursday")?.size === 0 &&
-            activeSessions.get("friday")?.size === 0 &&
-            activeSessions.get("saturday")?.size === 0
-          }
-          className="mb-2 disabled:cursor-not-allowed"
-        >
-          Export
-        </Button>
-      </div>
-      <div className="flex flex-col sm:flex-row gap-2 sm:mx-auto">
-        <Button
-          type="button"
-          color={activeDay === "thursday" ? "primary" : "default"}
-          variant={activeDay === "thursday" ? "solid" : "light"}
-          onClick={() => setActiveDay("thursday")}
-          className="text-white"
-        >
-          Thursday
-        </Button>
-        <Button
-          type="button"
-          color={activeDay === "friday" ? "primary" : "default"}
-          variant={activeDay === "friday" ? "solid" : "light"}
-          onClick={() => setActiveDay("friday")}
-          className="text-white"
-        >
-          Friday
-        </Button>
-        <Button
-          type="button"
-          color={activeDay === "saturday" ? "primary" : "default"}
-          variant={activeDay === "saturday" ? "solid" : "light"}
-          onClick={() => setActiveDay("saturday")}
-          className="text-white"
-        >
-          Saturday
-        </Button>
-      </div>
-      <Epg {...getEpgProps()}>
-        <Layout
-          {...getLayoutProps()}
-          renderTimeline={(props) => <Timeline {...props} />}
-          renderProgram={({ program, ...rest }) => (
-            <Program
-              key={program.data.id}
-              program={program}
-              onClick={() => {
-                const newSessionsData = { ...sessionsData };
-                const newActiveSessions = new Map(activeSessions);
+                  newSessionsData[activeDay] = newSessionsData[activeDay].map(
+                    (s: any, i: number) => {
+                      if (i === program.data.index) {
+                        const newIsActive = !s.isActive;
 
-                newSessionsData[activeDay] = newSessionsData[activeDay].map(
-                  (s: any, i: number) => {
-                    if (i === program.data.index) {
-                      const newIsActive = !s.isActive;
+                        if (newIsActive) {
+                          newActiveSessions.get(activeDay)?.set(s.id, s);
+                        } else {
+                          newActiveSessions.get(activeDay)?.delete(s.id);
+                        }
 
-                      if (newIsActive) {
-                        newActiveSessions.get(activeDay)?.set(s.id, s);
-                      } else {
-                        newActiveSessions.get(activeDay)?.delete(s.id);
+                        return { ...s, isActive: newIsActive };
                       }
 
-                      return { ...s, isActive: newIsActive };
+                      return s;
                     }
+                  );
 
-                    return s;
-                  }
-                );
-
-                setActiveSessions(newActiveSessions);
-                setSessionsData(newSessionsData);
-              }}
-              {...rest}
-            />
-          )}
-          renderChannel={({ channel }) => (
-            <ChannelItem key={channel.uuid} channel={channel} />
-          )}
-        />
-      </Epg>
-    </div>
+                  setActiveSessions(newActiveSessions);
+                  setSessionsData(newSessionsData);
+                }}
+                {...rest}
+              />
+            )}
+            renderChannel={({ channel }) => (
+              <ChannelItem key={channel.uuid} channel={channel} />
+            )}
+          />
+        </Epg>
+      </div>
+      <PDFPreview sessionsByDay={activeSessions} />
+    </>
   );
 }
