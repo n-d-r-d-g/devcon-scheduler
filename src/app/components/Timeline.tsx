@@ -28,16 +28,11 @@ export function Timeline({
   offsetStartHoursRange,
   sidebarWidth,
 }: TimelineProps) {
-  const { time, dividers, formatTime } = useTimeline(
-    numberOfHoursInDay,
-    isBaseTimeFormat
-  );
+  const { time, dividers } = useTimeline(numberOfHoursInDay, isBaseTimeFormat);
 
   const renderTime = (index: number) => (
     <TimelineBox key={index} width={hourWidth}>
-      <TimelineTime>
-        {formatTime(index + offsetStartHoursRange).toLowerCase()}
-      </TimelineTime>
+      <TimelineTime>{index + offsetStartHoursRange}:00</TimelineTime>
       <TimelineDividers>{renderDividers()}</TimelineDividers>
     </TimelineBox>
   );
