@@ -1,6 +1,10 @@
 "use client";
 
-import { AGENDA_DATE_TIME_FORMAT, AGENDA_THEME } from "@/constants";
+import {
+  AGENDA_DATE_TIME_FORMAT,
+  AGENDA_THEME,
+  EXPORT_TIME_FORMAT,
+} from "@/constants";
 import { Room, Session } from "@/types";
 import { Button } from "@nextui-org/react";
 import dayjs from "dayjs";
@@ -118,15 +122,15 @@ export function Agenda({
       nextDisplay += `<<<<<<< ${day.toUpperCase()} >>>>>>>\n`;
       let sessionIndex = 0;
       sessionsByDay?.forEach((session) => {
-        nextDisplay += "\n";
-        nextDisplay += `${session.title}\n`;
-        nextDisplay += `${session.channelUuid}\n`;
-        nextDisplay += `${dayjs
+        nextDisplay += `\n${session.title}`;
+        nextDisplay += `\n${session.room}`;
+        nextDisplay += `\n${dayjs
           .utc(session.startsAt)
-          .format(AGENDA_DATE_TIME_FORMAT)} - ${dayjs
+          .format(EXPORT_TIME_FORMAT)} - ${dayjs
           .utc(session.endsAt)
-          .format(AGENDA_DATE_TIME_FORMAT)}\n`;
-        nextDisplay += `${session.speakers.join(", ")}`;
+          .format(EXPORT_TIME_FORMAT)}`;
+        nextDisplay +=
+          session.speakers.length > 0 ? `\n${session.speakers.join(", ")}` : "";
 
         if (sessionIndex < sessionsByDay.size - 1) {
           nextDisplay += "\n\n";
