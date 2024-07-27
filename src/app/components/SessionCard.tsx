@@ -1,8 +1,10 @@
 "use client";
 
-import { MSCC_WEBSITE_AGENDA_URL } from "@/constants";
+import { EXPORT_TIME_FORMAT, MSCC_WEBSITE_AGENDA_URL } from "@/constants";
 import { Session } from "@/types";
 import { Button, Link, Tooltip } from "@nextui-org/react";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
 import {
   ProgramBox,
   ProgramContent,
@@ -16,6 +18,8 @@ import {
 import { useState } from "react";
 import { FaEye as FaEyeIcon } from "react-icons/fa";
 
+dayjs.extend(utc);
+
 type SessionCardProps = ProgramItem & {
   onClick: () => void;
   program: { data: Session };
@@ -27,7 +31,7 @@ export const SessionCard = ({
   ...rest
 }: SessionCardProps) => {
   const [isTitleTooltipOpen, setIsTitleTooltipOpen] = useState(false);
-  const { styles, formatTime, set12HoursTimeFormat } = useProgram({
+  const { styles } = useProgram({
     program,
     ...rest,
   });
@@ -43,8 +47,8 @@ export const SessionCard = ({
     isClickDisabled,
   } = data;
   debugger;
-  const startTime = formatTime(startsAt, set12HoursTimeFormat()).toLowerCase();
-  const endTime = formatTime(endsAt, set12HoursTimeFormat()).toLowerCase();
+  const startTime = dayjs.utc(startsAt).format(EXPORT_TIME_FORMAT);
+  const endTime = dayjs.utc(endsAt).format(EXPORT_TIME_FORMAT);
 
   return (
     <ProgramBox width={styles.width} style={styles.position}>

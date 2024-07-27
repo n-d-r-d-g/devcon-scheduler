@@ -1,10 +1,6 @@
 "use client";
 
-import {
-  AGENDA_DATE_TIME_FORMAT,
-  AGENDA_THEME,
-  EXPORT_TIME_FORMAT,
-} from "@/constants";
+import { AGENDA_THEME, EXPORT_TIME_FORMAT } from "@/constants";
 import { Room, Session } from "@/types";
 import { Button } from "@nextui-org/react";
 import dayjs from "dayjs";
@@ -16,8 +12,8 @@ import {
   LuCheckCheck as LuCheckCheckIcon,
   LuCopy as LuCopyIcon,
 } from "react-icons/lu";
-import { RoomName } from "./RoomName";
 import { PDFPreview } from "./PDFPreview";
+import { RoomName } from "./RoomName";
 import { SessionCard } from "./SessionCard";
 import { Timeline } from "./Timeline";
 
@@ -203,52 +199,54 @@ export function Agenda({
             onClick={onDayChange}
           />
         </div>
-        <Epg {...getEpgProps()}>
-          <Layout
-            {...getLayoutProps()}
-            renderTimeline={(props) => <Timeline {...props} />}
-            renderProgram={({ program, ...rest }) => (
-              <SessionCard
-                key={program.data.id}
-                program={
-                  program as unknown as ProgramItem & {
-                    data: Session;
-                    position: Omit<Position, "edgeEnd">;
+        <div className="w-full max-w-full">
+          <Epg {...getEpgProps()}>
+            <Layout
+              {...getLayoutProps()}
+              renderTimeline={(props) => <Timeline {...props} />}
+              renderProgram={({ program, ...rest }) => (
+                <SessionCard
+                  key={program.data.id}
+                  program={
+                    program as unknown as ProgramItem & {
+                      data: Session;
+                      position: Omit<Position, "edgeEnd">;
+                    }
                   }
-                }
-                onClick={() => {
-                  const newSessionsData = { ...sessionsData };
-                  const newActiveSessions = new Map(activeSessions);
+                  onClick={() => {
+                    const newSessionsData = { ...sessionsData };
+                    const newActiveSessions = new Map(activeSessions);
 
-                  newSessionsData[activeDay] = newSessionsData[activeDay].map(
-                    (s: any, i: number) => {
-                      if (i === program.data.index) {
-                        const newIsActive = !s.isActive;
+                    newSessionsData[activeDay] = newSessionsData[activeDay].map(
+                      (s: any, i: number) => {
+                        if (i === program.data.index) {
+                          const newIsActive = !s.isActive;
 
-                        if (newIsActive) {
-                          newActiveSessions.get(activeDay)?.set(s.id, s);
-                        } else {
-                          newActiveSessions.get(activeDay)?.delete(s.id);
+                          if (newIsActive) {
+                            newActiveSessions.get(activeDay)?.set(s.id, s);
+                          } else {
+                            newActiveSessions.get(activeDay)?.delete(s.id);
+                          }
+
+                          return { ...s, isActive: newIsActive };
                         }
 
-                        return { ...s, isActive: newIsActive };
+                        return s;
                       }
+                    );
 
-                      return s;
-                    }
-                  );
-
-                  setActiveSessions(newActiveSessions);
-                  setSessionsData(newSessionsData);
-                }}
-                {...rest}
-              />
-            )}
-            renderChannel={({ channel }) => (
-              <RoomName key={channel.uuid} channel={channel} />
-            )}
-          />
-        </Epg>
+                    setActiveSessions(newActiveSessions);
+                    setSessionsData(newSessionsData);
+                  }}
+                  {...rest}
+                />
+              )}
+              renderChannel={({ channel }) => (
+                <RoomName key={channel.uuid} channel={channel} />
+              )}
+            />
+          </Epg>
+        </div>
       </div>
       <PDFPreview sessionsByDay={activeSessions} />
     </>
