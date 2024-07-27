@@ -46,72 +46,76 @@ export const SessionCard = ({
     isActive,
     isClickDisabled,
   } = data;
-  debugger;
   const startTime = dayjs.utc(startsAt).format(EXPORT_TIME_FORMAT);
   const endTime = dayjs.utc(endsAt).format(EXPORT_TIME_FORMAT);
 
   return (
     <ProgramBox width={styles.width} style={styles.position}>
-      <ProgramContent
-        width={styles.width}
-        isLive={isActive}
-        tabIndex={0}
-        onClick={onClick}
-        className={`border-2 border-dashed ${
-          isActive ? "border-green-300" : "border-transparent"
-        }`}
+      <Button
+        onPress={onClick}
+        className="w-full h-full p-0 text-start"
+        variant="light"
+        radius="sm"
       >
-        <ProgramFlex>
-          <ProgramStack>
-            <Tooltip
-              content={title}
-              isOpen={isTitleTooltipOpen}
-              color="foreground"
-            >
-              <div className="flex flex-row items-baseline gap-0.5">
-                <ProgramTitle
-                  onMouseEnter={() => setIsTitleTooltipOpen(true)}
-                  onMouseLeave={() => setIsTitleTooltipOpen(false)}
-                >
-                  {title}
-                </ProgramTitle>
-                <Button
-                  isIconOnly
-                  variant="light"
-                  size="sm"
-                  radius="full"
-                  aria-label="View full title"
-                  onPress={() => setIsTitleTooltipOpen((prev) => !prev)}
-                  onBlur={() => setIsTitleTooltipOpen(false)}
-                  onMouseLeave={() => setIsTitleTooltipOpen(false)}
-                  className="text-white"
-                >
-                  <FaEyeIcon />
-                </Button>
-              </div>
-            </Tooltip>
-            <ProgramText className="mb-1 text-gray-300">
-              {startTime} - {endTime}
-            </ProgramText>
-            <ProgramText className="mb-1 text-gray-300">{room}</ProgramText>
-            {speakers.length > 0 && (
-              <ProgramText className="mb-1 text-gray-300">
-                {speakers.join(", ")}
-              </ProgramText>
-            )}
-            {!isClickDisabled && (
-              <Link
-                isExternal
-                showAnchorIcon
-                href={`${MSCC_WEBSITE_AGENDA_URL}${id}`}
-                className="text-blue-300"
+        <ProgramContent
+          width={styles.width}
+          isLive={isActive}
+          className={`w-full border-2 border-dashed ${
+            isActive ? "border-green-300" : "border-transparent"
+          }`}
+        >
+          <ProgramFlex>
+            <ProgramStack>
+              <Tooltip
+                content={title}
+                isOpen={isTitleTooltipOpen}
+                color="foreground"
               >
-                Details
-              </Link>
-            )}
-          </ProgramStack>
-        </ProgramFlex>
-      </ProgramContent>
+                <div className="flex flex-row items-baseline gap-0.5">
+                  <ProgramTitle
+                    onMouseEnter={() => setIsTitleTooltipOpen(true)}
+                    onMouseLeave={() => setIsTitleTooltipOpen(false)}
+                  >
+                    {title}
+                  </ProgramTitle>
+                  <Button
+                    isIconOnly
+                    variant="light"
+                    size="sm"
+                    radius="full"
+                    aria-label="View full title"
+                    onPress={() => setIsTitleTooltipOpen((prev) => !prev)}
+                    onBlur={() => setIsTitleTooltipOpen(false)}
+                    onMouseLeave={() => setIsTitleTooltipOpen(false)}
+                    className="text-white data-[focus-visible=true]:-outline-offset-[2px]"
+                  >
+                    <FaEyeIcon />
+                  </Button>
+                </div>
+              </Tooltip>
+              <ProgramText className="mb-1 text-gray-300">
+                {startTime} - {endTime}
+              </ProgramText>
+              <ProgramText className="mb-1 text-gray-300">{room}</ProgramText>
+              {speakers.length > 0 && (
+                <ProgramText className="mb-1 text-gray-300">
+                  {speakers.join(", ")}
+                </ProgramText>
+              )}
+              {!isClickDisabled && (
+                <Link
+                  isExternal
+                  showAnchorIcon
+                  href={`${MSCC_WEBSITE_AGENDA_URL}${id}`}
+                  className="text-blue-300"
+                >
+                  Details
+                </Link>
+              )}
+            </ProgramStack>
+          </ProgramFlex>
+        </ProgramContent>
+      </Button>
     </ProgramBox>
   );
 };
