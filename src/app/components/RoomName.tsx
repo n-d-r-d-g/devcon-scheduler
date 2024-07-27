@@ -6,7 +6,7 @@ interface ChannelItemProps {
   channel: Channel;
 }
 
-export const ChannelItem = ({ channel }: ChannelItemProps) => {
+export const RoomName = ({ channel }: ChannelItemProps) => {
   const { position, title } = channel;
   return (
     <ChannelBox {...position}>

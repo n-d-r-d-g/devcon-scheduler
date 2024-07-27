@@ -1,9 +1,10 @@
 "use client";
 
+import { MSCC_WEBSITE_AGENDA_URL } from "@/constants";
 import { Card, CardBody, Link } from "@nextui-org/react";
 
 type Props = {
-  sessionsByDay: Map<"thursday" | "friday" | "saturday", Map<string, any>>;
+  sessionsByDay: Map<string, Map<string, any>>;
 };
 
 export function PDFPreview({ sessionsByDay }: Props) {
@@ -48,19 +49,21 @@ export function PDFPreview({ sessionsByDay }: Props) {
                       <p className="text-small text-default-700 font-semibold">
                         {session.room}
                       </p>
-                      {session.authors.length > 0 && (
+                      {session.speakers.length > 0 && (
                         <p className="text-small text-default-700">
-                          {session.authors.join(", ")}
+                          {session.speakers.join(", ")}
                         </p>
                       )}
-                      <Link
-                        isExternal
-                        showAnchorIcon
-                        href={session.link}
-                        className="text-blue-600"
-                      >
-                        View details
-                      </Link>
+                      {!session.isClickDisabled && (
+                        <Link
+                          isExternal
+                          showAnchorIcon
+                          href={`${MSCC_WEBSITE_AGENDA_URL}${session.id}`}
+                          className="text-blue-600"
+                        >
+                          View details
+                        </Link>
+                      )}
                     </CardBody>
                   </Card>
                 ))}

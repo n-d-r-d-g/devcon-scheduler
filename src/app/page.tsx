@@ -1,58 +1,126 @@
-import { SESSION_WRAPPER_SELECTOR } from "@/constants";
-import { load as loadWithCheerio } from "cheerio";
+import { Session } from "@/types";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import sessionsData from "../data/sessions.json";
+import roomsData from "../data/rooms.json";
 import { Agenda } from "./components/Agenda";
+import { AGENDA_DATE_TIME_FORMAT } from "@/constants";
+
+dayjs.extend(utc);
 
 export default async function Home() {
-  const formatSession = (session: any) => {
-    const title = session.children.find((child: any) => child.name === "h3")
-      ?.children?.[0]?.data;
-    const schedule = session.children
-      .find((child: any) => child.attribs?.class?.includes("tile_start"))
-      ?.children?.[0]?.data?.trim()
-      ?.split(" - ");
-    const startTime = schedule[0];
-    const endTime = schedule[1];
-    const authors = (
-      session.children
-        .find((child: any) => child.attribs?.class?.includes("speaker"))
-        ?.children?.filter((child: any) =>
-          child.attribs?.class.includes("speaker--headshot")
-        ) ?? []
-    ).flatMap((x: any) =>
-      x.children.map((child: any) => child?.children?.[0]?.data).filter(Boolean)
-    );
-    const room = session.attribs["data-room"];
-    const link = `https://conference.mscc.mu${session.attribs["href"]}`;
+  let defaultConfDay: undefined | string;
+  const sessionsByDay: Record<string, Array<Session>> = {};
+  const confDays: Array<string> = [];
+  const roomMap: Record<string, string> = {};
+  const rooms = roomsData.map((room) => {
+    roomMap[room.id] = room.name;
 
     return {
-      title,
-      since: startTime,
-      till: endTime,
-      authors,
-      room,
-      link,
-      isActive: false,
+      uuid: room.id,
+      type: "channel",
+      title: room.name,
+      logo: "",
     };
-  };
-  const rawData = await fetch("https://conference.mscc.mu/agenda");
-  const html = await rawData.text();
-  const $ = loadWithCheerio(html);
-  const thursdaySessions = $(
-    `#agenda-thursday ${SESSION_WRAPPER_SELECTOR}`
-  ) as any;
-  const fridaySessions = $(`#agenda-friday ${SESSION_WRAPPER_SELECTOR}`) as any;
-  const saturdaySessions = $(
-    `#agenda-saturday ${SESSION_WRAPPER_SELECTOR}`
-  ) as any;
-  const sessionsByDay = {
-    thursday: [...thursdaySessions].map(formatSession),
-    friday: [...fridaySessions].map(formatSession),
-    saturday: [...saturdaySessions].map(formatSession),
-  };
+  });
+  const stringifiedRooms = JSON.stringify(rooms);
+  const timelineRangeByDay: Record<
+    string,
+    Record<"start" | "end", string>
+  > = {};
+
+  sessionsData.forEach((dayWithSessions) => {
+    const currConfDay = dayWithSessions.groupName;
+
+    if (!defaultConfDay && dayWithSessions.isDefault) {
+      defaultConfDay = dayWithSessions.groupName;
+    }
+
+    confDays.push(currConfDay);
+
+    const currConfDayFirstSession = dayWithSessions.sessions?.[0];
+    const firstSessionStartsAt = dayjs.utc(
+      currConfDayFirstSession?.startsAt ?? "1970-01-01T08:30:00"
+    );
+    const currConfDayRegStartsAt = firstSessionStartsAt
+      .clone()
+      .set("hours", 8)
+      .set("minutes", 30)
+      .set("seconds", 0); // 08:30
+    const currConfDayRegEndsAt = firstSessionStartsAt
+      .clone()
+      .set("hours", 15)
+      .set("minutes", 0)
+      .set("seconds", 0); // 15:00
+    const registrationSession = {
+      id: "registration",
+      title: "Registration",
+      description: "Registration",
+      startsAt: currConfDayRegStartsAt.format(AGENDA_DATE_TIME_FORMAT),
+      endsAt: currConfDayRegEndsAt.format(AGENDA_DATE_TIME_FORMAT),
+      roomId: "-1",
+      speakers: [],
+      image: "",
+      isClickDisabled: true,
+    };
+
+    const currDaySessions = [registrationSession, ...dayWithSessions.sessions];
+    sessionsByDay[currConfDay] = currDaySessions.map((session, index) => ({
+      id: session.id,
+      title: session.title,
+      description: session.description ?? "",
+      startsAt: session.startsAt,
+      endsAt: session.endsAt,
+      since: session.startsAt,
+      till: session.endsAt,
+      channelUuid: session.roomId,
+      room: roomMap[session.roomId] ?? "",
+      speakers: session.speakers.map((speaker) => speaker.name),
+      image: "",
+      isActive: false,
+      index,
+      isClickDisabled:
+        (session as typeof registrationSession).isClickDisabled ?? false,
+    }));
+
+    const lastSessionEndsAt = dayjs.utc(
+      sessionsByDay[currConfDay][sessionsByDay[currConfDay].length - 1].endsAt
+    );
+    const timelineRangeEndsAtHours =
+      lastSessionEndsAt.minute() === 0 && lastSessionEndsAt.hour() === 0
+        ? lastSessionEndsAt.hour()
+        : lastSessionEndsAt.hour() + 1 === 23
+        ? 23
+        : lastSessionEndsAt.hour() + 1;
+    const timelineRangeEndsAt = lastSessionEndsAt
+      .clone()
+      .set("hours", timelineRangeEndsAtHours)
+      .set("minutes", 0)
+      .set("seconds", 0);
+    timelineRangeByDay[currConfDay] = {
+      start: firstSessionStartsAt
+        .clone()
+        .set("hours", 8)
+        .set("minutes", 0)
+        .set("seconds", 0)
+        .format(AGENDA_DATE_TIME_FORMAT),
+      end: timelineRangeEndsAt.format(AGENDA_DATE_TIME_FORMAT),
+    };
+  });
+
+  const stringifiedSessionsByDay = JSON.stringify(sessionsByDay);
+  const stringifiedConfDays = JSON.stringify(confDays);
+  const stringifiedTimelineRangeByDay = JSON.stringify(timelineRangeByDay);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between px-2 py-2">
-      <Agenda dataStr={JSON.stringify(sessionsByDay)} />
+    <main className="flex min-h-screen flex-col items-center px-2 py-2">
+      <Agenda
+        stringifiedSessionsByDay={stringifiedSessionsByDay}
+        stringifiedRooms={stringifiedRooms}
+        stringifiedDays={stringifiedConfDays}
+        stringifiedTimelineRangeByDay={stringifiedTimelineRangeByDay}
+        defaultDay={defaultConfDay}
+      />
     </main>
   );
 }

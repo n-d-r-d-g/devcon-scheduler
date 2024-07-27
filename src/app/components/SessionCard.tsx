@@ -1,5 +1,7 @@
 "use client";
 
+import { MSCC_WEBSITE_AGENDA_URL } from "@/constants";
+import { Session } from "@/types";
 import { Button, Link, Tooltip } from "@nextui-org/react";
 import {
   ProgramBox,
@@ -14,20 +16,35 @@ import {
 import { useState } from "react";
 import { FaEye as FaEyeIcon } from "react-icons/fa";
 
-export const Program = ({
+type SessionCardProps = ProgramItem & {
+  onClick: () => void;
+  program: { data: Session };
+};
+
+export const SessionCard = ({
   program,
   onClick,
   ...rest
-}: ProgramItem & { onClick: any }) => {
+}: SessionCardProps) => {
   const [isTitleTooltipOpen, setIsTitleTooltipOpen] = useState(false);
   const { styles, formatTime, set12HoursTimeFormat } = useProgram({
     program,
     ...rest,
   });
   const { data } = program;
-  const { title, since, till, room, authors, link, isActive } = data;
-  const sinceTime = formatTime(since, set12HoursTimeFormat()).toLowerCase();
-  const tillTime = formatTime(till, set12HoursTimeFormat()).toLowerCase();
+  const {
+    id,
+    title,
+    startsAt,
+    endsAt,
+    room,
+    speakers,
+    isActive,
+    isClickDisabled,
+  } = data;
+  debugger;
+  const startTime = formatTime(startsAt, set12HoursTimeFormat()).toLowerCase();
+  const endTime = formatTime(endsAt, set12HoursTimeFormat()).toLowerCase();
 
   return (
     <ProgramBox width={styles.width} style={styles.position}>
@@ -70,22 +87,24 @@ export const Program = ({
               </div>
             </Tooltip>
             <ProgramText className="mb-1 text-gray-300">
-              {sinceTime} - {tillTime}
+              {startTime} - {endTime}
             </ProgramText>
             <ProgramText className="mb-1 text-gray-300">{room}</ProgramText>
-            {authors.length > 0 && (
+            {speakers.length > 0 && (
               <ProgramText className="mb-1 text-gray-300">
-                {authors.join(", ")}
+                {speakers.join(", ")}
               </ProgramText>
             )}
-            <Link
-              isExternal
-              showAnchorIcon
-              href={link}
-              className="text-blue-300"
-            >
-              Details
-            </Link>
+            {!isClickDisabled && (
+              <Link
+                isExternal
+                showAnchorIcon
+                href={`${MSCC_WEBSITE_AGENDA_URL}${id}`}
+                className="text-blue-300"
+              >
+                Details
+              </Link>
+            )}
           </ProgramStack>
         </ProgramFlex>
       </ProgramContent>
