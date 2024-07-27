@@ -53,9 +53,10 @@ export const SessionCard = ({
     <ProgramBox width={styles.width} style={styles.position}>
       <Button
         onPress={onClick}
-        className="w-full h-full p-0 text-start"
+        className="w-full h-full p-0"
         variant="light"
         radius="sm"
+        as="div"
       >
         <ProgramContent
           width={styles.width}
