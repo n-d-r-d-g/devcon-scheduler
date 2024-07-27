@@ -1,13 +1,24 @@
 "use client";
 
-import { MSCC_WEBSITE_AGENDA_URL } from "@/constants";
+import { EXPORT_TIME_FORMAT, MSCC_WEBSITE_AGENDA_URL } from "@/constants";
+import { Session } from "@/types";
 import { Card, CardBody, Link } from "@nextui-org/react";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import { useCallback } from "react";
+
+dayjs.extend(utc);
 
 type Props = {
-  sessionsByDay: Map<string, Map<string, any>>;
+  sessionsByDay: Map<string, Map<string, Session>>;
 };
 
 export function PDFPreview({ sessionsByDay }: Props) {
+  const retrieveTime = useCallback(
+    (dateTime: string) => dayjs.utc(dateTime).format(EXPORT_TIME_FORMAT),
+    []
+  );
+
   return (
     <div className="hidden print:block w-full">
       <h1 className="text-3xl font-bold mb-2">
@@ -43,7 +54,8 @@ export function PDFPreview({ sessionsByDay }: Props) {
                     <CardBody className="flex flex-col gap-1">
                       <p className="text-lg font-semibold">{session.title}</p>
                       <p className="text-small text-default-700">
-                        {session.startTime} - {session.endTime} ~{" "}
+                        {retrieveTime(session.startsAt)} -{" "}
+                        {retrieveTime(session.endsAt)} ~{" "}
                         <span className="capitalize italic">{day}</span>
                       </p>
                       <p className="text-small text-default-700 font-semibold">
