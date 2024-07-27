@@ -50,7 +50,11 @@ export function PDFPreview({ sessionsByDay }: Props) {
               <h2 className="text-xl font-bold uppercase">{day}</h2>
               <div className={`flex flex-col items-start gap-4`}>
                 {[...sessions.entries()].map(([id, session]) => (
-                  <Card key={id} className="max-w-full border-1" shadow="none">
+                  <Card
+                    key={id}
+                    className="max-w-full border-1 break-inside-avoid"
+                    shadow="none"
+                  >
                     <CardBody className="flex flex-col gap-1">
                       <p className="text-lg font-semibold">{session.title}</p>
                       <p className="text-small text-default-700">
