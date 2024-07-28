@@ -1,17 +1,17 @@
-import { Session } from "@/types";
+import { AGENDA_DATE_TIME_FORMAT } from "@/constants";
+import { ConfDay, SessionsByDay } from "@/types";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
-import sessionsData from "../data/sessions.json";
 import roomsData from "../data/rooms.json";
+import sessionsData from "../data/sessions.json";
 import { Agenda } from "./components/Agenda";
-import { AGENDA_DATE_TIME_FORMAT } from "@/constants";
 
 dayjs.extend(utc);
 
 export default async function Home() {
   let defaultConfDay: undefined | string;
-  const sessionsByDay: Record<string, Array<Session>> = {};
-  const confDays: Array<string> = [];
+  const sessionsByDay: SessionsByDay = {};
+  const confDays: Array<ConfDay> = [];
   const roomMap: Record<string, string> = {};
   const rooms = roomsData.map((room) => {
     roomMap[room.id] = room.name;
@@ -36,7 +36,12 @@ export default async function Home() {
       defaultConfDay = dayWithSessions.groupName;
     }
 
-    confDays.push(currConfDay);
+    confDays.push({
+      name: {
+        long: currConfDay,
+        short: currConfDay.slice(0, 3),
+      },
+    });
 
     const currConfDayFirstSession = dayWithSessions.sessions?.[0];
     const firstSessionStartsAt = dayjs.utc(
@@ -113,14 +118,12 @@ export default async function Home() {
   const stringifiedTimelineRangeByDay = JSON.stringify(timelineRangeByDay);
 
   return (
-    <main className="flex min-h-screen flex-col items-center px-2 py-2">
-      <Agenda
-        stringifiedSessionsByDay={stringifiedSessionsByDay}
-        stringifiedRooms={stringifiedRooms}
-        stringifiedDays={stringifiedConfDays}
-        stringifiedTimelineRangeByDay={stringifiedTimelineRangeByDay}
-        defaultDay={defaultConfDay}
-      />
-    </main>
+    <Agenda
+      stringifiedSessionsByDay={stringifiedSessionsByDay}
+      stringifiedRooms={stringifiedRooms}
+      stringifiedDays={stringifiedConfDays}
+      stringifiedTimelineRangeByDay={stringifiedTimelineRangeByDay}
+      defaultDay={defaultConfDay}
+    />
   );
 }

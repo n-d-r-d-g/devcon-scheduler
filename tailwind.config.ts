@@ -1,5 +1,6 @@
-import type { Config } from "tailwindcss";
 import { nextui } from "@nextui-org/react";
+import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 
 const config: Config = {
   content: [
@@ -18,6 +19,26 @@ const config: Config = {
     },
   },
   darkMode: "class",
-  plugins: [nextui()],
+  plugins: [
+    nextui({
+      themes: {
+        light: {
+          colors: {
+            primary: "#1d4ed8",
+          },
+        },
+        dark: {
+          colors: {
+            primary: "#60a5fa",
+          },
+        },
+      },
+    }),
+    plugin(function ({ addUtilities }) {
+      addUtilities({
+        ".font-size-inherit": { fontSize: "inherit" },
+      });
+    }),
+  ],
 };
 export default config;

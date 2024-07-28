@@ -1,16 +1,22 @@
 "use client";
 
-import { AGENDA_THEME, EXPORT_TIME_FORMAT } from "@/constants";
-import { Room, Session } from "@/types";
-import { Button } from "@nextui-org/react";
+import {
+  AGENDA_DARK_THEME,
+  AGENDA_LIGHT_THEME,
+  EXPORT_TIME_FORMAT,
+} from "@/constants";
+import { ConfDay, Room, Session, SessionsByDay } from "@/types";
+import { Button, ButtonGroup } from "@nextui-org/react";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
+import { useTheme } from "next-themes";
 import { Epg, Layout, Program, ProgramItem, useEpg } from "planby";
 import { Position } from "planby/dist/Epg/helpers/types";
 import { useCallback, useRef, useState } from "react";
 import {
   LuCheckCheck as LuCheckCheckIcon,
   LuCopy as LuCopyIcon,
+  LuDownload,
 } from "react-icons/lu";
 import { PDFPreview } from "./PDFPreview";
 import { RoomName } from "./RoomName";
@@ -28,7 +34,7 @@ type Props = {
 };
 
 type DaysProps = {
-  days: Array<string>;
+  days: Array<ConfDay>;
   activeDay: string;
   onClick: (day: string) => void;
 };
@@ -39,18 +45,32 @@ function Days({ days, activeDay, onClick }: DaysProps) {
     [onClick]
   );
 
-  return days.map((day) => (
-    <Button
-      key={day}
-      type="button"
-      color={activeDay === day ? "primary" : "default"}
-      variant={activeDay === day ? "solid" : "light"}
-      onClick={handleClick(day)}
-      className="text-white"
-    >
-      {day}
-    </Button>
-  ));
+  const isActiveDay = useCallback(
+    (day: string) => activeDay === day,
+    [activeDay]
+  );
+
+  return (
+    <ButtonGroup fullWidth disableAnimation>
+      {days.map((day) => (
+        <Button
+          key={day.name.long}
+          type="button"
+          color="primary"
+          variant={isActiveDay(day.name.long) ? "solid" : "bordered"}
+          onClick={handleClick(day.name.long)}
+          className={`px-[14px] sm:px-5 min-w-fit ${
+            isActiveDay(day.name.long)
+              ? "text-white bg-blue-700 dark:text-black dark:bg-blue-400"
+              : "text-default-600 bg-default-50"
+          }`}
+        >
+          <span className="sm:hidden">{day.name.short}</span>
+          <span className="hidden sm:inline-block">{day.name.long}</span>
+        </Button>
+      ))}
+    </ButtonGroup>
+  );
 }
 
 export function Agenda({
@@ -62,22 +82,23 @@ export function Agenda({
 }: Props) {
   const [activeDay, setActiveDay] = useState<string>(defaultDay ?? "");
   const rooms = useRef(JSON.parse(stringifiedRooms) as Array<Room>);
-  const days = useRef(JSON.parse(stringifiedDays) as Array<string>);
+  const days = useRef(JSON.parse(stringifiedDays) as Array<ConfDay>);
   const timelineRangeByDay = useRef(
     JSON.parse(stringifiedTimelineRangeByDay) as Record<
       string,
       Record<"start" | "end", string>
     >
   );
-  const [sessionsData, setSessionsData] = useState<
-    Record<string, Array<Session>>
-  >(JSON.parse(stringifiedSessionsByDay));
+  const [sessionsData, setSessionsData] = useState<SessionsByDay>(
+    JSON.parse(stringifiedSessionsByDay)
+  );
   const [activeSessions, setActiveSessions] = useState(
     new Map<string, Map<string, Session>>(
-      days.current.map((day) => [day, new Map()])
+      days.current.map((day) => [day.name.long, new Map()])
     )
   );
   const [isCopying, setIsCopying] = useState(false);
+  const { resolvedTheme } = useTheme();
 
   const noSessionsSelected = useCallback(() => {
     let allActiveSessionsCount = 0;
@@ -94,14 +115,14 @@ export function Agenda({
     epg: sessionsData[activeDay] as Array<Program>,
     dayWidth: 3000,
     sidebarWidth: 83,
-    itemHeight: 156,
+    itemHeight: 164,
     isSidebar: true,
     isTimeline: true,
     isLine: false,
     startDate: timelineRangeByDay.current[activeDay]?.start,
     endDate: timelineRangeByDay.current[activeDay]?.end,
     isBaseTimeFormat: true,
-    theme: AGENDA_THEME,
+    theme: resolvedTheme === "light" ? AGENDA_LIGHT_THEME : AGENDA_DARK_THEME,
   });
 
   const retrieveTextToCopy = useCallback(() => {
@@ -165,41 +186,43 @@ export function Agenda({
 
   return (
     <>
-      <div className="print:hidden flex flex-col sm:items-end gap-2 max-w-full">
-        <div className="max-w-full flex flex-row gap-2">
-          <Button
-            type="button"
-            color="default"
-            variant="light"
-            onClick={handleCopy}
-            isDisabled={noSessionsSelected()}
-            endContent={
-              isCopying ? <LuCheckCheckIcon color="#4ade80" /> : <LuCopyIcon />
-            }
-            className={`mb-2 disabled:cursor-not-allowed ${
-              isCopying ? "text-success-400" : "text-white"
-            }`}
-          >
+      <div className="print:hidden max-w-full flex flex-row items-center gap-2 sm:mx-auto px-3 pt-2">
+        <Days days={days.current} activeDay={activeDay} onClick={onDayChange} />
+        <Button
+          type="button"
+          color="default"
+          variant="faded"
+          onClick={handleCopy}
+          isDisabled={noSessionsSelected()}
+          endContent={isCopying ? <LuCheckCheckIcon /> : <LuCopyIcon />}
+          title="Copy"
+          className={`px-[14px] sm:px-4 min-w-fit border-0 disabled:cursor-not-allowed ${
+            isCopying
+              ? "text-success-800 dark:text-success-400"
+              : "text-default-foreground"
+          }`}
+        >
+          <span className="hidden sm:inline-block">
             {isCopying ? "Copied" : "Copy"}
-          </Button>
-          <Button
-            type="button"
-            color="success"
-            onClick={handleSave}
-            isDisabled={noSessionsSelected()}
-            className="mb-2 disabled:cursor-not-allowed"
-          >
-            Save
-          </Button>
-        </div>
-        <div className="flex flex-col sm:flex-row gap-2 sm:mx-auto">
-          <Days
-            days={days.current}
-            activeDay={activeDay}
-            onClick={onDayChange}
-          />
-        </div>
-        <div className="w-full max-w-full">
+          </span>
+        </Button>
+        <Button
+          type="button"
+          color="success"
+          variant={noSessionsSelected() ? "faded" : "solid"}
+          onClick={handleSave}
+          isDisabled={noSessionsSelected()}
+          endContent={<LuDownload />}
+          title="Save"
+          className={`px-[14px] sm:px-4 min-w-fit border-0 ${
+            noSessionsSelected() ? "text-default-foreground" : "bg-green-400"
+          } data-[disabled=true]:cursor-not-allowed`}
+        >
+          <span className="hidden sm:inline-block">Save</span>
+        </Button>
+      </div>
+      <div className="print:hidden sticky top-0 min-h-0 h-full flex flex-col gap-2 max-w-full isolate">
+        <div className="w-full max-w-full min-h-0 grow">
           <Epg {...getEpgProps()}>
             <Layout
               {...getLayoutProps()}

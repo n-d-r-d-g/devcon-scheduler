@@ -47,6 +47,7 @@ export function Timeline({
       dayWidth={dayWidth}
       sidebarWidth={sidebarWidth}
       isSidebar={isSidebar}
+      className="shadow-lg border border-b-1 border-default-50 dark:shadow-2xl"
     >
       {time.map((_, index) => renderTime(index))}
     </TimelineWrapper>

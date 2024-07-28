@@ -3,19 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 0, 0, 0;
-  --background-end-rgb: 0, 0, 0;
+  --header-height: 65px;
+  --footer-height: 40px;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply text-black bg-white dark:text-white dark:bg-neutral-950;
 }
 
 @layer utilities {
@@ -29,4 +22,12 @@ body {
     color: black;
     background: white;
   }
+}
+
+a {
+  @apply rounded text-blue-700 font-extrabold dark:text-blue-300 focus:ring-0 focus:ring-offset-0 focus-visible:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-blue-500 focus-visible:dark:ring-offset-neutral-950;
+}
+a:hover,
+a:focus-visible {
+  @apply underline;
 }
