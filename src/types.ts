@@ -21,3 +21,7 @@ export type Room = {
   title: string;
   logo: string;
 };
+
+export type SessionsByDay = Record<string, Array<Session>>;
+
+export type ConfDay = Record<"name", Record<"short" | "long", string>>;

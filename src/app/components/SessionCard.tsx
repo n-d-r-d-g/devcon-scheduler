@@ -51,72 +51,78 @@ export const SessionCard = ({
 
   return (
     <ProgramBox width={styles.width} style={styles.position}>
-      <Button
-        onPress={onClick}
-        className="w-full h-full p-0"
-        variant="light"
-        radius="sm"
-        as="div"
-      >
-        <ProgramContent
-          width={styles.width}
-          isLive={isActive}
-          className={`w-full border-2 border-dashed ${
-            isActive ? "border-green-300" : "border-transparent"
-          }`}
+      <Tooltip content={isActive ? "Remove session" : "Add session"}>
+        <Button
+          onPress={onClick}
+          className="w-full h-full p-0"
+          variant="light"
+          radius="sm"
+          as="div"
+          aria-label={isActive ? "Remove session" : "Add session"}
+          disableAnimation
         >
-          <ProgramFlex>
-            <ProgramStack>
-              <Tooltip
-                content={title}
-                isOpen={isTitleTooltipOpen}
-                color="foreground"
-              >
-                <div className="flex flex-row items-baseline gap-0.5">
-                  <ProgramTitle
-                    onMouseEnter={() => setIsTitleTooltipOpen(true)}
-                    onMouseLeave={() => setIsTitleTooltipOpen(false)}
-                  >
-                    {title}
-                  </ProgramTitle>
-                  <Button
-                    isIconOnly
-                    variant="light"
-                    size="sm"
-                    radius="full"
-                    aria-label="View full title"
-                    onPress={() => setIsTitleTooltipOpen((prev) => !prev)}
-                    onBlur={() => setIsTitleTooltipOpen(false)}
-                    onMouseLeave={() => setIsTitleTooltipOpen(false)}
-                    className="text-white data-[focus-visible=true]:-outline-offset-[2px]"
-                  >
-                    <FaEyeIcon />
-                  </Button>
-                </div>
-              </Tooltip>
-              <ProgramText className="mb-1 text-gray-300">
-                {startTime} - {endTime}
-              </ProgramText>
-              <ProgramText className="mb-1 text-gray-300">{room}</ProgramText>
-              {speakers.length > 0 && (
-                <ProgramText className="mb-1 text-gray-300">
-                  {speakers.join(", ")}
-                </ProgramText>
-              )}
-              {!isClickDisabled && (
-                <Link
-                  isExternal
-                  showAnchorIcon
-                  href={`${MSCC_WEBSITE_AGENDA_URL}${id}`}
-                  className="text-blue-300"
+          <ProgramContent
+            width={styles.width}
+            isLive={isActive}
+            className={`w-full border-2 border-dashed ${
+              isActive
+                ? "border-green-700 dark:border-green-300"
+                : "border-transparent"
+            }`}
+          >
+            <ProgramFlex>
+              <ProgramStack>
+                <Tooltip
+                  content={title}
+                  isOpen={isTitleTooltipOpen}
+                  color="foreground"
                 >
-                  Details
-                </Link>
-              )}
-            </ProgramStack>
-          </ProgramFlex>
-        </ProgramContent>
-      </Button>
+                  <div className="flex flex-row items-baseline gap-0.5">
+                    <ProgramTitle
+                      onMouseEnter={() => setIsTitleTooltipOpen(true)}
+                      onMouseLeave={() => setIsTitleTooltipOpen(false)}
+                    >
+                      {title}
+                    </ProgramTitle>
+                    <Button
+                      isIconOnly
+                      variant="light"
+                      size="sm"
+                      radius="full"
+                      aria-label="View full title"
+                      onPress={() => setIsTitleTooltipOpen((prev) => !prev)}
+                      onBlur={() => setIsTitleTooltipOpen(false)}
+                      onMouseLeave={() => setIsTitleTooltipOpen(false)}
+                      className="text-default-foreground data-[focus-visible=true]:-outline-offset-[2px]"
+                    >
+                      <FaEyeIcon />
+                    </Button>
+                  </div>
+                </Tooltip>
+                <ProgramText className="mb-1 text-gray-300">
+                  {startTime} - {endTime}
+                </ProgramText>
+                <ProgramText className="mb-1 text-gray-300">{room}</ProgramText>
+                {speakers.length > 0 && (
+                  <ProgramText className="mb-1 text-gray-300">
+                    {speakers.join(", ")}
+                  </ProgramText>
+                )}
+                {!isClickDisabled && (
+                  <Link
+                    isExternal
+                    showAnchorIcon
+                    href={`${MSCC_WEBSITE_AGENDA_URL}${id}`}
+                    className="text-[0.9375rem] text-blue-800 dark:text-blue-300 font-semibold"
+                  >
+                    Details
+                  </Link>
+                )}
+              </ProgramStack>
+            </ProgramFlex>
+          </ProgramContent>
+        </Button>
+      </Tooltip>
     </ProgramBox>
   );
 };
