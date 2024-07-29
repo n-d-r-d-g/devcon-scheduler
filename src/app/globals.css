@@ -25,8 +25,15 @@ body {
 }
 
 a {
-  @apply rounded text-blue-700 font-extrabold dark:text-blue-300 focus:ring-0 focus:ring-offset-0 focus-visible:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-blue-500 focus-visible:dark:ring-offset-neutral-950;
+  @apply rounded text-blue-700 font-extrabold cursor-pointer focus:ring-0 focus:ring-offset-0 focus-visible:no-underline focus-visible:shadow-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:text-blue-300 dark:focus-visible:ring-blue-500 dark:focus-visible:ring-offset-neutral-950;
+
+  /* NextUI Link - START */
+  &[data-focus="true"] {
+    box-shadow: none !important;
+  }
+  /* NextUI Link - END */
 }
+
 a:hover,
 a:focus-visible {
   @apply underline;
