@@ -50,6 +50,7 @@ export default function RootLayout({
                     radius="full"
                     variant="light"
                     as={Link}
+                    href="https://github.com/n-d-r-d-g/devcon-scheduler"
                     aria-label="GitHub link"
                     className="!text-default-foreground focus-visible:!ring-transparent data-[focus-visible=true]:!-outline-offset-2"
                     isIconOnly
