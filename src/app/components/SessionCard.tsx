@@ -64,14 +64,14 @@ export const SessionCard = ({
           <ProgramContent
             width={styles.width}
             isLive={isActive}
-            className={`w-full border-2 border-dashed ${
+            className={`w-full border-2 border-dashed !p-0 ${
               isActive
                 ? "border-green-700 dark:border-green-300"
                 : "border-transparent"
             }`}
           >
             <ProgramFlex>
-              <ProgramStack>
+              <ProgramStack className="px-5 py-2.5">
                 <Tooltip
                   content={title}
                   isOpen={isTitleTooltipOpen}
@@ -110,10 +110,10 @@ export const SessionCard = ({
                 )}
                 {!isClickDisabled && (
                   <Link
-                    isExternal
                     showAnchorIcon
                     href={`${MSCC_WEBSITE_AGENDA_URL}${id}`}
                     className="text-[0.9375rem] text-blue-800 dark:text-blue-300 font-semibold"
+                    isExternal
                   >
                     Details
                   </Link>
