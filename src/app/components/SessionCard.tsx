@@ -109,14 +109,17 @@ export const SessionCard = ({
                   </ProgramText>
                 )}
                 {!isClickDisabled && (
-                  <Link
-                    showAnchorIcon
+                  <Button
+                    as={Link}
+                    variant="light"
+                    size="sm"
                     href={`${MSCC_WEBSITE_AGENDA_URL}${id}`}
-                    className="text-[0.9375rem] text-blue-800 dark:text-blue-300 font-semibold"
+                    className="px-0 text-[0.9375rem] text-blue-800 dark:text-blue-300 font-semibold"
                     isExternal
+                    showAnchorIcon
                   >
                     Details
-                  </Link>
+                  </Button>
                 )}
               </ProgramStack>
             </ProgramFlex>
