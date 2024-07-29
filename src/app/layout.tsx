@@ -1,4 +1,4 @@
-import { Button, Link } from "@nextui-org/react";
+import { Button, Link, Tooltip } from "@nextui-org/react";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Inter } from "next/font/google";
@@ -44,21 +44,22 @@ export default function RootLayout({
                 DevConMU Scheduler
               </Link>
               <aside className="flex flex-row items-center gap-1">
-                <Button
-                  type="button"
-                  size="md"
-                  radius="full"
-                  variant="light"
-                  as={Link}
-                  href="https://github.com/n-d-r-d-g/devcon-scheduler"
-                  target="_blank"
-                  rel="noreferrer noopener nofollow"
-                  title="GitHub link"
-                  aria-label="GitHub link"
-                  isIconOnly
-                >
-                  <FaGithub size={16} />
-                </Button>
+                <Tooltip content="GitHub link">
+                  <Button
+                    size="md"
+                    radius="full"
+                    variant="light"
+                    as={Link}
+                    href="https://github.com/n-d-r-d-g/devcon-scheduler"
+                    target="_blank"
+                    rel="noreferrer noopener nofollow"
+                    aria-label="GitHub link"
+                    className="!text-default-foreground"
+                    isIconOnly
+                  >
+                    <FaGithub size={16} />
+                  </Button>
+                </Tooltip>
                 <ThemeSwitch />
               </aside>
             </nav>
