@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Inter } from "next/font/google";
 import Image from "next/image";
-import { FaGithub } from "react-icons/fa6";
+import { FaGithub, FaHeart } from "react-icons/fa6";
 import { ThemeSwitch } from "./components/ThemeSwitch";
 import "./globals.css";
 
@@ -67,16 +67,15 @@ export default function RootLayout({
               {children}
             </main>
             <footer className="print:hidden grid place-content-center py-2 isolate">
-              <span className="text-center text-xs text-gray-700 dark:text-gray-400">
+              <span className="inline-flex items-center gap-[0.5ch] text-center text-xs text-gray-700 dark:text-gray-400">
                 Made with{" "}
-                <span
-                  title="love, sweat & tears"
-                  aria-label="love, sweat & tears"
-                  className="cursor-help"
-                >
-                  💖
-                </span>{" "}
-                by{" "}
+                <Tooltip content="love, sweat & tears">
+                  <FaHeart
+                    className="inline-block text-red-800 cursor-help dark:text-red-400"
+                    aria-label="love, sweat & tears"
+                  />
+                </Tooltip>
+                <span>by</span>
                 <Link
                   href="https://github.com/n-d-r-d-g"
                   target="_blank"
