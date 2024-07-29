@@ -1,7 +1,7 @@
 "use client";
 
 import { APP_THEMES } from "@/constants";
-import { Select, SelectItem } from "@nextui-org/react";
+import { Select, SelectItem, Tooltip } from "@nextui-org/react";
 import { useTheme } from "next-themes";
 import { ChangeEvent, useCallback, useEffect, useState } from "react";
 
@@ -30,19 +30,23 @@ export function ThemeSwitch() {
   }
 
   return (
-    <Select
-      aria-label="Change theme"
-      selectedKeys={[theme ?? "system"]}
-      startContent={<Icon />}
-      placeholder="test"
-      onChange={handleSelectionChange}
-      className="w-[68px]"
-    >
-      {APP_THEMES.map((appTheme) => (
-        <SelectItem key={appTheme.key} aria-label={appTheme.label}>
-          <appTheme.icon size={16} />
-        </SelectItem>
-      ))}
-    </Select>
+    <Tooltip content="Change theme">
+      <div>
+        <Select
+          aria-label="Change theme"
+          selectedKeys={[theme ?? "system"]}
+          startContent={<Icon />}
+          placeholder="test"
+          onChange={handleSelectionChange}
+          className="w-[68px]"
+        >
+          {APP_THEMES.map((appTheme) => (
+            <SelectItem key={appTheme.key} aria-label={appTheme.label}>
+              <appTheme.icon size={16} />
+            </SelectItem>
+          ))}
+        </Select>
+      </div>
+    </Tooltip>
   );
 }
