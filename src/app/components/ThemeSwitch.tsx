@@ -36,7 +36,6 @@ export function ThemeSwitch() {
           aria-label="Change theme"
           selectedKeys={[theme ?? "system"]}
           startContent={<Icon />}
-          placeholder="test"
           onChange={handleSelectionChange}
           className="w-[68px]"
         >
