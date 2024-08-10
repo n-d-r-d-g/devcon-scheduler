@@ -111,4 +111,4 @@ export const APP_THEMES = [
     label: "Dark",
     icon: TbMoonFilled,
   },
-];
+] as const;
