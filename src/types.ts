@@ -24,4 +24,7 @@ export type Room = {
 
 export type SessionsByDay = Record<string, Array<Session>>;
 
-export type ConfDay = Record<"name", Record<"short" | "long", string>>;
+export type ConfDay = {
+  name: Record<"short" | "long", string>;
+  date: string;
+};

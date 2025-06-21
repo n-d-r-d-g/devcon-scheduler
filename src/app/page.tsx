@@ -41,6 +41,7 @@ export default async function Home() {
         long: currConfDay,
         short: currConfDay.slice(0, 3),
       },
+      date: dayWithSessions.sessions[0].startsAt,
     });
 
     const currConfDayFirstSession = dayWithSessions.sessions?.[0];

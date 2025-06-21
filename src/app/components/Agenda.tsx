@@ -59,7 +59,7 @@ function Days({ days, activeDay, onClick }: DaysProps) {
           color="primary"
           variant={isActiveDay(day.name.long) ? "solid" : "bordered"}
           onClick={handleClick(day.name.long)}
-          className={`px-[14px] sm:px-5 min-w-fit ${
+          className={`px-[14px] sm:px-5 min-w-fit flex flex-col items-center gap-0 ${
             isActiveDay(day.name.long)
               ? "text-white bg-blue-700 dark:text-black dark:bg-blue-400"
               : "text-default-600 bg-default-50"
@@ -67,6 +67,15 @@ function Days({ days, activeDay, onClick }: DaysProps) {
         >
           <span className="sm:hidden">{day.name.short}</span>
           <span className="hidden sm:inline-block">{day.name.long}</span>
+          <span
+            className={`text-xs ${
+              !isActiveDay(day.name.long)
+                ? "text-gray-700 dark:text-gray-400"
+                : ""
+            }`}
+          >
+            {dayjs.utc(day.date).format("DD/MM")}
+          </span>
         </Button>
       ))}
     </ButtonGroup>
