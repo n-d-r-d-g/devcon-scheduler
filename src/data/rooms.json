@@ -4,23 +4,15 @@
     "name": "Main Hall"
   },
   {
-    "id": "43505",
-    "name": "Donkey Kong"
+    "id": "58137",
+    "name": "Educator 1"
   },
   {
-    "id": "43506",
-    "name": "Tetris"
+    "id": "58138",
+    "name": "Educator 2"
   },
   {
-    "id": "48853",
-    "name": "Street Fighter"
-  },
-  {
-    "id": "43507",
-    "name": "Pac Man"
-  },
-  {
-    "id": "48854",
-    "name": "Space Invaders"
+    "id": "58139",
+    "name": "Accelerator"
   }
 ]
