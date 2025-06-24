@@ -22,7 +22,7 @@ export function PDFPreview({ sessionsByDay }: Props) {
   return (
     <div className="hidden print:block w-full">
       <h1 className="text-3xl font-bold mb-2">
-        MSCC Developers Conference 2024 Agenda
+        MSCC Developers Conference 2025 Agenda
       </h1>
       <div className="flex flex-row items-baseline gap-4 mb-12">
         <Link

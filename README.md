@@ -15,6 +15,8 @@ To update this repository's data, changes need to be made in the:
 - JSON files under `src/data`
 - `registrationSession` constant in `src/app/page.tsx` (This session is not stored in the sessions data and is not usually assigned a `roomId` in MSCC's data. We have a special `roomId` of -1 to account for this.)
 
+The [exported PDF's title](src/app/components/PDFPreview.tsx) also needs to be updated based on the current year.
+
 ## Contribute
 
 Feel free to contribute!
