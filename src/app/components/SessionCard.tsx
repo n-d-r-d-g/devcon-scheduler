@@ -2,7 +2,7 @@
 
 import { EXPORT_TIME_FORMAT, MSCC_WEBSITE_AGENDA_URL } from "@/constants";
 import { Session } from "@/types";
-import { Button, Link, Tooltip } from "@nextui-org/react";
+import { Button, Link, Tooltip } from "@heroui/react";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import {

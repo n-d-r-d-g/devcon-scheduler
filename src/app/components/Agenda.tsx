@@ -6,7 +6,7 @@ import {
   EXPORT_TIME_FORMAT,
 } from "@/constants";
 import { ConfDay, Room, Session, SessionsByDay } from "@/types";
-import { Button, ButtonGroup } from "@nextui-org/react";
+import { Button, ButtonGroup } from "@heroui/react";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import { useTheme } from "next-themes";
@@ -58,7 +58,7 @@ function Days({ days, activeDay, onClick }: DaysProps) {
           type="button"
           color="primary"
           variant={isActiveDay(day.name.long) ? "solid" : "bordered"}
-          onClick={handleClick(day.name.long)}
+          onPress={handleClick(day.name.long)}
           className={`px-[14px] sm:px-5 min-w-fit flex flex-col items-center gap-0 ${
             isActiveDay(day.name.long)
               ? "text-white bg-blue-700 dark:text-black dark:bg-blue-400"
@@ -201,7 +201,7 @@ export function Agenda({
           type="button"
           color="default"
           variant="faded"
-          onClick={handleCopy}
+          onPress={handleCopy}
           isDisabled={noSessionsSelected()}
           endContent={isCopying ? <LuCheckCheckIcon /> : <LuCopyIcon />}
           title="Copy"
@@ -219,7 +219,7 @@ export function Agenda({
           type="button"
           color="success"
           variant={noSessionsSelected() ? "faded" : "solid"}
-          onClick={handleSave}
+          onPress={handleSave}
           isDisabled={noSessionsSelected()}
           endContent={<LuDownload />}
           title="Save"

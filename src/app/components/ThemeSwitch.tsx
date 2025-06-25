@@ -1,7 +1,7 @@
 "use client";
 
 import { APP_THEMES } from "@/constants";
-import { Select, SelectItem, Tooltip } from "@nextui-org/react";
+import { Select, SelectItem, Tooltip } from "@heroui/react";
 import { useTheme } from "next-themes";
 import { ChangeEvent, useCallback, useEffect, useState } from "react";
 
