@@ -22,6 +22,7 @@ import { PDFPreview } from "./PDFPreview";
 import { RoomName } from "./RoomName";
 import { SessionCard } from "./SessionCard";
 import { Timeline } from "./Timeline";
+import { retrieveSortedSessionsByDay } from "@/functions";
 
 dayjs.extend(utc);
 
@@ -147,7 +148,7 @@ export function Agenda({
       isFirstActiveSession = false;
       nextDisplay += `<<<<<<< ${day.toUpperCase()} >>>>>>>\n`;
       let sessionIndex = 0;
-      sessionsByDay?.forEach((session) => {
+      retrieveSortedSessionsByDay(sessionsByDay).forEach((session) => {
         nextDisplay += `\n${session.title}`;
         nextDisplay += `\n${session.room}`;
         nextDisplay += `\n${dayjs

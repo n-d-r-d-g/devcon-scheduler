@@ -1,6 +1,7 @@
 "use client";
 
 import { EXPORT_TIME_FORMAT, MSCC_WEBSITE_AGENDA_URL } from "@/constants";
+import { retrieveSortedSessionsByDay } from "@/functions";
 import { Session } from "@/types";
 import { Card, CardBody, Link } from "@heroui/react";
 import dayjs from "dayjs";
@@ -49,9 +50,9 @@ export function PDFPreview({ sessionsByDay }: Props) {
             <div key={day} className="flex flex-col gap-4">
               <h2 className="text-xl font-bold uppercase">{day}</h2>
               <div className={`flex flex-col items-start gap-4`}>
-                {[...sessions.entries()].map(([id, session]) => (
+                {retrieveSortedSessionsByDay(sessions).map((session) => (
                   <Card
-                    key={id}
+                    key={session.id}
                     className="max-w-full border-1 break-inside-avoid"
                     shadow="none"
                   >
