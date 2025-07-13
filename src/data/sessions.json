@@ -12,10 +12,12 @@
         "endsAt": "2025-07-24T09:45:00",
         "isServiceSession": true,
         "isPlenumSession": true,
-        "speakers": [{
-          "id": "-1",
-          "name": "Sujit Woozageer"
-        }],
+        "speakers": [
+          {
+            "id": "-1",
+            "name": "Sujit Woozageer"
+          }
+        ],
         "categories": [],
         "roomId": "58137",
         "room": "Educator 1",
@@ -401,10 +403,12 @@
         "endsAt": "2025-07-25T09:45:00",
         "isServiceSession": true,
         "isPlenumSession": true,
-        "speakers": [{
-          "id": "-2",
-          "name": "Atieno Allela"
-        }],
+        "speakers": [
+          {
+            "id": "-2",
+            "name": "Atieno Allela"
+          }
+        ],
         "categories": [],
         "roomId": "58137",
         "room": "Educator 1",
@@ -870,10 +874,12 @@
         "endsAt": "2025-07-26T09:45:00",
         "isServiceSession": true,
         "isPlenumSession": true,
-        "speakers": [{
-          "id": "-3",
-          "name": "Joe van der Walt"
-        }],
+        "speakers": [
+          {
+            "id": "395aaadd-d46b-47dc-80da-10b03d54c83d",
+            "name": "Joe van der Walt"
+          }
+        ],
         "categories": [],
         "roomId": "58137",
         "room": "Educator 1",
@@ -1161,7 +1167,7 @@
       },
       {
         "questionAnswers": [],
-        "id": "-1",
+        "id": "965084",
         "title": "Code & Concepts: A Developer's Deep Dive into Gen AI's Power Plays",
         "description": "Building on the strategic vision of \"The Business Superpower,\" this session gets under the hood of the generative AI revolution. We'll move from the 'what' and 'why' to the 'how,' with a developer-focused exploration of Mixture of Experts (MoE), AI Agents, and Retrieval-Augmented Generation (RAG). Prepare for a code-intensive journey through architectural patterns, implementation strategies, and the practical challenges of building intelligent, enterprise-grade AI systems. We will dissect PyTorch implementations of MoE, construct AI agents with LangChain, and build a complete RAG pipeline in Python. This is your opportunity to translate high-level concepts into production-ready skills.",
         "startsAt": "2025-07-26T14:00:00",
@@ -1170,7 +1176,7 @@
         "isPlenumSession": false,
         "speakers": [
           {
-            "id": "-3",
+            "id": "395aaadd-d46b-47dc-80da-10b03d54c83d",
             "name": "Joe van der Walt"
           }
         ],
