@@ -6,13 +6,16 @@
       {
         "questionAnswers": [],
         "id": "310dc80a-c991-41fb-b78b-b90090bbbad7",
-        "title": "Opening Keynote (Google)",
+        "title": "Opening Keynote (SWAN): AI - Framing the problem",
         "description": null,
         "startsAt": "2025-07-24T09:00:00",
-        "endsAt": "2025-07-24T10:00:00",
+        "endsAt": "2025-07-24T09:45:00",
         "isServiceSession": true,
         "isPlenumSession": true,
-        "speakers": [],
+        "speakers": [{
+          "id": "-1",
+          "name": "Sujit Woozageer"
+        }],
         "categories": [],
         "roomId": "58137",
         "room": "Educator 1",
@@ -392,13 +395,16 @@
       {
         "questionAnswers": [],
         "id": "925ba600-a7d1-4ee8-9f4f-9e323ca9d504",
-        "title": "Opening Keynote (SWAN)",
+        "title": "Opening Keynote (Google): What's New for Developers",
         "description": null,
         "startsAt": "2025-07-25T09:00:00",
-        "endsAt": "2025-07-25T10:00:00",
+        "endsAt": "2025-07-25T09:45:00",
         "isServiceSession": true,
         "isPlenumSession": true,
-        "speakers": [],
+        "speakers": [{
+          "id": "-2",
+          "name": "Atieno Allela"
+        }],
         "categories": [],
         "roomId": "58137",
         "room": "Educator 1",
@@ -858,13 +864,16 @@
       {
         "questionAnswers": [],
         "id": "64ca3590-8dc5-40f1-8d8d-edf1e96c6d49",
-        "title": "Open Keynote (Microsoft)",
+        "title": "Opening Keynote (Axiz|Microsoft): The Business Superpower: Unleashing Gen AI with MCPs, Agents & RAG",
         "description": null,
         "startsAt": "2025-07-26T09:00:00",
-        "endsAt": "2025-07-26T10:00:00",
+        "endsAt": "2025-07-26T09:45:00",
         "isServiceSession": true,
         "isPlenumSession": true,
-        "speakers": [],
+        "speakers": [{
+          "id": "-3",
+          "name": "Joe van der Walt"
+        }],
         "categories": [],
         "roomId": "58137",
         "room": "Educator 1",
@@ -892,34 +901,6 @@
         "categories": [],
         "roomId": "58137",
         "room": "Educator 1",
-        "liveUrl": null,
-        "recordingUrl": null,
-        "status": "Accepted",
-        "isInformed": true,
-        "isConfirmed": true
-      },
-      {
-        "questionAnswers": [],
-        "id": "874389",
-        "title": "How Flutter is Platform-Agnostic",
-        "description": "Platform-agnosticism is a relative measure of how an app works the same way, irrespective of the operating system on which the app is running. \r\n\r\nFlutter is platform-agnostic because it gives users of Flutter-built apps the same experience across their different devices. Flutter is platform-agnostic through how it renders user interfaces and through platform channels.\r\n\r\nFor UI, Flutter's rendering uses multiple layers. Also, Flutter grabs a blank canvas on the target platform and paints as it likes. In addition, the same Flutter engine is shipped in every app so Flutter paints the Dart code in exactly the same way. \r\n\r\nFor Platform Channels, Dart (the flutter side) can call methods and listen to events whose declarations are found in the native side (of the target platform) and vice versa. This enables plugin development and streamlines native features in the Flutter app.\r\n\r\nIn this session, the audience will understand the crucial benefits of platform-agnosticism especially in this our modern times of the sovereignty of cross-platform tools. Furthermore, session participants will appreciate how Flutter achieves this fit of being platform-agnostic through rendering UI and using platform-channels.\r\n\r\nWe will walk through how a host/native app is different from the \"inner\" Flutter app and engine. We will also see how Dart's Binary Messenger serializes/deserializes function calls across both sides. Finally, the audience will grasp the difference with Flutter's execution on the Web as browsers are not Operating Systems.",
-        "startsAt": "2025-07-26T10:00:00",
-        "endsAt": "2025-07-26T10:45:00",
-        "isServiceSession": false,
-        "isPlenumSession": false,
-        "speakers": [
-          {
-            "id": "9982b5fe-314d-48e5-94c2-0439a8bc674f",
-            "name": "Obumuneme Nwabude"
-          },
-          {
-            "id": "f60af971-bfc5-4735-8f27-68b71de0e2f8",
-            "name": "Samuel Abada"
-          }
-        ],
-        "categories": [],
-        "roomId": "58138",
-        "room": "Educator 2",
         "liveUrl": null,
         "recordingUrl": null,
         "status": "Accepted",
@@ -996,30 +977,6 @@
         "categories": [],
         "roomId": "58138",
         "room": "Educator 2",
-        "liveUrl": null,
-        "recordingUrl": null,
-        "status": "Accepted",
-        "isInformed": true,
-        "isConfirmed": true
-      },
-      {
-        "questionAnswers": [],
-        "id": "871432",
-        "title": "What is Enterprise Architecture – and Why Should Developers Care?",
-        "description": "Enterprise Architecture (EA) often sits in the background of most organisations, if at all - quietly shaping decisions around systems, data, and strategy. While it’s not something developers always interact with directly, it plays a critical role in aligning technology with long-term business goals.\r\n\r\nThis session offers a clear, grounded introduction to what EA is, how it works, and where it intersects with the work developers do. We’ll explore core concepts like capabilities, business architecture, technology architecture layers or views, and change impact - and show how EA helps create the conditions for scalable, future-ready systems.\r\n\r\nWhether you’re working in a fast-moving startup or a large enterprise, this session is about giving you a lens into the architectural decisions that shape the environments you build in every day.",
-        "startsAt": "2025-07-26T11:00:00",
-        "endsAt": "2025-07-26T11:45:00",
-        "isServiceSession": false,
-        "isPlenumSession": false,
-        "speakers": [
-          {
-            "id": "8d4fca0b-76de-400e-804f-e84498a329ad",
-            "name": "Ajmal Saifudeen"
-          }
-        ],
-        "categories": [],
-        "roomId": "58139",
-        "room": "Accelerator",
         "liveUrl": null,
         "recordingUrl": null,
         "status": "Accepted",
@@ -1204,21 +1161,17 @@
       },
       {
         "questionAnswers": [],
-        "id": "876046",
-        "title": "Securing Mobile Apps: Keeping Hackers Out and Users Safe",
-        "description": "Mobile apps handle a lot of sensitive data, which makes them prime targets for hackers. Weak authentication, leaky APIs, and apps that store secrets in all the wrong places? That’s like leaving your front door open with a \"Help Yourself\" sign.\r\n\r\nIn this session, we’ll explore real-world security threats and how to lock down your mobile app. Attendees will learn about secure storage, API protection, strong authentication, encryption, and preventing reverse engineering. While we’ll focus on Flutter-specific security practices, the principles and techniques apply no matter what framework or tools you’re using.\r\n\r\nWhether you're a Flutter dev, mobile engineer, or just someone who doesn’t want their app to be the next security disaster, this talk will give you practical, no-nonsense strategies to keep hackers out and user data safe.",
+        "id": "-1",
+        "title": "Code & Concepts: A Developer's Deep Dive into Gen AI's Power Plays",
+        "description": "Building on the strategic vision of \"The Business Superpower,\" this session gets under the hood of the generative AI revolution. We'll move from the 'what' and 'why' to the 'how,' with a developer-focused exploration of Mixture of Experts (MoE), AI Agents, and Retrieval-Augmented Generation (RAG). Prepare for a code-intensive journey through architectural patterns, implementation strategies, and the practical challenges of building intelligent, enterprise-grade AI systems. We will dissect PyTorch implementations of MoE, construct AI agents with LangChain, and build a complete RAG pipeline in Python. This is your opportunity to translate high-level concepts into production-ready skills.",
         "startsAt": "2025-07-26T14:00:00",
         "endsAt": "2025-07-26T14:45:00",
         "isServiceSession": false,
         "isPlenumSession": false,
         "speakers": [
           {
-            "id": "f60af971-bfc5-4735-8f27-68b71de0e2f8",
-            "name": "Samuel Abada"
-          },
-          {
-            "id": "9982b5fe-314d-48e5-94c2-0439a8bc674f",
-            "name": "Obumuneme Nwabude"
+            "id": "-3",
+            "name": "Joe van der Walt"
           }
         ],
         "categories": [],
