@@ -17,6 +17,8 @@ To update this repository's data, changes need to be made in the:
 
 The [exported PDF's title](src/app/components/PDFPreview.tsx) also needs to be updated based on the current year.
 
+Adapt tests to the new data. Execute `npm test` and `npx cypress run` (or `npx cypress open`) to run tests.
+
 ## Contribute
 
 Feel free to contribute!
