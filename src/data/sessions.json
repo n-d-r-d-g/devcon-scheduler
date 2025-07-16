@@ -6,7 +6,7 @@
       {
         "questionAnswers": [],
         "id": "963227",
-        "title": "Opening Keynote (SWAN): AI - Framing the problem",
+        "title": "Opening Keynote (SWAN): 🚀 AI - Framing the problem",
         "description": null,
         "startsAt": "2025-07-24T09:00:00",
         "endsAt": "2025-07-24T09:45:00",
@@ -397,7 +397,7 @@
       {
         "questionAnswers": [],
         "id": "971242",
-        "title": "Opening Keynote (Google): What's New for Developers",
+        "title": "Opening Keynote (Google): 🚀 What's New for Developers",
         "description": null,
         "startsAt": "2025-07-25T09:00:00",
         "endsAt": "2025-07-25T09:45:00",
@@ -868,7 +868,7 @@
       {
         "questionAnswers": [],
         "id": "961766",
-        "title": "Opening Keynote (Axiz|Microsoft): The Business Superpower: Unleashing Gen AI with MCPs, Agents & RAG",
+        "title": "Opening Keynote (Axiz|Microsoft): 🚀 The Business Superpower: Unleashing Gen AI with MCPs, Agents & RAG",
         "description": null,
         "startsAt": "2025-07-26T09:00:00",
         "endsAt": "2025-07-26T09:45:00",
@@ -983,6 +983,30 @@
         "categories": [],
         "roomId": "58138",
         "room": "Educator 2",
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": "Accepted",
+        "isInformed": true,
+        "isConfirmed": true
+      },
+      {
+        "questionAnswers": [],
+        "id": "841392",
+        "title": "Multi-Cloud CI/CD: From Azure to AWS to GCP",
+        "description": "In today's rapidly evolving tech landscape, organizations are heavily investing in CI/CD platforms to deploy applications across multiple cloud providers such as Azure, AWS, and GCP. However, managing multiple deployment pipelines across different platforms can introduce complexity, increase operational overhead, and drive up costs.\n\nThis session will provide insights into how you can streamline multi-cloud deployments using a unified CI/CD approach, eliminating the need for multiple platform-specific pipelines. We will explore a minimalistic yet powerful strategy to deploy applications seamlessly across various cloud providers, reducing licensing and maintenance costs while improving operational efficiency.\n\nJoin us to discover how Azure DevOps can serve as a centralized solution to achieve consistent, scalable, and cost-effective deployments across cloud environments. Learn how to optimize your DevOps workflows without the burden of managing multiple CI/CD platforms.",
+        "startsAt": "2025-07-26T11:00:00",
+        "endsAt": "2025-07-26T11:45:00",
+        "isServiceSession": false,
+        "isPlenumSession": false,
+        "speakers": [
+          {
+            "id": "51f713e3-f67b-4884-aed0-ef782fda8a6c",
+            "name": "Purdaseea Dhaneshwursingh"
+          }
+        ],
+        "categories": [],
+        "roomId": "58139",
+        "room": "Accelerator",
         "liveUrl": null,
         "recordingUrl": null,
         "status": "Accepted",
@@ -1216,7 +1240,7 @@
       {
         "questionAnswers": [],
         "id": "1381d036-5109-4f15-a42a-44acd3260d6f",
-        "title": "Campsite Fire Chat",
+        "title": "Campsite Fire Chat - Digital Adoption & Transformation",
         "description": null,
         "startsAt": "2025-07-26T15:00:00",
         "endsAt": "2025-07-26T15:45:00",
