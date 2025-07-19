@@ -1,6 +1,32 @@
 import sessionsData from "../../src/data/sessions.json";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+
+dayjs.extend(utc);
 
 describe("compare with MSCC", () => {
+  it("checks that MSCC's conference dates are the same as DevCon Scheduler", () => {
+    cy.visit("https://conference.mscc.mu/agenda");
+
+    cy.get(".days__container > .date").should(
+      "have.length",
+      Object.keys(sessionsData).length
+    );
+    cy.get(".days__container > .date").each((date, index) => {
+      expect(date.get(0).innerText).to.eq(
+        dayjs
+          .utc(Object.values(sessionsData)[index].sessions[0].startsAt)
+          .format("DD MMMM")
+          .toLocaleUpperCase()
+      );
+    });
+    cy.get(".day__selector > .days__container > div").each((day, index) => {
+      expect(day.get(0).innerText).to.eq(
+        Object.values(sessionsData)[index].groupName.toLocaleUpperCase()
+      );
+    });
+  });
+
   it("checks that MSCC's registration sessions are the same as DevCon Scheduler", () => {
     cy.visit("https://conference.mscc.mu/agenda");
 
