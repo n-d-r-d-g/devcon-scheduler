@@ -31,62 +31,37 @@ describe("compare with MSCC", () => {
     cy.visit("https://conference.mscc.mu/agenda");
 
     // Retrieve registration session (same across all conference days)
-    cy.get("#day-thursday + label").click();
-    cy.get("div.session__wrapper").should("be.visible");
-    cy.get("div.session__wrapper > .tile_start").should(
-      "contain.text",
-      "As from 08:30 — 15:00"
-    );
-    cy.get("div.session__wrapper > h3").should("contain.text", "Registration");
-    cy.get("#day-friday + label").click();
-    cy.get("div.session__wrapper").should("be.visible");
-    cy.get("div.session__wrapper > .tile_start").should(
-      "contain.text",
-      "As from 08:30 — 15:00"
-    );
-    cy.get("div.session__wrapper > h3").should("contain.text", "Registration");
-    cy.get("#day-saturday + label").click();
-    cy.get("div.session__wrapper").should("be.visible");
-    cy.get("div.session__wrapper > .tile_start").should(
-      "contain.text",
-      "As from 08:30 — 15:00"
-    );
-    cy.get("div.session__wrapper > h3").should("contain.text", "Registration");
+    sessionsData.forEach((group) => {
+      cy.get(`#day-${group.groupName.toLocaleLowerCase()} + label`).click();
+      cy.get("div.session__wrapper").should("be.visible");
+      cy.get("div.session__wrapper > .tile_start").should(
+        "contain.text",
+        "As from 08:30 — 15:00"
+      );
+      cy.get("div.session__wrapper > h3").should("contain.text", "Registration");
+    });
   });
 
   it("checks that MSCC's session count is the same as DevCon Scheduler", () => {
     cy.visit("https://conference.mscc.mu/agenda");
 
-    // Check Thursday session count
-    cy.get(
-      '#agenda-thursday a.session__wrapper h3:not(:contains("TBA")):not(:contains("Opening Keynote"))'
-    ).should(
-      "have.length",
-      sessionsData.find((group) => group.groupName === "Thursday")?.sessions
-        .length ?? 0
-    );
-    // Check Friday session count
-    cy.get(
-      '#agenda-friday a.session__wrapper h3:not(:contains("TBA")):not(:contains("Opening Keynote"))'
-    ).should(
-      "have.length",
-      sessionsData.find((group) => group.groupName === "Friday")?.sessions
-        .length ?? 0
-    );
-    // Check Saturday session count
-    cy.get(
-      '#agenda-saturday a.session__wrapper h3:not(:contains("TBA")):not(:contains("Opening Keynote"))'
-    ).should(
-      "have.length",
-      sessionsData.find((group) => group.groupName === "Saturday")?.sessions
-        .length ?? 0
-    );
+    sessionsData.forEach((group) => {
+      cy.get(
+        `#agenda-${group.groupName.toLocaleLowerCase()} a.session__wrapper h3:not(:contains("TBA")):not(:contains("Opening Keynote"))`
+      ).should(
+        "have.length",
+        group.sessions
+          .length ?? 0
+      );
+    });
   });
 
   it("checks that MSCC's sessions are the same as DevCon Scheduler", () => {
     cy.visit("https://conference.mscc.mu/agenda");
 
-    const compareSessionsByDay = (day: string, date: string) => {
+    sessionsData.forEach((group) => {
+      const day = group.groupName.toLocaleLowerCase();
+      const date = group.sessions[0].startsAt.slice(0, 10);
       const sessionsByDay = sessionsData.find(
         (session) =>
           session.groupName === `${day.charAt(0).toUpperCase()}${day.slice(1)}`
@@ -166,10 +141,6 @@ describe("compare with MSCC", () => {
               : sessionsByDay?.[index].room
           );
         });
-    };
-
-    compareSessionsByDay("thursday", "2025-07-24");
-    compareSessionsByDay("friday", "2025-07-25");
-    compareSessionsByDay("saturday", "2025-07-26");
+    });
   });
 });
