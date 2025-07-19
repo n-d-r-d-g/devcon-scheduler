@@ -992,7 +992,7 @@
       {
         "questionAnswers": [],
         "id": "841392",
-        "title": "Multi-Cloud CI/CD: From Azure to AWS to GCP",
+        "title": "Multi-Cloud CI/CD: From Azure to AWS",
         "description": "In today's rapidly evolving tech landscape, organizations are heavily investing in CI/CD platforms to deploy applications across multiple cloud providers such as Azure, AWS, and GCP. However, managing multiple deployment pipelines across different platforms can introduce complexity, increase operational overhead, and drive up costs.\n\nThis session will provide insights into how you can streamline multi-cloud deployments using a unified CI/CD approach, eliminating the need for multiple platform-specific pipelines. We will explore a minimalistic yet powerful strategy to deploy applications seamlessly across various cloud providers, reducing licensing and maintenance costs while improving operational efficiency.\n\nJoin us to discover how Azure DevOps can serve as a centralized solution to achieve consistent, scalable, and cost-effective deployments across cloud environments. Learn how to optimize your DevOps workflows without the burden of managing multiple CI/CD platforms.",
         "startsAt": "2025-07-26T11:00:00",
         "endsAt": "2025-07-26T11:45:00",
