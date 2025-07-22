@@ -30,7 +30,7 @@
       {
         "questionAnswers": [],
         "id": "870159",
-        "title": "Panel Discussion: How much of cyber security is enough?",
+        "title": "Panel Discussion: How much of cybersecurity is enough?",
         "description": "This panel brings together cybersecurity professionals to explore how organisations can determine the right level of security, assess risks effectively, and avoid both over-engineering and under-protecting their systems.\r\n\r\nJoin us for an insightful discussion on finding the sweet spot between security, compliance, and practicality in today’s digital landscape.",
         "startsAt": "2025-07-24T10:00:00",
         "endsAt": "2025-07-24T11:45:00",
@@ -101,17 +101,17 @@
       },
       {
         "questionAnswers": [],
-        "id": "882635",
-        "title": "Case Studies in Traffic Acquistion",
-        "description": "From SEO, to Social, to Paid and even some AI, Acquiring more traffic to your website is vital to doing business, especially if you are in the content game.  Learn from real world case studies from Ringier's portfolio of Media and Marketplace businesses on what worked and how you can bend Google to your will.",
+        "id": "889912",
+        "title": "LLMs at Enterprise Scale: Lessons They Don’t Teach in Tutorials",
+        "description": "Designing LLM-powered applications is easy—until real users show up. This session focuses on how to build and deploy LLM solutions that are scalable, reliable, and production-ready at enterprise scale.\r\n\r\n We’ll cover:\r\n- Architectural patterns for handling millions of requests and high-throughput pipelines.\r\n- Techniques for reducing latency, cost, and hallucination rates.\r\n- Best practices for evaluating and stress-testing LLM outputs.\r\n- Real-world examples: How we built and shipped League Summaries and our TransCreation content pipeline, ensuring reliability under load.\r\n\r\nIdeal for developers and architects ready to move from proof-of-concept to production.",
         "startsAt": "2025-07-24T12:00:00",
         "endsAt": "2025-07-24T12:45:00",
         "isServiceSession": false,
         "isPlenumSession": false,
         "speakers": [
           {
-            "id": "50f6bd48-8b68-4464-8a92-76292bf3f7dd",
-            "name": "Matthew Hood"
+            "id": "bd1f4850-5bcb-4c8c-9bd3-611efc60a61a",
+            "name": "Nicholas Baard"
           }
         ],
         "categories": [],
@@ -915,6 +915,30 @@
       },
       {
         "questionAnswers": [],
+        "id": "980869",
+        "title": "Confirm your knowledge with a certification",
+        "description": "You probably graduated from university and you may hold some sort of degree in the field of IT or software engineering. Since then you working your daily job as a professional - either employed or freelancing. Over time you gain knowledge and valuable experience in the tools and programming languages you use. But do you know whether your knowledge and experience is \"up to standards\"? Or how you would compare to other professionals in the same technology stack? Certifications in the industry can help with that. They are standardized world wide and give you an indicator about yourself. During the session you are going to hear about my experience with various certification exams over the past years, and why a constant, probably daily, learning attitude is essential for your career and personal growth in the field. Lastly, you are going to learn how to stay motivated during the preparation for an exam and how to keep yourself accountable following the #100DaysOfExam approach.",
+        "startsAt": "2025-07-26T10:00:00",
+        "endsAt": "2025-07-26T10:45:00",
+        "isServiceSession": false,
+        "isPlenumSession": false,
+        "speakers": [
+          {
+            "id": "4c563acb-7ae8-4b4d-9ddf-11c19a02b813",
+            "name": "Jochen Kirstätter"
+          }
+        ],
+        "categories": [],
+        "roomId": "58138",
+        "room": "Educator 2",
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": "Accepted",
+        "isInformed": true,
+        "isConfirmed": true
+      },
+      {
+        "questionAnswers": [],
         "id": "867065",
         "title": "Behind the LinkedIn Curtain: How the Algorithm REALLY Works",
         "description": "In this session, we’ll take a deep dive into the inner workings of LinkedIn's algorithm, revealing how content is ranked, recommended, and surfaced to users. We’ll explore the key factors that influence what shows up in your feed, from engagement signals to relevance scoring, and how LinkedIn's unique blend of AI and machine learning drives content discovery. Attendees will learn actionable insights into how they can optimize their profiles and posts to ensure maximum visibility and engagement, especially within professional networks.\r\n\r\nKey takeaways from this session include a clear understanding of how LinkedIn’s algorithm prioritizes content, how to capitalize on this knowledge to boost your reach, and practical strategies for developers, engineers, and tech professionals to stand out in a crowded digital space. By the end of the talk, participants will be equipped with the tools to fine-tune their LinkedIn presence for better career opportunities, networking, and community engagement. This session will be especially valuable for DevCon attendees who want to trigger the LinkedIn algorithm effectively, enhancing their online visibility and boosting the branding of their technical expertise.",
@@ -1015,17 +1039,17 @@
       },
       {
         "questionAnswers": [],
-        "id": "889912",
-        "title": "LLMs at Enterprise Scale: Lessons They Don’t Teach in Tutorials",
-        "description": "Designing LLM-powered applications is easy—until real users show up. This session focuses on how to build and deploy LLM solutions that are scalable, reliable, and production-ready at enterprise scale.\r\n\r\n We’ll cover:\r\n- Architectural patterns for handling millions of requests and high-throughput pipelines.\r\n- Techniques for reducing latency, cost, and hallucination rates.\r\n- Best practices for evaluating and stress-testing LLM outputs.\r\n- Real-world examples: How we built and shipped League Summaries and our TransCreation content pipeline, ensuring reliability under load.\r\n\r\nIdeal for developers and architects ready to move from proof-of-concept to production.",
+        "id": "882635",
+        "title": "Case Studies in Traffic Acquistion",
+        "description": "From SEO, to Social, to Paid and even some AI, Acquiring more traffic to your website is vital to doing business, especially if you are in the content game.  Learn from real world case studies from Ringier's portfolio of Media and Marketplace businesses on what worked and how you can bend Google to your will.",
         "startsAt": "2025-07-26T12:00:00",
         "endsAt": "2025-07-26T12:45:00",
         "isServiceSession": false,
         "isPlenumSession": false,
         "speakers": [
           {
-            "id": "bd1f4850-5bcb-4c8c-9bd3-611efc60a61a",
-            "name": "Nicholas Baard"
+            "id": "50f6bd48-8b68-4464-8a92-76292bf3f7dd",
+            "name": "Matthew Hood"
           }
         ],
         "categories": [],
@@ -1239,14 +1263,23 @@
       },
       {
         "questionAnswers": [],
-        "id": "1381d036-5109-4f15-a42a-44acd3260d6f",
-        "title": "Campsite Fire Chat - Digital Adoption & Transformation",
+        "id": "980865",
+        "title": "Campsite Fire Chat: Digital Adoption & Transformation",
         "description": null,
         "startsAt": "2025-07-26T15:00:00",
         "endsAt": "2025-07-26T15:45:00",
         "isServiceSession": true,
         "isPlenumSession": false,
-        "speakers": [],
+        "speakers": [
+          {
+            "id": "4c563acb-7ae8-4b4d-9ddf-11c19a02b813",
+            "name": "Jochen Kirstätter"
+          },
+          {
+            "id": "cf415be6-0558-4411-aa4d-dee4f0648547",
+            "name": "Vidush H. Namah"
+          }
+        ],
         "categories": [],
         "roomId": "58137",
         "room": "Educator 1",
