@@ -286,20 +286,24 @@ export function Agenda({
                     const newActiveSessions = new Map(activeSessions);
 
                     newSessionsData[activeDay] = newSessionsData[activeDay].map(
-                      (s: any, i: number) => {
-                        if (i === program.data.index) {
-                          const newIsActive = !s.isActive;
+                      (session, index) => {
+                        if (index === program.data.index) {
+                          const newIsActive = !session.isActive;
 
                           if (newIsActive) {
-                            newActiveSessions.get(activeDay)?.set(s.id, s);
+                            newActiveSessions
+                              .get(activeDay)
+                              ?.set(session.id, session);
                           } else {
-                            newActiveSessions.get(activeDay)?.delete(s.id);
+                            newActiveSessions
+                              .get(activeDay)
+                              ?.delete(session.id);
                           }
 
-                          return { ...s, isActive: newIsActive };
+                          return { ...session, isActive: newIsActive };
                         }
 
-                        return s;
+                        return session;
                       }
                     );
 
