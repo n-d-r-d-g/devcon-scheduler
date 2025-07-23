@@ -12,7 +12,7 @@ import utc from "dayjs/plugin/utc";
 import { useTheme } from "next-themes";
 import { Epg, Layout, Program, ProgramItem, useEpg } from "planby";
 import { Position } from "planby/dist/Epg/helpers/types";
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useLayoutEffect, useRef, useState } from "react";
 import {
   LuCheckCheck as LuCheckCheckIcon,
   LuCopy as LuCopyIcon,
@@ -109,6 +109,41 @@ export function Agenda({
   );
   const [isCopying, setIsCopying] = useState(false);
   const { resolvedTheme } = useTheme();
+
+  useLayoutEffect(() => {
+    const storedActiveSessions = localStorage.getItem("activeSessions");
+
+    if (storedActiveSessions) {
+      const parsedActiveSessions = JSON.parse(storedActiveSessions) as Record<
+        string,
+        Array<string>
+      >;
+
+      const newSessionsData: SessionsByDay = structuredClone(sessionsData);
+      const newActiveSessions = structuredClone(activeSessions);
+
+      for (const [day, sessionIds] of Object.entries(parsedActiveSessions)) {
+        sessionIds.forEach((sessionId) => {
+          const matchingSessionIndex = newSessionsData[day].findIndex(
+            (session) => session.id === sessionId
+          );
+
+          if (matchingSessionIndex >= 0) {
+            newSessionsData[day][matchingSessionIndex].isActive = true;
+            newActiveSessions
+              .get(day)
+              ?.set(
+                sessionsData[day][matchingSessionIndex].id,
+                sessionsData[day][matchingSessionIndex]
+              );
+          }
+        });
+      }
+      setSessionsData(newSessionsData);
+      setActiveSessions(newActiveSessions);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const noSessionsSelected = useCallback(() => {
     let allActiveSessionsCount = 0;
@@ -268,6 +303,23 @@ export function Agenda({
                       }
                     );
 
+                    let activeSessionIds = {};
+                    for (const [key, sessionsMap] of newActiveSessions) {
+                      const listOfIds: string[] = [];
+                      sessionsMap.forEach((_value, key) => {
+                        listOfIds.push(key);
+                      });
+
+                      activeSessionIds = {
+                        ...activeSessionIds,
+                        [key]: listOfIds,
+                      };
+                    }
+
+                    localStorage.setItem(
+                      "activeSessions",
+                      JSON.stringify(activeSessionIds)
+                    );
                     setActiveSessions(newActiveSessions);
                     setSessionsData(newSessionsData);
                   }}
