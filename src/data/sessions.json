@@ -880,7 +880,7 @@
         "title": "Data Fabric vs. Data Mesh: What Developers Need to Know",
         "description": "As data ecosystems grow more complex, traditional data architectures struggle to keep up with scalability, governance, and real-time analytics. Enter Data Fabric and Data Mesh—two modern approaches that aim to streamline data access, improve governance, and empower teams. But what’s the difference, and which one should you choose?\r\n\r\nIn this session, we’ll break it down:\r\n✅ What is Data Fabric? A unified, AI-driven approach to data management\r\n✅ What is Data Mesh? A decentralized model that gives ownership to domain teams\r\n✅ Key differences & trade-offs: Centralized vs. decentralized governance\r\n✅ Use cases & best practices: When to choose one over the other\r\n✅ Hands-on Demo: Implementing a basic Data Fabric or Data Mesh architecture using modern data tools\r\n\r\nWhether you're a data engineer, software architect, or developer, this session will help you navigate the evolving data landscape and make informed architectural decisions for your projects. 🚀",
         "startsAt": "2026-07-25T09:00:00",
-        "endsAt": "2026-07-25T10:05:00",
+        "endsAt": "2026-07-25T10:00:00",
         "isServiceSession": false,
         "isPlenumSession": false,
         "speakers": [
