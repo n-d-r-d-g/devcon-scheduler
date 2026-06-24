@@ -1,26 +1,21 @@
 [
   {
-    "groupId": 45862,
+    "groupId": 20260723,
     "groupName": "Thursday",
+    "isDefault": true,
     "sessions": [
       {
         "questionAnswers": [],
-        "id": "963227",
-        "title": "Opening Keynote (SWAN): 🚀 AI - Framing the problem",
+        "id": "6bf13a74-24f3-49d2-9d3d-819cb4c70bc1",
+        "title": "Opening Sesion",
         "description": null,
-        "startsAt": "2025-07-24T09:00:00",
-        "endsAt": "2025-07-24T09:45:00",
+        "startsAt": "2026-07-23T09:30:00",
+        "endsAt": "2026-07-23T10:00:00",
         "isServiceSession": true,
         "isPlenumSession": true,
-        "speakers": [
-          {
-            "id": "-1",
-            "name": "Sujit Woozageer"
-          }
-        ],
+        "speakers": [],
         "categories": [],
-        "roomId": "58137",
-        "room": "Educator 1",
+        "roomId": "74750",
         "liveUrl": null,
         "recordingUrl": null,
         "status": null,
@@ -29,11 +24,171 @@
       },
       {
         "questionAnswers": [],
-        "id": "870159",
-        "title": "Panel Discussion: How much of cybersecurity is enough?",
-        "description": "This panel brings together cybersecurity professionals to explore how organisations can determine the right level of security, assess risks effectively, and avoid both over-engineering and under-protecting their systems.\r\n\r\nJoin us for an insightful discussion on finding the sweet spot between security, compliance, and practicality in today’s digital landscape.",
-        "startsAt": "2025-07-24T10:00:00",
-        "endsAt": "2025-07-24T11:45:00",
+        "id": "c271c698-dd47-40d4-8cf6-b055d705f9ff",
+        "title": "Keynote: SWAN",
+        "description": null,
+        "startsAt": "2026-07-23T10:00:00",
+        "endsAt": "2026-07-23T11:00:00",
+        "isServiceSession": true,
+        "isPlenumSession": true,
+        "speakers": [],
+        "categories": [],
+        "roomId": "74750",
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": null,
+        "isInformed": false,
+        "isConfirmed": false
+      },
+      {
+        "questionAnswers": [],
+        "id": "1193740",
+        "title": "Building a Blast Radius Skill - Where Dev, QA and ClaudeAI Collide",
+        "description": "You've merged a PR and something breaks in production. The change looked small, but it touched a config that cascaded through three services you didn't even know depended on it. Blast radius analysis prevents that. It uses Claude to trace every dependency, config, and execution path your code change touches, and tells you what could break before it ever leaves your branch.\r\n\r\nAlong the way, it catches things you'd normally miss:\r\n\r\nDead code\r\nMissing overrides\r\nBroken configs\r\n\r\nAll surfaced before a QA engineer even looks at it.\r\nBut it goes further. The same analysis gives QA hard evidence to push back when the scope of a change hasn't been fully addressed, with data, not opinion. That means fewer rounds of back-and-forth and faster, cleaner releases.\r\n\r\nWe'll build this as a reusable \"skill\" in Claude Code, showing how agentic harnesses support composable, repeatable workflow building blocks that go far beyond traditional test automation. Whether you're a developer tired of unexpected breakage, a QA engineer looking for better tooling, or a lead trying to reduce cycle time, this talk reframes what's possible when you think about the whole problem, not just the obvious solution.\r\n\r\nWhile this is defined as \"Intermediate\" level, it will be useful and challenging for all levels of experience and role. ",
+        "startsAt": "2026-07-23T11:00:00",
+        "endsAt": "2026-07-23T12:00:00",
+        "isServiceSession": false,
+        "isPlenumSession": false,
+        "speakers": [
+          {
+            "id": "61d89e71-a2c1-47fe-920c-7c769b35e358",
+            "name": "Dylan Harbour"
+          }
+        ],
+        "categories": [],
+        "roomId": "74750",
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": "Accepted",
+        "isInformed": true,
+        "isConfirmed": true
+      },
+      {
+        "questionAnswers": [],
+        "id": "1170242",
+        "title": "Tailoring LLMs for specific domains",
+        "description": "Generic LLMs are powerful but inefficient when applied to specialized tasks — they consume more resources than necessary and offer no competitive differentiation. This talk explores the model rearchitecting pipeline: a systematic approach to transforming generic models into optimized, domain-specific solutions. We'll cover three key phases:\r\n\r\n- Structural Optimization (Pruning) — Surgically remove model components that contribute least to your target task, reducing size and increasing inference speed.\r\n\r\n- Knowledge Recovery (Distillation) — The pruned \"student\" model learns to replicate the original \"teacher\" model's reasoning patterns, recovering lost capabilities efficiently.\r\n\r\n- Specialization (Fine-tuning with LoRA) — Adapt the recovered model to a specific domain using parameter-efficient techniques that train only a small subset of weights.\r\n\r\nFor the demo, we will consider a specific use case to walk through the full pipeline end-to-end, demonstrating how each phase builds on the previous one. By the end, you'll understand how to move beyond prompt engineering and fine-tuning to architect smaller, faster, and more accurate models tailored to your needs.",
+        "startsAt": "2026-07-23T11:00:00",
+        "endsAt": "2026-07-23T12:00:00",
+        "isServiceSession": false,
+        "isPlenumSession": false,
+        "speakers": [
+          {
+            "id": "f5370b66-7fdf-4178-9c9e-404381d8437d",
+            "name": "Roshan Summun"
+          },
+          {
+            "id": "e4b91b00-77b0-4239-abbd-22c2523f4c21",
+            "name": "Praveer Rampersand"
+          }
+        ],
+        "categories": [],
+        "roomId": "74751",
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": "Accepted",
+        "isInformed": true,
+        "isConfirmed": true
+      },
+      {
+        "questionAnswers": [],
+        "id": "1172140",
+        "title": "Building a Product from Scratch: From Idea to Launch",
+        "description": "Bringing a product from idea to production involves far more than writing code. In this session, I will walk through the complete lifecycle of building and launching a real-world application — from defining the problem and prototyping, to choosing the right frontend and backend technologies, structuring architecture, and preparing for deployment. Attendees will gain a clear understanding of how infrastructure, hosting, CI/CD, and environment management fit into the bigger picture of product delivery.\r\n\r\nThe talk will also explore critical but often overlooked aspects of launching to real users: authentication, secure API design, data protection, cybersecurity fundamentals, and the responsibilities developers carry when handling consumer data. Using practical examples, this session aims to bridge the gap between theory and real-world product execution.\r\n\r\nBy the end of this talk, attendees will understand what it truly means to move from “it works on my machine” to a secure, scalable, production-ready system — and how to approach building products with a more complete, professional mindset.",
+        "startsAt": "2026-07-23T11:00:00",
+        "endsAt": "2026-07-23T12:00:00",
+        "isServiceSession": false,
+        "isPlenumSession": false,
+        "speakers": [
+          {
+            "id": "93de39cf-980c-4093-aadc-d7a1ccfa108e",
+            "name": "Arbaaz Mowlabucus"
+          }
+        ],
+        "categories": [],
+        "roomId": "74752",
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": "Accepted",
+        "isInformed": true,
+        "isConfirmed": true
+      },
+      {
+        "questionAnswers": [],
+        "id": "1168202",
+        "title": "Measuring the Internet with Python",
+        "description": "I'm a Internet Measurement and Data Expert working at Internet Society and in my work we need to measure various aspects of the Internet, such as the Internet topology (how ISPs are interconnected), performance of end-to-end paths, and security risks of the routing system. To collect such measurements, we rely on various open-source python tools that are less known but enable large-scale measurements of real-time Internet phenomena. In this talk I will first introduce briefly some core Internet networking aspects, why engineers and researchers want to measure and monitor them and then I will walk you through a suite of open-source Python tools we use to probe, map and analyze macroscopic properties of the Internet ecosystem. My aim is for attendees to walk away with some fundamentals on networking and concrete, reusable examples on how to build their own Python-powered Internet measurement pipelines.",
+        "startsAt": "2026-07-23T12:00:00",
+        "endsAt": "2026-07-23T13:00:00",
+        "isServiceSession": false,
+        "isPlenumSession": false,
+        "speakers": [
+          {
+            "id": "f9dc8546-9b53-41bc-ae9b-7678c88e46cc",
+            "name": "Dr. Amreesh Phokeer"
+          }
+        ],
+        "categories": [],
+        "roomId": "74750",
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": "Accepted",
+        "isInformed": true,
+        "isConfirmed": true
+      },
+      {
+        "questionAnswers": [],
+        "id": "1170540",
+        "title": "The Safe and Fast Future of Programming: Introducing Rust",
+        "description": "Rust has garnered a bit of a stereotype as of late, landing much like the \"i use arch btw\" of programming languages. A typical tagline sounds something like \"blazing fast, memory safe, and fearless concurrency\". While everyone touts AI as the sole future of programming, companies are gradually rewriting their core services in Rust.\r\n\r\nFrom Cloudflare to Ladybird Browser, Git, and even the Linux kernel, Rust is popping up in more and more places, in services and toolchains we use daily.\r\n\r\nThis session will give a blazing fast introduction to the wonderful language of Rust, whether you are an experienced C developer or a Javascript person.\r\nYou will learn about the perks of Rust, including its phenomenal compiler, and how to use them to build highly performant applications which can truly scale (unlike nodejs). Finally, you will see a couple of Rust frameworks in action and how simple web development can be with Rust!",
+        "startsAt": "2026-07-23T12:00:00",
+        "endsAt": "2026-07-23T13:00:00",
+        "isServiceSession": false,
+        "isPlenumSession": false,
+        "speakers": [
+          {
+            "id": "80c8f586-0d9c-45a7-ae05-037cc1dce4e7",
+            "name": "Alex Bissessur"
+          }
+        ],
+        "categories": [],
+        "roomId": "74751",
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": "Accepted",
+        "isInformed": true,
+        "isConfirmed": true
+      },
+      {
+        "questionAnswers": [],
+        "id": "1167347",
+        "title": "Deploying OpenClaw on a Personal VPS — Private, Secure, Yours",
+        "description": "Most AI tools are stateless chatbots — you ask, they answer, they forget. OpenClaw is different. It's an open-source AI agent with persistent memory, structured context files, and the ability to take real actions on your behalf — executing commands, managing code, and operating autonomously between sessions. This session covers what makes OpenClaw fundamentally different from a chatbot, why an AI agent with real system access changes your threat model, and how to deploy it on a personal VPS that's completely invisible to the public internet — secured behind Tailscale's private mesh network with no open ports and no attack surface. Practical and hands-on, a solid starting point if you want an AI agent you actually own and control.",
+        "startsAt": "2026-07-23T12:00:00",
+        "endsAt": "2026-07-23T13:00:00",
+        "isServiceSession": false,
+        "isPlenumSession": false,
+        "speakers": [
+          {
+            "id": "9e81e32f-b831-4f64-969b-3fefc3ef1dc8",
+            "name": "Tarounen ."
+          }
+        ],
+        "categories": [],
+        "roomId": "74752",
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": "Accepted",
+        "isInformed": true,
+        "isConfirmed": true
+      },
+      {
+        "questionAnswers": [],
+        "id": "1167879",
+        "title": "Essential Linux Skills for Google Cloud Platform",
+        "description": "The cloud didn't replace Linux — it runs on it. Yet many cloud practitioners underestimate the Linux knowledge needed to effectively deploy, secure, and troubleshoot workloads on Google Cloud Platform. This session provides a structured, no-nonsense assessment of exactly how much Linux proficiency you need to be productive on GCP, covering the spectrum from basic VM operations to container orchestration on GKE.\r\n\r\nWe'll walk through practical scenarios including provisioning and managing Compute Engine instances across distributions like Ubuntu and openSUSE, configuring networking and firewall rules, leveraging OS Login and IAM for secure access, and debugging common issues using journalctl, ss, and cloud-native observability tools.\r\n\r\nWhether you're preparing for your first GCP deployment or looking to level up your cloud infrastructure skills, this session will equip you with a focused, actionable skill set that bridges Linux fundamentals and cloud infrastructure.",
+        "startsAt": "2026-07-23T13:00:00",
+        "endsAt": "2026-07-23T14:00:00",
         "isServiceSession": false,
         "isPlenumSession": false,
         "speakers": [
@@ -43,8 +198,7 @@
           }
         ],
         "categories": [],
-        "roomId": "58137",
-        "room": "Educator 1",
+        "roomId": "74750",
         "liveUrl": null,
         "recordingUrl": null,
         "status": "Accepted",
@@ -53,22 +207,21 @@
       },
       {
         "questionAnswers": [],
-        "id": "930892",
-        "title": "Cross-organizational developer productivity",
-        "description": "Working in a distributed team is one thing. But what about working across organizational boundaries to deliver specialized software that works across a variety of specialized development environments behind corporate silos? I will share my experiences from inter-corporate product development, how to keep your own team productive and aligned on a coherent goal, and how we could have done better in the first place.",
-        "startsAt": "2025-07-24T10:00:00",
-        "endsAt": "2025-07-24T10:45:00",
+        "id": "1151948",
+        "title": "Let’s Make a WordPress Plugin!",
+        "description": "This intermediate hands-on session explores what WordPress plugins do and why the WordPress ecosystem depends on them. Plugins extend core features without changing core files. This keeps WordPress modular, upgrade safe, and highly customizable. We will look at how plugins work internally, how they register hooks with actions and filters, load assets, and interact with themes and core APIs.\r\n\r\nYou will build a simple plugin from scratch to better understand structure, main plugin files, headers, activation hooks, and basic security practices. We will set up a clean local development environment for testing and debugging.\r\n\r\nWe will also cover practical use of vibe coding tools such as GitHub Copilot and OpenCode. ",
+        "startsAt": "2026-07-23T13:00:00",
+        "endsAt": "2026-07-23T14:00:00",
         "isServiceSession": false,
         "isPlenumSession": false,
         "speakers": [
           {
-            "id": "37cfa614-39a0-4188-b0a7-3ad1c86b8294",
-            "name": "Justin Kaeser"
+            "id": "e4d51ad0-51f7-44bc-ade2-8c7250bb5400",
+            "name": "Nathan Mangar"
           }
         ],
         "categories": [],
-        "roomId": "58139",
-        "room": "Accelerator",
+        "roomId": "74751",
         "liveUrl": null,
         "recordingUrl": null,
         "status": "Accepted",
@@ -77,402 +230,11 @@
       },
       {
         "questionAnswers": [],
-        "id": "835898",
-        "title": "Building Unbreakable Linux Systems Through Strategic Failure",
-        "description": "Discover how deliberately injecting failures into your Linux cloud infrastructure can make it remarkably resilient. This session goes beyond theoretical chaos engineering to show you practical implementations that uncover system weaknesses before they become production nightmares. Through live demonstrations and real war stories, learn how leading companies are using controlled chaos to build infrastructure that thrives under pressure.",
-        "startsAt": "2025-07-24T11:00:00",
-        "endsAt": "2025-07-24T11:45:00",
-        "isServiceSession": false,
-        "isPlenumSession": false,
-        "speakers": [
-          {
-            "id": "8a2e498b-c50c-4078-a906-92d49e81c792",
-            "name": "Samuel Arogbonlo"
-          }
-        ],
-        "categories": [],
-        "roomId": "58139",
-        "room": "Accelerator",
-        "liveUrl": null,
-        "recordingUrl": null,
-        "status": "Accepted",
-        "isInformed": true,
-        "isConfirmed": true
-      },
-      {
-        "questionAnswers": [],
-        "id": "889912",
-        "title": "LLMs at Enterprise Scale: Lessons They Don’t Teach in Tutorials",
-        "description": "Designing LLM-powered applications is easy—until real users show up. This session focuses on how to build and deploy LLM solutions that are scalable, reliable, and production-ready at enterprise scale.\r\n\r\n We’ll cover:\r\n- Architectural patterns for handling millions of requests and high-throughput pipelines.\r\n- Techniques for reducing latency, cost, and hallucination rates.\r\n- Best practices for evaluating and stress-testing LLM outputs.\r\n- Real-world examples: How we built and shipped League Summaries and our TransCreation content pipeline, ensuring reliability under load.\r\n\r\nIdeal for developers and architects ready to move from proof-of-concept to production.",
-        "startsAt": "2025-07-24T12:00:00",
-        "endsAt": "2025-07-24T12:45:00",
-        "isServiceSession": false,
-        "isPlenumSession": false,
-        "speakers": [
-          {
-            "id": "bd1f4850-5bcb-4c8c-9bd3-611efc60a61a",
-            "name": "Nicholas Baard"
-          }
-        ],
-        "categories": [],
-        "roomId": "58137",
-        "room": "Educator 1",
-        "liveUrl": null,
-        "recordingUrl": null,
-        "status": "Accepted",
-        "isInformed": true,
-        "isConfirmed": true
-      },
-      {
-        "questionAnswers": [],
-        "id": "835847",
-        "title": "The Art of Transforming a Foundation Model into a Domain Expert",
-        "description": "Standard foundation models have general knowledge on most topics, but little specific domain knowledge. Learn how to customize them to make them experts in your field. Through interactive demonstrations, learn how to perform fine-tuning, use the RAG (Retrieval Augmented Generation) technique, or use transactional agents. Learn to evaluate the pros and cons of each approach to choose the solution that best suits your needs.",
-        "startsAt": "2025-07-24T12:00:00",
-        "endsAt": "2025-07-24T12:45:00",
-        "isServiceSession": false,
-        "isPlenumSession": false,
-        "speakers": [
-          {
-            "id": "107327be-a539-4fae-8253-9f18741812db",
-            "name": "Sebastien Stormacq"
-          }
-        ],
-        "categories": [],
-        "roomId": "58138",
-        "room": "Educator 2",
-        "liveUrl": null,
-        "recordingUrl": null,
-        "status": "Accepted",
-        "isInformed": true,
-        "isConfirmed": true
-      },
-      {
-        "questionAnswers": [],
-        "id": "835896",
-        "title": "All About AI-Powered Linux Administration",
-        "description": "Step into the future of Linux administration where AI transforms routine tasks into automated workflows and complex troubleshooting into guided solutions. This session demonstrates how to harness Large Language Models and AI tools to create a smart administration environment that responds to issues and anticipates them. You'll discover practical implementations that go beyond basic ChatGPT prompts, showing how to build an intelligent administration layer that makes both junior and senior Linux administrators more productive.\r\n",
-        "startsAt": "2025-07-24T12:00:00",
-        "endsAt": "2025-07-24T12:45:00",
-        "isServiceSession": false,
-        "isPlenumSession": false,
-        "speakers": [
-          {
-            "id": "8a2e498b-c50c-4078-a906-92d49e81c792",
-            "name": "Samuel Arogbonlo"
-          }
-        ],
-        "categories": [],
-        "roomId": "58139",
-        "room": "Accelerator",
-        "liveUrl": null,
-        "recordingUrl": null,
-        "status": "Accepted",
-        "isInformed": true,
-        "isConfirmed": true
-      },
-      {
-        "questionAnswers": [],
-        "id": "842856",
-        "title": "Secure your Modular Monolith by pretending it's a cat",
-        "description": "Cats require attentive care, consistent boundaries, play, and a cozy, secure environment. Just like Modular Monoliths! While everything is still within the cozy confines of the monolith, security is easy! But let me show you how it becomes harder when you start scaling out your modules, and how it pays off to plan for it upfront. Just like getting a cat!\r\n\r\nIn this humorous talk, you'll learn which security concerns are important to think about while working in a Modular Monolith. I'll show you how you can implement those concerns so that security isn't a disaster when you need to scale your system out. And maybe you'll learn a thing or two about cats, too. Dog people are also welcome.",
-        "startsAt": "2025-07-24T13:00:00",
-        "endsAt": "2025-07-24T13:45:00",
-        "isServiceSession": false,
-        "isPlenumSession": false,
-        "speakers": [
-          {
-            "id": "8bbe720c-a313-49a4-b6fd-f488669363eb",
-            "name": "William Brander"
-          }
-        ],
-        "categories": [],
-        "roomId": "58137",
-        "room": "Educator 1",
-        "liveUrl": null,
-        "recordingUrl": null,
-        "status": "Accepted",
-        "isInformed": true,
-        "isConfirmed": true
-      },
-      {
-        "questionAnswers": [],
-        "id": "889914",
-        "title": "LLMs Lie: How We Built a Fact-Checked, Safe Content Pipeline",
-        "description": "LLMs are powerful, but how do you verify that the output is accurate—especially when dealing with data-heavy content like sports scores, financials, or live updates?\r\n\r\nThis talk focuses on practical evaluation techniques for LLM-generated content:\r\n- Incorporating Human-in-the-Loop evaluation workflows.\r\n- Building custom, automated evaluation pipelines tailored to your use case.\r\n- Using prompt engineering and iterative workflows to fine-tune accuracy.\r\n- Case study: How we designed a verifiable, fact-checked content pipeline for sports data, ensuring correctness at scale.\r\n\r\nLearn how to create LLM applications you can trust in real-world, high-stakes environments.",
-        "startsAt": "2025-07-24T13:00:00",
-        "endsAt": "2025-07-24T13:45:00",
-        "isServiceSession": false,
-        "isPlenumSession": false,
-        "speakers": [
-          {
-            "id": "bd1f4850-5bcb-4c8c-9bd3-611efc60a61a",
-            "name": "Nicholas Baard"
-          }
-        ],
-        "categories": [],
-        "roomId": "58138",
-        "room": "Educator 2",
-        "liveUrl": null,
-        "recordingUrl": null,
-        "status": "Accepted",
-        "isInformed": true,
-        "isConfirmed": true
-      },
-      {
-        "questionAnswers": [],
-        "id": "857897",
-        "title": "Stop Writing Code, Start Understanding Your Domain -- a gentle introduction to DDD",
-        "description": "Ever worked on a codebase that felt like an unplanned city—messy, unorganized, and impossible to navigate? Without structure, software development can lead to chaotic dependencies, hidden business logic, and features that break everything.\r\n\r\nIn this session, we’ll use the city planning analogy to break down Domain-Driven Design (DDD) in a way that makes sense. You’ll learn:\r\n✅ How to organize your code like a well-planned city\r\n✅ How Bounded Contexts help avoid traffic jams in your architecture\r\n✅ How to define clear business domains so your software mirrors real-world processes\r\n\r\nWe’ll take these concepts from theory to practice with a live coding demo, where we build a sample app using DDD principles. By the end, you'll walk away with a clear roadmap for applying DDD to your own projects—so your software feels less like a chaotic sprawl and more like a well-designed metropolis.\r\n\r\n🚀 Join me to transform your messy code into a scalable, well-structured system!",
-        "startsAt": "2025-07-24T13:00:00",
-        "endsAt": "2025-07-24T13:45:00",
-        "isServiceSession": false,
-        "isPlenumSession": false,
-        "speakers": [
-          {
-            "id": "931baa84-0c5f-43c9-95dd-6896e0455080",
-            "name": "Abdallah Ramsing"
-          }
-        ],
-        "categories": [],
-        "roomId": "58139",
-        "room": "Accelerator",
-        "liveUrl": null,
-        "recordingUrl": null,
-        "status": "Accepted",
-        "isInformed": true,
-        "isConfirmed": true
-      },
-      {
-        "questionAnswers": [],
-        "id": "875549",
-        "title": "Start Scalable: Begin Building in Bazel",
-        "description": "Bazel is known as a build system optimized for massive scale multi-language monorepos. But is it really so complex that you need dedicated developers to maintain a build? Or is it actually easy to start small and scale complexity as  you go? Let's find out!\r\n\r\nWe will go through the setup of a simple Bazel project that builds Java and Kotlin code, and discuss how it can be expanded to any number of languages and size of project. I will present the tools and resources that can help you along the way, and give an overview of why (and why not) you might want to choose Bazel for your next project.",
-        "startsAt": "2025-07-24T14:00:00",
-        "endsAt": "2025-07-24T14:45:00",
-        "isServiceSession": false,
-        "isPlenumSession": false,
-        "speakers": [
-          {
-            "id": "37cfa614-39a0-4188-b0a7-3ad1c86b8294",
-            "name": "Justin Kaeser"
-          }
-        ],
-        "categories": [],
-        "roomId": "58137",
-        "room": "Educator 1",
-        "liveUrl": null,
-        "recordingUrl": null,
-        "status": "Accepted",
-        "isInformed": true,
-        "isConfirmed": true
-      },
-      {
-        "questionAnswers": [],
-        "id": "831947",
-        "title": "Create a .NET Open Source Library: Lessons Learned",
-        "description": "This session shares practical lessons learned from the process of creating and maintaining a .NET open-source library. We'll go beyond the technical aspects, exploring the challenges and rewards of open-source contribution and providing actionable advice for aspiring library authors.\r\n\r\nTarget Audience: .NET developers interested in contributing to open source or creating and publishing their own libraries.\r\n\r\nLearning Objectives: By the end of this session, participants will be able to:\r\n\r\n- Understand the key characteristics of high-quality .NET open-source libraries, including inclusivity, stability, evolvability, debuggability, and trustworthiness.\r\n- Apply best practices for library design, focusing on testability, dependency injection, and clear documentation.\r\n- Effectively utilize NuGet for package creation and publishing, including versioning and handling breaking changes.\r\n- Manage community contributions, feedback, and issues.\r\n- Navigate the legal considerations involved in open-sourcing code from a workplace environment.\r\n\r\nSession Outline:\r\nIntroduction & Defining Success: We'll kick off by defining what constitutes a \"successful\" open-source library – it's not just about download numbers! We’ll emphasize the importance of solving real-world problems and building a thriving community.\r\n\r\nTechnical Best Practices: This section will cover key technical aspects, including:\r\n\r\n- Cross-platform compatibility: leveraging .NET Standard and multi-targeting.\r\n    Testability: building libraries with testability in mind from the outset.\r\n    Dependency Injection: strategies for incorporating DI without imposing opinions on users.\r\n    Documentation: the importance of clear, concise, and comprehensive documentation (inline, README, examples).\r\n    NuGet Package Creation & Publishing: Best practices for versioning (SemVer 2.0.0), metadata, and security.\r\n    Source Link: enabling easy debugging for library users.\r\n\r\nCommunity & Collaboration: This segment will address the crucial aspects of community engagement:\r\n\r\n    Handling contributions: gracefully receiving, reviewing, and integrating pull requests.\r\n    Managing issues: effectively responding to and resolving reported bugs and feature requests.\r\n    Balancing community feedback with project vision: respectful handling of suggestions that might deviate from the core purpose of the library.\r\n    Open communication: maintaining a positive and helpful atmosphere within the project community.\r\n\r\nLegal and Practical Considerations:\r\n\r\n    Open-source licenses (choosing the right license for your project).\r\n    Obtaining necessary permissions from employers before releasing work-related code.[4]\r\n    Maintaining motivation and dealing with burnout.\r\n    Setting realistic expectations and accepting that a project may not achieve widespread popularity.\r\n\r\nFinally, we will conclude with a Q&A session and emphasize the importance of continuous learning and improvement in the open-source world. Participants will leave with a clearer understanding of the journey of creating and sustaining a successful .NET open-source library.",
-        "startsAt": "2025-07-24T14:00:00",
-        "endsAt": "2025-07-24T14:45:00",
-        "isServiceSession": false,
-        "isPlenumSession": false,
-        "speakers": [
-          {
-            "id": "4c563acb-7ae8-4b4d-9ddf-11c19a02b813",
-            "name": "Jochen Kirstätter"
-          }
-        ],
-        "categories": [],
-        "roomId": "58138",
-        "room": "Educator 2",
-        "liveUrl": null,
-        "recordingUrl": null,
-        "status": "Accepted",
-        "isInformed": true,
-        "isConfirmed": true
-      },
-      {
-        "questionAnswers": [],
-        "id": "876026",
-        "title": "The Next Frontier: Exploring the Power of .NET Aspire",
-        "description": ".NET Aspire is a new cloud-native application model designed to simplify microservices development and orchestration in the .NET ecosystem. This session begins with the fundamentals of .NET Aspire, covering its core concepts such as the Aspire App Model, built-in components, and observability features. A hands-on demo will showcase how to set up a new Aspire project, integrate essential services, and utilize built-in telemetry for monitoring and debugging.\r\n\r\nBeyond the basics, the session explores intermediate topics like deploying Aspire-based applications to the cloud, enabling distributed tracing, and securing applications with authentication and authorization. Best practices, common pitfalls, and performance considerations will also be discussed to ensure smooth development and deployment. Whether just starting with .NET Aspire or looking to gain deeper insights, attendees will leave with the knowledge and practical skills needed to build scalable and observable cloud-native applications.",
-        "startsAt": "2025-07-24T14:00:00",
-        "endsAt": "2025-07-24T14:45:00",
-        "isServiceSession": false,
-        "isPlenumSession": false,
-        "speakers": [
-          {
-            "id": "4d30981f-69b9-40bb-a00d-6a741b200d91",
-            "name": "Fawwaaz Koodruth"
-          }
-        ],
-        "categories": [],
-        "roomId": "58139",
-        "room": "Accelerator",
-        "liveUrl": null,
-        "recordingUrl": null,
-        "status": "Accepted",
-        "isInformed": true,
-        "isConfirmed": true
-      },
-      {
-        "questionAnswers": [],
-        "id": "842852",
-        "title": "Top 5 techniques for building the worst microservice system ever",
-        "description": "Microservices come with promises of scalability, reliability, and autonomy. But if everything is so rosy, how come the only success stories we hear about are at places like Netflix or Uber? I've spent countless hours working on all kinds of microservice systems to come up with the definitive top 5 tips to ensure your microservices become complete disasters. Join me on a tour of insanity through some of the worst ways to make distributed mistakes.",
-        "startsAt": "2025-07-24T15:00:00",
-        "endsAt": "2025-07-24T15:45:00",
-        "isServiceSession": false,
-        "isPlenumSession": false,
-        "speakers": [
-          {
-            "id": "8bbe720c-a313-49a4-b6fd-f488669363eb",
-            "name": "William Brander"
-          }
-        ],
-        "categories": [],
-        "roomId": "58137",
-        "room": "Educator 1",
-        "liveUrl": null,
-        "recordingUrl": null,
-        "status": "Accepted",
-        "isInformed": true,
-        "isConfirmed": true
-      },
-      {
-        "questionAnswers": [],
-        "id": "873445",
-        "title": "Beyond LLMs: The Rise of Small, Efficient AI Models",
-        "description": "AI has long been dominated by large language models (LLMs) like GPT-4 and Claude, but a new wave of small, efficient AI models is transforming the field. These lightweight, high-performance models—such as Mistral, Llama 3, and Gemma—are revolutionizing edge computing, real-time AI applications, and privacy-conscious AI deployments.\r\n\r\nIn this session, we’ll explore:\r\n✅ Why smaller AI models matter: Performance, efficiency, and cost benefits\r\n✅ How they compare to traditional LLMs in accuracy and computational needs\r\n✅ Real-world applications in mobile AI, IoT, and on-device intelligence\r\n✅ Hands-on Demo: Deploying a lightweight AI model on an edge device (e.g., Raspberry Pi or mobile phone)\r\n\r\nThis talk is perfect for developers, AI enthusiasts, and data scientists looking to harness the power of small AI models for real-world applications. Join us to learn how these compact AI systems are reshaping the future of AI! 🚀",
-        "startsAt": "2025-07-24T15:00:00",
-        "endsAt": "2025-07-24T15:45:00",
-        "isServiceSession": false,
-        "isPlenumSession": false,
-        "speakers": [
-          {
-            "id": "43f66e40-f651-42b7-b7fd-159d9caeae4a",
-            "name": "Kavish Seechurn"
-          }
-        ],
-        "categories": [],
-        "roomId": "58138",
-        "room": "Educator 2",
-        "liveUrl": null,
-        "recordingUrl": null,
-        "status": "Accepted",
-        "isInformed": true,
-        "isConfirmed": true
-      },
-      {
-        "questionAnswers": [],
-        "id": "863172",
-        "title": "Microsoft Fabric: A New Era for Business Intelligence?",
-        "description": "Hey everyone, fellow tech enthusiasts!  Get ready to explore something truly exciting: Microsoft Fabric!\r\n\r\nThis comprehensive analytics solution is generating a lot of buzz, and for good reason.  It promises to revolutionize how we handle data.   \r\n\r\nFabric aims to streamline the entire data lifecycle.  Think ingestion, preparation, visualization, and reporting – all within a single, unified platform.   \r\n\r\nIt's a bold vision, no doubt.  And today, we're going to dissect what it offers and how it compares to the big players in the BI world.\r\n\r\nWe'll be putting Fabric's features, architecture, and potential advantages side-by-side with established solutions.  Think Tableau, Power BI (which is now even more deeply integrated within Fabric!), and other cloud-based BI platforms.\r\n\r\nThe big question: Is Fabric a game-changer, or a natural evolution?  Let's dive in and find out together!",
-        "startsAt": "2025-07-24T15:00:00",
-        "endsAt": "2025-07-24T15:45:00",
-        "isServiceSession": false,
-        "isPlenumSession": false,
-        "speakers": [
-          {
-            "id": "80b07936-76ef-4273-9a2f-396ff681dfb4",
-            "name": "Vincent Chu"
-          }
-        ],
-        "categories": [],
-        "roomId": "58139",
-        "room": "Accelerator",
-        "liveUrl": null,
-        "recordingUrl": null,
-        "status": "Accepted",
-        "isInformed": true,
-        "isConfirmed": true
-      }
-    ],
-    "isDefault": true
-  },
-  {
-    "groupId": 45863,
-    "groupName": "Friday",
-    "sessions": [
-      {
-        "questionAnswers": [],
-        "id": "971242",
-        "title": "Opening Keynote (Google): 🚀 What's New for Developers",
-        "description": null,
-        "startsAt": "2025-07-25T09:00:00",
-        "endsAt": "2025-07-25T09:45:00",
-        "isServiceSession": true,
-        "isPlenumSession": true,
-        "speakers": [
-          {
-            "id": "-2",
-            "name": "Atieno Allela"
-          }
-        ],
-        "categories": [],
-        "roomId": "58137",
-        "room": "Educator 1",
-        "liveUrl": null,
-        "recordingUrl": null,
-        "status": null,
-        "isInformed": false,
-        "isConfirmed": false
-      },
-      {
-        "questionAnswers": [],
-        "id": "875424",
-        "title": "Exploring AI Agents: From Fundamentals to Implementation",
-        "description": "AI agents are transforming automation and decision-making across various domains. In this session, we’ll introduce the fundamentals of AI agents, how they operate, and the key frameworks used to build them.\r\n\r\nWhether you're new to AI agents or looking to expand your knowledge, this session will equip you with the foundational concepts and tools to start building your own AI-powered solutions.",
-        "startsAt": "2025-07-25T10:00:00",
-        "endsAt": "2025-07-25T10:45:00",
-        "isServiceSession": false,
-        "isPlenumSession": false,
-        "speakers": [
-          {
-            "id": "38da18c7-eed7-46ec-9bac-ce60db8a1908",
-            "name": "Nisha Appanah"
-          }
-        ],
-        "categories": [],
-        "roomId": "58137",
-        "room": "Educator 1",
-        "liveUrl": null,
-        "recordingUrl": null,
-        "status": "Accepted",
-        "isInformed": true,
-        "isConfirmed": true
-      },
-      {
-        "questionAnswers": [],
-        "id": "873795",
-        "title": "Exploring OpenData Mauritius with Python Marimo",
-        "description": "Mauritius has a wealth of open government data available through the OpenData Mauritius platform, but unlocking its full potential requires the right tools. In this talk, we will explore how Python Marimo, a powerful interactive notebook framework, can be leveraged to analyze, visualize, and gain insights from these datasets in a more intuitive and interactive way. We’ll cover how Marimo differs from traditional Jupyter notebooks, its advantages in creating reactive data-driven applications, and how developers can use it to quickly prototype dashboards and reports.\r\n\r\nThrough a live demonstration, attendees will see how to fetch, clean, and analyze real-world datasets from OpenData Mauritius, and build interactive visualizations with minimal code. We’ll discuss best practices for working with open data, handling inconsistencies, and sharing insights effectively. By the end of the session, developers will walk away with a practical approach to making open data more accessible and actionable, empowering them to build their own interactive data applications with ease.",
-        "startsAt": "2025-07-25T10:00:00",
-        "endsAt": "2025-07-25T10:45:00",
-        "isServiceSession": false,
-        "isPlenumSession": false,
-        "speakers": [
-          {
-            "id": "477c56a0-d60c-42c6-beef-fc009a020fb8",
-            "name": "Kherin Bundhoo"
-          }
-        ],
-        "categories": [],
-        "roomId": "58138",
-        "room": "Educator 2",
-        "liveUrl": null,
-        "recordingUrl": null,
-        "status": "Accepted",
-        "isInformed": true,
-        "isConfirmed": true
-      },
-      {
-        "questionAnswers": [],
-        "id": "875946",
-        "title": "Scooby-Doo and the Malware Mystery",
-        "description": "Ever wondered how malware works? Just like Scooby-Doo unmasking villains,  we’ll dive deep into malware analysis to reveal digital threats!\r\nIn this session, we will crack open a mysterious malware sample using static, dynamic, and behavioral techniques using powerful tools like Wireshark, ProcMon, and sandboxes to expose its darkest secrets. Get ready for a thrilling, hands-on demo as we uncover how malware hides, spreads, and executes.\r\n\r\nBy the end, attendees will learn key malware analysis techniques, how to safely investigate threats, and how defenders stay ahead in the cyber race!",
-        "startsAt": "2025-07-25T10:00:00",
-        "endsAt": "2025-07-25T10:45:00",
+        "id": "1172282",
+        "title": "Suárez bite it, Let's Automate SOC to Fight It!",
+        "description": "In an era where Mauritian enterprises face a rising tide of sophisticated cyber threats, traditional manual Security Operations Center (SOC) processes are no longer sustainable. This session demonstrates how to leverage n8n, a fair-code workflow automation tool, to orchestrate a modern, responsive SOC that bridges the gap between disparate security tools. \r\n\r\nAttendees will discover how to transform raw security alerts into actionable intelligence by building automated workflows for alert normalization, threat enrichment, and rapid incident containment. By the end of the session, you will understand how to implement a self-hosted, privacy-centric automation layer that reduces analyst Tier 1 burnout and slashes Mean Time to Respond (MTTR) within the specific regulatory and infrastructure constraints of the Mauritian landscape.\r\n\r\nOpen source tools will include:\r\n- n8n (workflow automation and orchestration)\r\n- SIEM (log ingestion, correlation, detection)\r\n- Slack (SOC notifications)\r\n- VirusTotal (File/URL Analysis)\r\n- AbuseIPDB (IP Reputation)\r\n- GenAI (reasoning)\r\n\r\nI'll share a JSON template of the n8n workflow as a practical 'takeaway' that attendees can take back to their organizations.\r\n\r\nReference:\r\n- https://www.youtube.com/watch?v=Xh9AP-x06jU\r\n- https://kuraido.medium.com/soc-automation-2-0-20da7d4d1fe1\r\n- https://medium.com/@bappesarker2010/soc-automation-forwazuh-siem-integration-with-n8n-virustotal-gmail-03f3ee7ef684\r\n",
+        "startsAt": "2026-07-23T13:00:00",
+        "endsAt": "2026-07-23T14:00:00",
         "isServiceSession": false,
         "isPlenumSession": false,
         "speakers": [
@@ -482,8 +244,7 @@
           }
         ],
         "categories": [],
-        "roomId": "58139",
-        "room": "Accelerator",
+        "roomId": "74752",
         "liveUrl": null,
         "recordingUrl": null,
         "status": "Accepted",
@@ -492,22 +253,21 @@
       },
       {
         "questionAnswers": [],
-        "id": "874355",
-        "title": "From passion (and no coding background) to making our first game",
-        "description": "Dive into the whirlwind journey of creating a game from scratch in just four days for a game jam! As a designer with no formal coding experience, I'll share how my cousin and I, leveraging the power of Godot and a shared passion, brought our vision to life. This session details our rapid development process, highlighting the challenges of learning basic GDScript on the fly to bridge the gap between design and functionality.\r\n\r\nI'll focus on how design thinking and collaborative teamwork compensated for our initial coding limitations, and how we effectively utilized Godot’s features to animate and implement game mechanics.\r\n\r\nKey takeaways include practical insights on rapid prototyping, the importance of clear communication between design and code, and strategies for non-coders to contribute meaningfully to game development.\r\n\r\nAttendees will gain valuable perspective on overcoming technical hurdles through collaborative learning and a focused, passion-driven approach, demonstrating that anyone can contribute to game creation with the right mindset and tools.",
-        "startsAt": "2025-07-25T11:00:00",
-        "endsAt": "2025-07-25T11:45:00",
+        "id": "1141058",
+        "title": "Digital Engagement: The Cost/Return of Global Neurological Debt.",
+        "description": "In this talk, we are going to discuss the \"Age of Engagement\" and how digital platforms that can sustain and grow user engagement have become the primary drivers of capital market performance --- across the board!\r\n\r\nWe are going to see how short-form, engagement-optimized media produces neurological and psychological side-effects that accumulate as systemic \"neurological debt\". Through a systems and historical lens, we are going to also examine how capital incentives are reshaping human cognitive behavior, reinforcing feedback loops of increasing consumption, impulsive behavior, and behavioral dependency. \r\n\r\nTo close, we will discuss how to protect ourselves by designing engagement systems that respect human attention and cognition, not just metrics. By prioritizing transparency, user agency, and long-term well-being, platforms can reduce neurological side-effects while still thriving. ",
+        "startsAt": "2026-07-23T14:00:00",
+        "endsAt": "2026-07-23T15:00:00",
         "isServiceSession": false,
         "isPlenumSession": false,
         "speakers": [
           {
-            "id": "bb67370e-df20-421e-83b9-6316a7c1a018",
-            "name": "Cedric Sookahet"
+            "id": "a189d971-edd8-46d2-a69a-d561a20c681e",
+            "name": "Chittesh Sham"
           }
         ],
         "categories": [],
-        "roomId": "58137",
-        "room": "Educator 1",
+        "roomId": "74750",
         "liveUrl": null,
         "recordingUrl": null,
         "status": "Accepted",
@@ -516,13 +276,299 @@
       },
       {
         "questionAnswers": [],
-        "id": "870181",
-        "title": "Exploring the openSUSE Project",
-        "description": "openSUSE is more commonly known for its Linux distributions - either Tumbleweed or Leap. It's also often confused with the commercial Linux distribution SUSE Enterprise Linux.\r\n\r\nHowever, the openSUSE Project is not limited to just a Linux distribution. In this session, we will explore the project and discover other sub-projects, e.g Open Build Service (OBS), openQA, Kiwi. We will look at other lesser known distributions of the project and their uses. We will also discuss open source projects that are used for community management.",
-        "startsAt": "2025-07-25T11:00:00",
-        "endsAt": "2025-07-25T11:45:00",
+        "id": "1227756",
+        "title": "Software Development Lifecycle: From Code to Testing in the Age of AI",
+        "description": "The Software Development Lifecycle (SDLC) is evolving rapidly with the integration of Artificial Intelligence. This session explores how AI is transforming every phase of software delivery—from requirements gathering and design to coding, testing, deployment, and ongoing support. Learn how AI-powered tools assist developers with code generation, intelligent recommendations, automated documentation, code reviews, debugging, and test creation. Discover how organizations are leveraging solutions such as GitHub Copilot or others  and AI-driven testing platforms to improve productivity, accelerate release cycles, reduce defects, and enhance software quality. Attendees will gain practical insights into adopting AI across the SDLC while maintaining governance, security, and best development practices.\r\n",
+        "startsAt": "2026-07-23T14:00:00",
+        "endsAt": "2026-07-23T15:00:00",
         "isServiceSession": false,
         "isPlenumSession": false,
+        "speakers": [
+          {
+            "id": "37852cc9-f385-437b-9b1b-5d86dc568517",
+            "name": "Hema Tahadil"
+          },
+          {
+            "id": "e0e8644f-b55d-4160-86cb-aa71359ccd06",
+            "name": "Asgar Fakira"
+          }
+        ],
+        "categories": [],
+        "roomId": "74751",
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": "Accepted",
+        "isInformed": true,
+        "isConfirmed": true
+      },
+      {
+        "questionAnswers": [],
+        "id": "1129689",
+        "title": "Making an API for building APIs",
+        "description": "In this session, I’ll take you through the journey of building a high-performance API platform from scratch. I’ll share the full process—how I designed the system, tackled key technical challenges, and made decisions to ensure it’s fast, reliable, and developer-friendly. You’ll see how I handled complex issues like managing large amounts of data, keeping everything safe from crashes, and making the API responsive even under heavy use. Along the way, I’ll explain the lessons I learned, mistakes I made, and strategies that worked. By the end, you’ll have a clear idea of what it takes to design and build a modern API system, the trade-offs involved, and what to expect if you ever try something similar yourself. This talk is aimed at giving you insights you can apply directly in your own projects.\r\n\r\nSlides: https://api.kinesis.world/go/devcon-slides-2026\r\nShowcasing https://api.kinesis.world",
+        "startsAt": "2026-07-23T14:00:00",
+        "endsAt": "2026-07-23T15:00:00",
+        "isServiceSession": false,
+        "isPlenumSession": false,
+        "speakers": [
+          {
+            "id": "7f56dfcf-b457-47b0-be84-191a9636628d",
+            "name": "Kishan Takoordyal"
+          }
+        ],
+        "categories": [],
+        "roomId": "74752",
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": "Accepted",
+        "isInformed": true,
+        "isConfirmed": true
+      },
+      {
+        "questionAnswers": [],
+        "id": "1172262",
+        "title": "Hackers Don’t Miss Like Ronaldo. Defend Your Pipeline Before They Score.",
+        "description": "This session provides local software developers with a hands-on guide to implementing DevSecOps practices that address real challenges in the Mauritian software development environment. Attendees will explore common pipeline vulnerabilities, including hardcoded secrets, outdated dependencies, insecure containers, and unsafe coding patterns and see how these issues can be exploited if left unchecked.\r\n\r\nThrough a live demonstration of a deliberately vulnerable application, participants will learn to detect and prevent these vulnerabilities using free, industry-standard tools such as Gitleaks, Trivy, and OWASP Dependency-Check. The session demonstrates how to integrate these tools into CI/CD pipelines, embrace Shift Left security, and automate vulnerability detection, providing practical, actionable strategies that developers can immediately apply to their projects.\r\n\r\nBy attending, participants will gain a buffet of experiences and ideas: they will learn concrete techniques to secure code, understand enterprise-level security workflows, and discover ways to integrate best practices into their own development processes, all while connecting concepts to the realities of software development in Mauritius.\r\n\r\nLearning Outcomes:\r\n- Identify common security vulnerabilities in modern development pipelines\r\n- Apply practical DevSecOps tools to prevent breaches early\r\n- Automate security scans within CI/CD workflows\r\n- Translate enterprise-level security practices into local development environments\r\n\r\nReference:\r\n- https://www.youtube.com/watch?v=ZUquwnJnfNw&t=1013s&pp=ygUPZ2l0bGVha3MgZ2l0aHVi\r\n- https://www.youtube.com/watch?v=pZumqxTwLNw\r\n- https://www.youtube.com/watch?v=hWiI700y3J0\r\n",
+        "startsAt": "2026-07-23T15:00:00",
+        "endsAt": "2026-07-23T16:00:00",
+        "isServiceSession": false,
+        "isPlenumSession": false,
+        "speakers": [
+          {
+            "id": "4ed66d71-84b0-4175-afe9-c3eb48b4eb4f",
+            "name": "Namita Sham"
+          }
+        ],
+        "categories": [],
+        "roomId": "74750",
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": "Accepted",
+        "isInformed": true,
+        "isConfirmed": true
+      },
+      {
+        "questionAnswers": [],
+        "id": "1169715",
+        "title": "WebAI - Exploring agentic capabilities within the browser",
+        "description": "AI carries a lot of hype and it's most often known via the lens of a \"chatbox\", however there are many more ways where it's being adopted, and one such place is natively inside the browser. There have been significant development in this area by browser vendors and in this session we will explore these proposed standards and how to use them today in all browsers.\r\n\r\nWe are talking here about the \r\n- Prompt API: Sends prompts to built-in Gemini Nano for text generation.\r\n- Summarizer API: Summarizes text content.\r\n- Translator API: Translates text on-device without server-side processing.\r\n- Language Detector API: Identifies the language of text.\r\n- Writer API / Rewriter API: Assists with content creation, rewriting, and refining text.\r\n- Proofreader API: Provides grammatical and punctuation corrections. \r\n\r\nAll of these are able to work in-browser, offline, or optionally be polyfilled and use another agent like Gemini or OpenAI models as the backend. \r\n\r\nThere's a lot of work being done to starndardized these by the W3C\r\n\r\nThe goal is to demonstrate an alternative approach to the ai world, which can be private and offline.",
+        "startsAt": "2026-07-23T15:00:00",
+        "endsAt": "2026-07-23T16:00:00",
+        "isServiceSession": false,
+        "isPlenumSession": false,
+        "speakers": [
+          {
+            "id": "d802c569-2764-4a8c-ac90-4dec8e3c3f41",
+            "name": "Sandeep Ramgolam"
+          }
+        ],
+        "categories": [],
+        "roomId": "74751",
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": "Accepted",
+        "isInformed": true,
+        "isConfirmed": true
+      },
+      {
+        "questionAnswers": [],
+        "id": "1155329",
+        "title": "Bend it like Beckham using computer vision",
+        "description": "Can data science actually teach you how to bend it like Beckham? In this session, I break down how I transformed the subjective art of the free kick into a measurable science. I’ll walk you through the end-to-end pipeline: from using Computer Vision to track ball trajectory and body mechanics, to applying Machine Learning algorithms that identify the \"sweet spot\" variables for dip and swerve. We’ll explore how I used Data Science to analyze thousands of data points on launch angles, foot-to-ball contact, and velocity to iteratively improve my technique. Whether you’re a sports fan, a data nerd, or both, you’ll see how predictive modeling and biomechanical analysis can turn raw practice into a high-performance feedback loop.",
+        "startsAt": "2026-07-23T15:00:00",
+        "endsAt": "2026-07-23T16:00:00",
+        "isServiceSession": false,
+        "isPlenumSession": false,
+        "speakers": [
+          {
+            "id": "0834ce8d-76cf-489b-b778-61ff8fa6ed5e",
+            "name": "Noor Yadallee"
+          }
+        ],
+        "categories": [],
+        "roomId": "74752",
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": "Accepted",
+        "isInformed": true,
+        "isConfirmed": true
+      },
+      {
+        "questionAnswers": [],
+        "id": "1155448",
+        "title": "Suffering from htmlophobia? Remedy: PugJS!",
+        "description": "Are you suffering from an HTML invasion in your code?  If you’re tired of scrolling through hundreds of lines just to find a missing div, it’s time for a cleaner approach.\r\n\r\nPugJS is the remedy for modern markup. By replacing bulky tags with indentation-based logic, it restores sanity to your workflow. In this session, we’ll cover:\r\n\r\nSyntax Checkup: Replacing verbose tags with breathable whitespace.\r\n\r\nShorthand Management: Using CSS selector shortcuts for classes and IDs.\r\n\r\nPreventative Care: Integrating PugJS into React to immunize your components against boilerplate.\r\n\r\nStop the markup invasion. Take the PugJS prescription and simplify your code. \r\n\r\nAnd also, does it work with Vibe coding as well?",
+        "startsAt": "2026-07-23T16:00:00",
+        "endsAt": "2026-07-23T17:00:00",
+        "isServiceSession": false,
+        "isPlenumSession": false,
+        "speakers": [
+          {
+            "id": "330d0193-0f5f-4f9a-9df1-741448fa390d",
+            "name": "Nayar Joolfoo"
+          }
+        ],
+        "categories": [],
+        "roomId": "74750",
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": "Accepted",
+        "isInformed": true,
+        "isConfirmed": true
+      },
+      {
+        "questionAnswers": [],
+        "id": "1151357",
+        "title": "Engineering Challenges of Paying People Across 160+ Countries",
+        "description": "This talk dives into the engineering challenges of designing systems that handle payments for employees and contractors across more than 100 countries, emphasizing system design and distributed engineering principles rather than any specific product. It explores how factors like multiple payment rails, differing banking standards, currency conversions, time zones, regulatory requirements, and settlement delays impact architectural decisions. Attendees will learn practical techniques for building reliable, high-integrity financial workflows, including event-driven architectures, idempotent operations, fault-tolerant processing, robust validation, and reconciliation strategies. The session highlights how software engineers can apply distributed systems and backend design concepts to ensure correctness, scalability, and resilience in real-world global financial systems.",
+        "startsAt": "2026-07-23T16:00:00",
+        "endsAt": "2026-07-23T17:00:00",
+        "isServiceSession": false,
+        "isPlenumSession": false,
+        "speakers": [
+          {
+            "id": "dd3a76fa-fceb-4f62-81a1-b8c4f087d7d2",
+            "name": "Avish Cheetaram"
+          }
+        ],
+        "categories": [],
+        "roomId": "74751",
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": "Accepted",
+        "isInformed": true,
+        "isConfirmed": true
+      },
+      {
+        "questionAnswers": [],
+        "id": "1171113",
+        "title": "Triathlon performance dashboard implementation in Clojure",
+        "description": "This talk take the user through the process of implementing a performance monitoring dashboard using the Clojure Programming Language.\r\n\r\nThe talk will follow the following plan\r\n\r\n- Data ingestion (Garmin/Strava API)\r\n- Data storage in PostgreSQL\r\n- Time-Series Processing\r\n- ETL in Clojure\r\n- Fatigue & Performance Modeling\r\n- Visualize (Clerk notebook)\r\n- Serve dashboard via Ring/Compojure API\r\n- Example real use case\r\n- Possible future extensions (e.g integration with an LLM, ML, time series analysis)\r\n\r\nafter a brief presentation and motivation about the project.\r\n\r\nA demo will be given with a tool that can be used to monitor endurance sport performance and the talk takes the user through the process of building it.",
+        "startsAt": "2026-07-23T16:00:00",
+        "endsAt": "2026-07-23T17:00:00",
+        "isServiceSession": false,
+        "isPlenumSession": false,
+        "speakers": [
+          {
+            "id": "2cfd825e-9a05-47b9-a7bf-d5c2f4f8b74a",
+            "name": "Marius Rabenarivo"
+          }
+        ],
+        "categories": [],
+        "roomId": "74752",
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": "Accepted",
+        "isInformed": true,
+        "isConfirmed": true
+      }
+    ]
+  },
+  {
+    "groupId": 20260724,
+    "groupName": "Friday",
+    "isDefault": false,
+    "sessions": [
+      {
+        "questionAnswers": [],
+        "id": "1169488",
+        "title": "From CRUD to Cognitive Pipelines: Designing AI-Aware Backends in .NET",
+        "description": "Traditional .NET systems were built around CRUD operations: deterministic, transactional, predictable. But once AI enters the system, the model shifts. Requests become reasoning pipelines. Some steps are deterministic. Others are probabilistic. And suddenly architecture matters more than ever.\r\n\r\nIn this session, we’ll explore how to design “cognitive pipelines” in ASP.NET Core — systems where AI is embedded as a component, not the brain. We’ll examine where AI fits in clean architecture, how to protect system invariants, and why prompt logic must be treated like versioned APIs.\r\n\r\nWe’ll also address the rise of “vibe coding” — fast, AI-assisted development — and clarify when it accelerates exploration and when it silently erodes architectural integrity.",
+        "startsAt": "2026-07-24T09:00:00",
+        "endsAt": "2026-07-24T10:00:00",
+        "isServiceSession": false,
+        "isPlenumSession": false,
+        "speakers": [
+          {
+            "id": "ba185c08-5796-47fe-8407-6e7c19518d76",
+            "name": "Henintsoa Rajaonarivelo"
+          }
+        ],
+        "categories": [],
+        "roomId": "74750",
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": "Accepted",
+        "isInformed": true,
+        "isConfirmed": true
+      },
+      {
+        "questionAnswers": [],
+        "id": "1142978",
+        "title": "Disaster. Stories. A tale by DevOps.",
+        "description": "DevOps often looks smooth and automated from the outside — fast deployments, seamless pipelines, and cutting-edge tools. But behind the scenes lies a much messier reality: fragile pipelines, hidden technical debt, alert fatigue, cultural challenges, and unexpected production failures. This session explores the unrevealed side of DevOps through real stories, lessons learned, and practical insights. It highlights the human factors behind successful delivery — communication, collaboration, resilience, and continuous learning. Discover how teams transform chaos into reliability, strengthen trust across development and operations, and build systems that truly last. You’ll also see why, despite its challenges, DevOps remains one of the most exciting, impactful, and rewarding paths in modern technology today.",
+        "startsAt": "2026-07-24T09:00:00",
+        "endsAt": "2026-07-24T10:00:00",
+        "isServiceSession": false,
+        "isPlenumSession": false,
+        "speakers": [
+          {
+            "id": "4f0841a9-53e1-4034-ab51-f6cfc69e019a",
+            "name": "Medhavi Pareanen"
+          },
+          {
+            "id": "cfeb4255-8f21-4035-8c6c-d278196af487",
+            "name": "Madhav Ramdin"
+          }
+        ],
+        "categories": [],
+        "roomId": "74751",
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": "Accepted",
+        "isInformed": true,
+        "isConfirmed": true
+      },
+      {
+        "questionAnswers": [],
+        "id": "1168421",
+        "title": "Digital Systems in Physical Infrastructure: Observations from an Electrical Perspective",
+        "description": "Software increasingly controls real-world systems, from power networks to robotics and healthcare devices. But from an electrical engineering perspective, when AI models, connected devices, and cloud-based platforms interact with critical infrastructure, the consequences extend beyond software.\r\n\r\nIn electrical systems, latency influences control loops. Vulnerabilities affect operational networks. Optimization models can overlook physical constraints such as stability limits, load dynamics, and protection mechanisms.\r\n\r\nDrawing from experience across AI, cybersecurity, and embedded systems, this session reflects on how intelligent software behaves once deployed into real-world electrical environments and what becomes visible when digital logic meets physical systems.",
+        "startsAt": "2026-07-24T09:00:00",
+        "endsAt": "2026-07-24T10:00:00",
+        "isServiceSession": false,
+        "isPlenumSession": false,
+        "speakers": [
+          {
+            "id": "8e8d09fa-6b8b-401d-8b8b-cd2f0bba4a66",
+            "name": "Marie Alexia Issanhora Jolicoeur"
+          }
+        ],
+        "categories": [],
+        "roomId": "74752",
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": "Accepted",
+        "isInformed": true,
+        "isConfirmed": true
+      },
+      {
+        "questionAnswers": [],
+        "id": "1493b0e8-4212-4697-837c-6926d69e21e3",
+        "title": "Keynote: Mauritius Telecom",
+        "description": null,
+        "startsAt": "2026-07-24T10:00:00",
+        "endsAt": "2026-07-24T11:00:00",
+        "isServiceSession": true,
+        "isPlenumSession": true,
+        "speakers": [],
+        "categories": [],
+        "roomId": "74750",
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": null,
+        "isInformed": false,
+        "isConfirmed": false
+      },
+      {
+        "questionAnswers": [],
+        "id": "1167895",
+        "title": "Panel Discussion: Open Source in Africa and the Indian Ocean — Community, Contribution, and Career",
+        "description": "Open source software powers the majority of the world's digital infrastructure, yet contributors from Africa and the Indian Ocean region remain significantly underrepresented in global open source communities. With growing developer populations across the continent and increasing internet access, the potential for meaningful participation has never been higher. So what's holding us back — and what's already working?\r\n\r\nThis panel gathers open source contributors, community organisers, and technology professionals from the region to discuss the state of open source participation locally and across Africa. We'll explore the barriers to contribution, the role of local communities and conferences in nurturing talent, how open source involvement translates into career opportunities, and what maintainers and foundations can do to be more inclusive. If you've ever wondered how to go from user to contributor — or how to build a local open source culture — this discussion is for you.",
+        "startsAt": "2026-07-24T11:00:00",
+        "endsAt": "2026-07-24T13:00:00",
+        "isServiceSession": false,
+        "isPlenumSession": true,
         "speakers": [
           {
             "id": "ef7633d0-46b2-4045-bbc3-3dc1fcd55596",
@@ -530,8 +576,7 @@
           }
         ],
         "categories": [],
-        "roomId": "58138",
-        "room": "Educator 2",
+        "roomId": "74750",
         "liveUrl": null,
         "recordingUrl": null,
         "status": "Accepted",
@@ -540,11 +585,325 @@
       },
       {
         "questionAnswers": [],
-        "id": "871938",
-        "title": "Let’s build robots, its too easy",
-        "description": "A look on how open-source project and community empowers everyone beyond individual capabilities\r\n\r\nIn this session, we will uncover the incredible potential of open-source projects and how they enable developers, regardless of their experience level, to create remarkable applications and solutions. Attendees will discover how a wealth of shared knowledge and resources empowers individuals to collaborate and innovate, transforming simple ideas into impactful projects. We'll highlight several success stories from the open-source community that showcase rapid development, novel applications, and creative problem-solving, all achievable with minimal prior expertise. \r\nA small live demonstration building a robotic apparatus will be conducted\r\nSharing materials of the latest available projects and materials\r\nBy the end of this session, participants will be inspired to dive into the world of open-source, equipped with the tools and confidence to start their own projects and contribute to vibrant communities.\r\n",
-        "startsAt": "2025-07-25T11:00:00",
-        "endsAt": "2025-07-25T11:45:00",
+        "id": "1170593",
+        "title": "Onboarding AI: How to Recruit, Train & Manage Your AI Workforce",
+        "description": "What if building an AI agent was less like writing code and more like hiring a new employee?\r\nIn this talk, we explore the emerging reality of digital workers — AI agents that don't just answer questions but autonomously execute tasks, make decisions, and collaborate across enterprise systems. Using the familiar metaphor of the employee lifecycle, we'll walk through what it actually takes to go from experimenting with LLMs to deploying a reliable, governed AI workforce in a real enterprise environment.\r\nWe'll cover the full journey: recruiting the right AI stack for your needs, onboarding agents into your existing systems and data, training them to understand your domain, managing them with guardrails and human oversight, running performance reviews to measure real business impact, and knowing when to scale the team — or let an agent go.\r\nThis is not a demo-driven fairy tale. Expect honest lessons from the trenches — what works, what breaks, and what nobody warns you about when you start treating AI agents as part of your workforce.\r\nWhether you're a developer building agents, a tech lead evaluating frameworks, or a decision-maker exploring AI strategy, you'll walk away with a practical, battle-tested playbook for bringing digital workers into your organization.\r\nKey takeaways:\r\n\r\nA practical framework for thinking about AI agents as digital workers\r\nArchitecture patterns and tool choices for enterprise-grade agents\r\nHow to implement guardrails, governance, and human-in-the-loop oversight\r\nEvaluation strategies — measuring what actually matters\r\nLessons learned from deploying AI agents in a regulated enterprise",
+        "startsAt": "2026-07-24T13:00:00",
+        "endsAt": "2026-07-24T14:00:00",
+        "isServiceSession": false,
+        "isPlenumSession": false,
+        "speakers": [
+          {
+            "id": "e461d377-a8f7-4e6a-99bd-8e13d844c4cb",
+            "name": "Naveesh Doolhur"
+          }
+        ],
+        "categories": [],
+        "roomId": "74750",
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": "Accepted",
+        "isInformed": true,
+        "isConfirmed": true
+      },
+      {
+        "questionAnswers": [],
+        "id": "1170673",
+        "title": "Scaling a mobile app to 4.5M+ Users with Clean Architecture & .NET",
+        "description": "What happens when a retail application transitions from a \"nice-to-have\" tool to a critical daily companion? \r\n\r\nIn early 2023, the application reached 2.4 million active users. By early 2024, that number surged to over 4.5 million households, with an average growth of 150,000 new users every month. \r\n\r\nA major catalyst for this hyper-growth was a strategic shift in \"Digital Sustainability\": the complete digitalization of receipts. Today, 41% of loyalty cardholders have converted to the app, making the backend the front line of the customer experience. \r\n\r\nBut scaling is more than just adding servers. This session is a deep dive into the engineering journey required to survive this 10x surge in transaction volume. \r\n\r\nWe move beyond the theory to show how Clean Architecture and Modern .NET allowed us to scale without collapsing under technical debt. \r\n\r\nWe will explore the three pillars of our resilient backend: \r\n\r\nHigh-Performance Patterns: Mastering .NET Asynchronous programming to absorb \"Saturday-peak\" traffic spikes. \r\n\r\nArchitectural Decoupling: How Clean Architecture kept our business logic \"pure\" and independent of database or API changes. \r\n\r\nThe Safety Net: Implementing a robust Unit Testing strategy to ensure that scaling up doesn't mean breaking down. We’ll show how decoupling makes your code naturally testable. \r\n\r\nThe Highlight: A live \"Double-Feature\" Demo. \r\n\r\nFirst, a Live Stress Test with Artillery to push the API to its limits. \r\n\r\nSecond, a Test-Driven Refactor: Watch how we use unit tests to confidently optimize a critical path in real-time without breaking a single feature. ",
+        "startsAt": "2026-07-24T13:00:00",
+        "endsAt": "2026-07-24T14:00:00",
+        "isServiceSession": false,
+        "isPlenumSession": false,
+        "speakers": [
+          {
+            "id": "79304f68-95df-42f2-b787-b5e5c8f22360",
+            "name": "Hansa Jugnarain"
+          }
+        ],
+        "categories": [],
+        "roomId": "74751",
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": "Accepted",
+        "isInformed": true,
+        "isConfirmed": true
+      },
+      {
+        "questionAnswers": [],
+        "id": "1172162",
+        "title": ".NET Blazor: Building static sites (without SSR)",
+        "description": ".NET Blazor (Standalone) is a powerful alternative to developing client-side applications with little to no dependency on typical web servers.\r\n\r\nThis is not a new concept in any way - it might even be the oldest concept ever on the internet - but this session aims to cover the journey of using unlikely combinations of technologies to achieve a goal.\r\n\r\nThis session covers an interesting middle ground focused on:\r\n- Building a CMS with .NET Blazor\r\n- Generating static HTML pages using Blazor HTML Rendering\r\n- Alternative approach via Powershell scripting\r\n- Hosting static pages using Firebase\r\n- Challenges and limitations\r\n\r\nLeave session with some insights on how problem solving can be easy by focusing on key foundational concepts in development.",
+        "startsAt": "2026-07-24T13:00:00",
+        "endsAt": "2026-07-24T14:00:00",
+        "isServiceSession": false,
+        "isPlenumSession": false,
+        "speakers": [
+          {
+            "id": "cf415be6-0558-4411-aa4d-dee4f0648547",
+            "name": "Vidush H. Namah"
+          }
+        ],
+        "categories": [],
+        "roomId": "74752",
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": "Accepted",
+        "isInformed": true,
+        "isConfirmed": true
+      },
+      {
+        "questionAnswers": [],
+        "id": "1193611",
+        "title": "Anatomy of an AI Assistant",
+        "description": "Chatbots wait for a prompt; agents wait for a goal. This talk is a deep dive into the transition from passive AI to active, autonomous partners. I’ll demonstrate a personal assistant agent I built to handle my daily admin and explain the engineering that makes it work.\r\n\r\nWe will deconstruct the \"Agentic Stack\" piece by piece, focusing on how to build a reliable system without relying on opaque, one-click solutions.\r\n\r\nSystem Prompting for Autonomy: Crafting the \"DNA\" that keeps an agent on-task without human hand-holding.\r\n\r\nTools and Sub-Agents: When to give your agent an API and when to give it a \"helper\" agent.\r\n\r\nMulti Memory Types: What should you store where, and how do you manage context around the current task.\r\n\r\nThe Agentic Loop: Wrapping everything in a loop to bring proactivity to LLMs.\r\n\r\nStop using AI as a chat and start building it into a 24/7 proactive helper.",
+        "startsAt": "2026-07-24T14:00:00",
+        "endsAt": "2026-07-24T15:00:00",
+        "isServiceSession": false,
+        "isPlenumSession": false,
+        "speakers": [
+          {
+            "id": "50f6bd48-8b68-4464-8a92-76292bf3f7dd",
+            "name": "Matthew Hood"
+          }
+        ],
+        "categories": [],
+        "roomId": "74750",
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": "Accepted",
+        "isInformed": true,
+        "isConfirmed": true
+      },
+      {
+        "questionAnswers": [],
+        "id": "1172299",
+        "title": "Bridging the Screen Reader UX Gap in Web Forms Using AI-Assisted Step-by-Step Interaction",
+        "description": "Many web forms can be technically accessible yet still frustrating to complete with a screen reader. The UX gap shows up in everyday moments: long sequential navigation, unclear structure, losing context across sections, and error messages that are hard to find and fix. This talk presents an AI-assisted, step-by-step interaction model that guides users through complex forms in smaller, manageable steps while keeping the experience predictable and user-controlled. I’ll demonstrate the approach with NVDA on a real form workflow, comparing the traditional experience against the guided flow and highlighting what improves; task completion time, error rate, and correction effort. You’ll also get practical engineering guidance on how to build it: progressive disclosure, correct focus management, accessible announcements, and safe boundaries for AI assistance so it supports clarity without changing the meaning of the form or taking decisions away from the user.",
+        "startsAt": "2026-07-24T14:00:00",
+        "endsAt": "2026-07-24T15:00:00",
+        "isServiceSession": false,
+        "isPlenumSession": false,
+        "speakers": [
+          {
+            "id": "79196cc1-32fa-4ce8-8204-7aba4c84e9ce",
+            "name": "Kushul Soomaree"
+          }
+        ],
+        "categories": [],
+        "roomId": "74751",
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": "Accepted",
+        "isInformed": true,
+        "isConfirmed": true
+      },
+      {
+        "questionAnswers": [],
+        "id": "1123603",
+        "title": "The Execution Gap: Why Your AI Strategy Will Fail (And How to Build One That Won't)",
+        "description": "Last year, every CTO had an AI strategy. This year, most of them have expensive technical debt instead.\r\n\r\nThe pattern is painfully familiar: boards mandate transformation, CTOs promise results, teams get handed tools they can't integrate. We saw it with multi-cloud adoption - companies spent millions on \"vendor independence\" and built infrastructure so complex their own engineers couldn't operate it. Now we're watching it repeat with AI, except faster and at larger scale.\r\n\r\nHere's the uncomfortable truth: AI isn't failing. Your execution model is.\r\n\r\nIn this session, I'll show you why smart CTOs keep buying strategies their teams can't deliver—and the decision framework that breaks this cycle. You'll learn:\r\n\r\n- The Multi-Cloud Lesson: Why last year's AI+cloud investments became this year's operational nightmares (and what the pattern reveals about your organization)\r\n- The Execution Gap Diagnostic: How to identify whether you're building genuine capability or just performing strategy theater for the board—before you waste millions finding out\r\n- AI as Amplifier, Not Magic: Why AI magnifies whatever you already are. If your processes are inefficient, AI makes you inefficiently faster. If your teams can't execute, AI gives them more sophisticated ways to fail.\r\n- The Capability Audit: Five questions that reveal whether your organization can actually execute what you're about to buy (works for AI, multi-cloud, or the next shiny object from Harvard Business Review)\r\n- Leverage vs. Theater: How to use AI to buy back your team's time and amplify value creation - instead of creating another layer of complexity that requires headcount to manage\r\n\r\nAI is like money or a fork: it nourishes or it hurts, depending on how you wield it. Most organizations are about to stab themselves. This session gives you the framework to do otherwise.\r\n\r\nWhat you'll walk away with: A decision model you can apply Monday morning to evaluate whether your AI strategy (or any technology strategy) is building leverage or debt. No vendor pitches. No \"it depends\" consulting theater. Just honest pattern recognition from someone who's cleaned up after these disasters.\r\n\r\nWho should attend: CTOs and technical leaders tired of watching transformation initiatives turn into expensive complexity. Engineering leaders drowning in tools they didn't choose. Decision-makers who suspect their current approach is performative but don't know how to fix it.\r\n\r\nWho should skip this: Anyone looking for AI evangelism or validation that their current strategy is working. This session challenges assumptions—constructively, but directly.\r\n\r\nSession Note: Thursday or Friday Please xD",
+        "startsAt": "2026-07-24T14:00:00",
+        "endsAt": "2026-07-24T15:00:00",
+        "isServiceSession": false,
+        "isPlenumSession": false,
+        "speakers": [
+          {
+            "id": "80b07936-76ef-4273-9a2f-396ff681dfb4",
+            "name": "Vincent Chu"
+          },
+          {
+            "id": "52e311eb-1a8c-479d-b291-f486ac85d2df",
+            "name": "Ketika Jhingoor"
+          }
+        ],
+        "categories": [],
+        "roomId": "74752",
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": "Accepted",
+        "isInformed": true,
+        "isConfirmed": true
+      },
+      {
+        "questionAnswers": [],
+        "id": "1193748",
+        "title": "Claude Better: Months of Learnings in Minutes",
+        "description": "I haven't written a line of code in 6 months. In that time, I've shipped more than in the previous 3 years combined. Human driven, AI implemented. This talk shares how a few tips took Claude from good to unbelievably great.\r\n\r\nMost people using Claude are leaving value on the table. This is a curated set of practical tips: things that are easy to overlook, under-use, or haven't had the spotlight they deserve. Each tip is drawn from real production use, not theory.\r\n\r\nThe draft list:\r\n\r\n1. Context management and visibility  \r\n2. Sub-agent and agent team workflows  \r\n3. Setting up projects for success (progressive disclosure, constitution files)  \r\n4. Rewinding history and resetting  \r\n5. Intentional compaction  \r\n6. The research-plan-implement pattern  \r\n7. Desktop and mobile handoff  \r\n8. Telemetry visibility and token/usage window management  \r\n9. Skills as reusable workflow building blocks  \r\n10. Meta prompting frameworks\r\n\r\nThe list may evolve before the conference as the space moves quickly. It may also reduce slightly to give more time per item and go deeper rather than wider. But the core idea stays the same: specific, practical ways to get dramatically more value from every conversation.\r\n\r\nAll levels could benefit, but is geared more towards the Intermediate + Advanced Levels. ",
+        "startsAt": "2026-07-24T15:00:00",
+        "endsAt": "2026-07-24T16:00:00",
+        "isServiceSession": false,
+        "isPlenumSession": false,
+        "speakers": [
+          {
+            "id": "61d89e71-a2c1-47fe-920c-7c769b35e358",
+            "name": "Dylan Harbour"
+          }
+        ],
+        "categories": [],
+        "roomId": "74750",
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": "Accepted",
+        "isInformed": true,
+        "isConfirmed": true
+      },
+      {
+        "questionAnswers": [],
+        "id": "1166510",
+        "title": "L’architecture : le coût qu’on découvre trop tard",
+        "description": "On évalue souvent la qualité d’une architecture logicielle à travers des critères purement techniques : performance, scalabilité, choix des frameworks ou élégance du code. Pourtant, dans les projets réels, le coût des mauvaises décisions d’architecture est rarement visible dans les métriques techniques. Il se manifeste ailleurs : dans des délais qui s’allongent, des fonctionnalités simples qui deviennent complexes, une perte de confiance du métier, des équipes qui se démotivent et une capacité d’innovation qui diminue progressivement.\r\n\r\nÀ partir de retours d’expérience concrets sur des projets en production, cette session propose d’explorer l’impact réel de l’architecture sur la delivery, l’organisation des équipes et la réussite des produits. L’objectif n’est pas de présenter une architecture idéale ni de comparer des solutions techniques, mais d’adopter une approche pragmatique centrée sur la capacité à évoluer, à livrer et à créer de la valeur dans des contextes réels.",
+        "startsAt": "2026-07-24T15:00:00",
+        "endsAt": "2026-07-24T16:00:00",
+        "isServiceSession": false,
+        "isPlenumSession": false,
+        "speakers": [
+          {
+            "id": "bca04626-cca6-4f68-8899-242e14b732dd",
+            "name": "Vanessa V.Chellen"
+          }
+        ],
+        "categories": [],
+        "roomId": "74751",
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": "Accepted",
+        "isInformed": true,
+        "isConfirmed": true
+      },
+      {
+        "questionAnswers": [],
+        "id": "1170663",
+        "title": "a11y in Mobile Applications: Best practices, Technical Implementation & Real-world Challenges",
+        "description": "Accessibility is a fundamental quality attribute of modern mobile applications — not just a compliance requirement, but a key factor in usability and user experience. Yet in real-world mobile projects, accessibility is often added late, partially implemented, or misunderstood. \r\n\r\nThis session focuses on practical accessibility implementation for mobile applications, with concrete examples using a .NET MAUI app. We explore how accessibility features interact with Android and iOS platforms and how developers can design applications that behave correctly when assistive technologies are enabled. \r\n\r\nThrough live demonstrations, we cover essential best practices: \r\n\r\nConfiguring accessibility properties and semantic roles for UI components \r\n\r\nProperly labeling elements for screen readers such as VoiceOver and TalkBack \r\n\r\nStructuring navigation to support assistive technologies and focus management \r\n\r\nHandling text scaling, layout adaptation, and dynamic content \r\n\r\nDesigning with color contrast, keyboard support, and usability in mind \r\n\r\nWe also discuss common challenges encountered during implementation and share practical strategies for testing accessibility effectively across mobile platforms. \r\n\r\nWhat Will Attendees Discover? \r\n\r\nAttendees will gain hands-on knowledge of how to build accessible mobile applications using platform capabilities and modern frameworks. They will understand how assistive technologies interpret UI elements and how to avoid common accessibility pitfalls. \r\n\r\nBy the end of the session, participants will be able to audit their mobile applications for accessibility gaps, apply concrete improvements, and integrate accessibility best practices into their development workflow. ",
+        "startsAt": "2026-07-24T15:00:00",
+        "endsAt": "2026-07-24T16:00:00",
+        "isServiceSession": false,
+        "isPlenumSession": false,
+        "speakers": [
+          {
+            "id": "01add337-0eeb-4091-8443-a2bfba73cc55",
+            "name": "Teitiksh Beebakhy"
+          }
+        ],
+        "categories": [],
+        "roomId": "74752",
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": "Accepted",
+        "isInformed": true,
+        "isConfirmed": true
+      },
+      {
+        "questionAnswers": [],
+        "id": "1173377",
+        "title": "AI on a dime: Local use instead of Cloud",
+        "description": "The explosion of generative artificial intelligence has revolutionized how we work and build software, but it often comes with a hidden catch: exorbitant and unpredictable cloud computing costs. Relying exclusively on proprietary cloud APIs like OpenAI, Anthropic, or Google can quickly drain startup budgets, create monthly billing nightmares, and introduce severe data privacy concerns when handling sensitive enterprise information. But what if you could harness the robust power of advanced large language models (LLMs) without ever sending a single byte of data to a remote server?\r\n\r\nWelcome to \"AI on a Dime: Local Use Instead of Cloud.\" In this highly practical session, we will explore the rapidly expanding, disruptive ecosystem of local, open-source AI. We will demystify the process of downloading, configuring, and running highly capable AI models directly on your own hardware—whether that is a dedicated workstation, an Apple Silicon MacBook, or even a budget-friendly consumer laptop. We will dive into the technical magic of model quantization (GGUF, AWQ) and explore how smaller, highly optimized models like Llama 3, Mistral, and Microsoft's Phi-3 are routinely rivaling their massive, cloud-bound predecessors for specific, specialized tasks.\r\n\r\nBeyond the immediate relief of cost savings, this session will highlight the massive strategic advantages of local AI: absolute data sovereignty, zero-latency inference, zero vendor lock-in, and the ability to operate completely offline in air-gapped environments. We will walk through the leading user-friendly tools for local deployment, such as Ollama, LM Studio, and llama.cpp, demonstrating exactly how to swap out expensive cloud API calls for free, self-hosted alternatives in your current applications. Whether you are a solo developer bootstrapping a project, an enterprise architect navigating strict data compliance laws, or an enthusiast tired of monthly subscription fees, this session will equip you with everything you need to build intelligent applications on a shoestring budget.\r\n\r\nKey Takeaways for Attendees:\r\n- The Open-Source Landscape: Learn how to navigate platforms like Hugging Face to find the perfect open-weights models, balancing parameter size, inference speed, and intelligence for your specific needs.\r\n- Mastering Local Tooling: Get hands-on insights into setting up local inference servers (using Ollama, LM Studio, or vLLM) that act as seamless, drop-in replacements for standard cloud APIs.\r\n- Demystifying Hardware Realities: Understand exactly what hardware you need to run local AI effectively. We will break down CPU, Unified Memory, and VRAM requirements, and explain how quantization techniques make consumer hardware viable for AI.\r\n- Absolute Privacy & Security: Discover how running models locally completely eliminates data leakage, ensuring your proprietary code, internal documents, and customer data remain strictly in-house and fully compliant with privacy regulations.",
+        "startsAt": "2026-07-24T16:00:00",
+        "endsAt": "2026-07-24T17:00:00",
+        "isServiceSession": false,
+        "isPlenumSession": false,
+        "speakers": [
+          {
+            "id": "4c563acb-7ae8-4b4d-9ddf-11c19a02b813",
+            "name": "Jochen Kirstätter"
+          }
+        ],
+        "categories": [],
+        "roomId": "74750",
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": "Accepted",
+        "isInformed": true,
+        "isConfirmed": true
+      },
+      {
+        "questionAnswers": [],
+        "id": "1155499",
+        "title": "The RPI Framework: How to Actually Build Software with Claude Code",
+        "description": "We will dive into how to move beyond simple prompting by using Claude Code to first Research complex codebases and Plan architectural changes before a single line of code is written.\r\n\r\nMost developers start by telling an AI what to build and hoping for the best. The RPI (Research, Plan, Implement) Framework flips this approach, ensuring Claude Code truly understands your project before it generates any output.\r\n\r\n   Research Phase: We ask Claude Code to analyze an existing codebase to learn its structure, the patterns it uses, and how the various components fit together.\r\n\r\n    Plan Phase: We work with Claude to map out the necessary changes and the strategy for execution.\r\n\r\n    Implement Phase: Only after the first two steps do we begin writing code, equipped with all the context needed to do it well.\r\n\r\nWe will walk through real-world examples showing how this systematic, step-by-step approach leads to significantly better results than simply asking Claude to build something from scratch.",
+        "startsAt": "2026-07-24T16:00:00",
+        "endsAt": "2026-07-24T17:00:00",
+        "isServiceSession": false,
+        "isPlenumSession": false,
+        "speakers": [
+          {
+            "id": "ce743e20-9e95-4205-b3e9-e7f9a4899783",
+            "name": "Jain Ramchurn"
+          },
+          {
+            "id": "a74e488a-4c89-4f94-b1a2-60230c88f3aa",
+            "name": "Samanta Luchoo"
+          }
+        ],
+        "categories": [],
+        "roomId": "74751",
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": "Accepted",
+        "isInformed": true,
+        "isConfirmed": true
+      },
+      {
+        "questionAnswers": [],
+        "id": "1171750",
+        "title": "Architecting AI-Powered Enterprise Systems in .NET",
+        "description": "In this session, we’ll go beyond “calling an LLM” and focus on how to architect AI features that can actually ship in enterprise .NET systems. You’ll learn how to design a production-ready AI-powered API using Clean Architecture principles, where AI remains an Infrastructure concern behind clear interfaces for testability and vendor independence. We’ll break down Retrieval-Augmented Generation (RAG) end-to-end: document chunking, embedding generation, semantic search with PostgreSQL + pgvector, top-K retrieval, prompt construction with grounded context, and returning answers with citations for auditability. We’ll also cover the hard engineering parts: latency and throughput considerations, token/cost awareness, timeouts and retries, caching strategies, guardrails for hallucinations and “unknown” responses, prompt injection risks, and safe logging/observability. A pre-built ASP.NET Core demo will show ingestion and question-answer endpoints, so you leave with a clear blueprint you can adapt to real systems.",
+        "startsAt": "2026-07-24T16:00:00",
+        "endsAt": "2026-07-24T17:00:00",
+        "isServiceSession": false,
+        "isPlenumSession": false,
+        "speakers": [
+          {
+            "id": "3af69af8-a6f3-4008-9fef-46610a6f76e4",
+            "name": "Yash Busawon"
+          }
+        ],
+        "categories": [],
+        "roomId": "74752",
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": "Accepted",
+        "isInformed": true,
+        "isConfirmed": true
+      }
+    ]
+  },
+  {
+    "groupId": 20260725,
+    "groupName": "Saturday",
+    "isDefault": false,
+    "sessions": [
+      {
+        "questionAnswers": [],
+        "id": "1147444",
+        "title": "Data Fabric vs. Data Mesh: What Developers Need to Know",
+        "description": "As data ecosystems grow more complex, traditional data architectures struggle to keep up with scalability, governance, and real-time analytics. Enter Data Fabric and Data Mesh—two modern approaches that aim to streamline data access, improve governance, and empower teams. But what’s the difference, and which one should you choose?\r\n\r\nIn this session, we’ll break it down:\r\n✅ What is Data Fabric? A unified, AI-driven approach to data management\r\n✅ What is Data Mesh? A decentralized model that gives ownership to domain teams\r\n✅ Key differences & trade-offs: Centralized vs. decentralized governance\r\n✅ Use cases & best practices: When to choose one over the other\r\n✅ Hands-on Demo: Implementing a basic Data Fabric or Data Mesh architecture using modern data tools\r\n\r\nWhether you're a data engineer, software architect, or developer, this session will help you navigate the evolving data landscape and make informed architectural decisions for your projects. 🚀",
+        "startsAt": "2026-07-25T09:00:00",
+        "endsAt": "2026-07-25T10:05:00",
+        "isServiceSession": false,
+        "isPlenumSession": false,
+        "speakers": [
+          {
+            "id": "43f66e40-f651-42b7-b7fd-159d9caeae4a",
+            "name": "Kavish Seechurn"
+          }
+        ],
+        "categories": [],
+        "roomId": "74750",
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": "Accepted",
+        "isInformed": true,
+        "isConfirmed": true
+      },
+      {
+        "questionAnswers": [],
+        "id": "1148100",
+        "title": "Everything as Code - Manual Complexities to Automated Efficiency",
+        "description": "In this session, attendees will explore the transformative philosophy of \"Everything as Code,\" a paradigm that redefines how we manage IT resources in software development and DevOps. Participants will learn about the key benefits of representing IT resources as code, including enhanced audit capabilities, improved consistency across environments, and seamless scalability for dynamic resource needs. We will delve into practical applications and real-world case studies that illustrate how organizations can effectively implement this approach to streamline their workflows and enhance collaboration between development and operations teams. By the end of the session, attendees will leave with valuable insights into leveraging Everything as Code to drive innovation and efficiency in their own organizations.\r\n\r\nFor further reading and insights on this topic, please refer to the article from Dynatrace: Everything as Code. @ https://www.dynatrace.com/news/blog/everything-as-code/",
+        "startsAt": "2026-07-25T09:00:00",
+        "endsAt": "2026-07-25T10:00:00",
         "isServiceSession": false,
         "isPlenumSession": false,
         "speakers": [
@@ -554,8 +913,7 @@
           }
         ],
         "categories": [],
-        "roomId": "58139",
-        "room": "Accelerator",
+        "roomId": "74751",
         "liveUrl": null,
         "recordingUrl": null,
         "status": "Accepted",
@@ -564,22 +922,21 @@
       },
       {
         "questionAnswers": [],
-        "id": "836604",
-        "title": "🤖 Agents in Action: Architecture, Tools, and Use Cases",
-        "description": "Learn how to build and implement cutting-edge AI agents that extend beyond traditional language models. This session covers the architecture, tools, and orchestration layers necessary to create and deploy intelligent agents capable of real-world applications. Highlights include an introduction to LangChain, Vertex AI agents, and innovative techniques like retrieval-augmented generation (RAG).",
-        "startsAt": "2025-07-25T12:00:00",
-        "endsAt": "2025-07-25T12:45:00",
+        "id": "1171729",
+        "title": "Modeling User Behaviour for Better Systems",
+        "description": "Developers spend most of their time inside code editors, sprint boards, and architecture diagrams. Yet the systems we build are used by humans operating in messy, unpredictable, real-world environments. The gap between those two realities often shows up as misunderstood requirements, edge cases discovered too late, fragile UI logic, and features that technically work but fail to solve the real problem.\r\n\r\nThis talk explores a practical shift: how developers can better understand users without becoming UX designers or adding heavy processes to their workflow.\r\n\r\nDrawing from real product development experience in production systems, we will examine where assumptions about users silently shape code decisions and how small observational habits can dramatically improve system quality, feature clarity, and maintainability.\r\n\r\nAttendees will leave with concrete techniques to:\r\n- Identify hidden assumptions in feature discussions\r\n- Observe user behavior in ways that inform technical decisions\r\n- Model frontend systems around real-world states rather than ideal flows\r\n- Reduce rework caused by misunderstood human behavior\r\n\r\nThis session is aimed at mid-to-senior software developers working on real-world systems who want to build software that solves actual problems, not just passes QA.",
+        "startsAt": "2026-07-25T09:00:00",
+        "endsAt": "2026-07-25T10:00:00",
         "isServiceSession": false,
         "isPlenumSession": false,
         "speakers": [
           {
-            "id": "4f5c532a-b69f-4d47-8b15-da28742f3f83",
-            "name": "Hastika Cheddy"
+            "id": "924f17f6-33b5-4011-800b-43b15f652604",
+            "name": "Dryshtee Woozir-Manilall"
           }
         ],
         "categories": [],
-        "roomId": "58137",
-        "room": "Educator 1",
+        "roomId": "74752",
         "liveUrl": null,
         "recordingUrl": null,
         "status": "Accepted",
@@ -588,22 +945,39 @@
       },
       {
         "questionAnswers": [],
-        "id": "843960",
-        "title": "Where mathematics meets software testing",
-        "description": "Having the knowledge of mathematical principles does help in software testing.\r\n\r\nThis talk highlights the vital role of mathematics in software testing, showcasing how concepts like data distribution, formal estimation methods, and probabilistic models enhance test coverage, defect detection, and automation. \r\n\r\nIt offers practical insights for developers, testers, and researchers to build more reliable and efficient software by applying mathematical principles to real-world testing challenges.",
-        "startsAt": "2025-07-25T12:00:00",
-        "endsAt": "2025-07-25T12:45:00",
+        "id": "a6597cd9-ff78-41f6-924b-48fc80a973f0",
+        "title": "Keynote: Google",
+        "description": null,
+        "startsAt": "2026-07-25T10:00:00",
+        "endsAt": "2026-07-25T11:00:00",
+        "isServiceSession": true,
+        "isPlenumSession": true,
+        "speakers": [],
+        "categories": [],
+        "roomId": "74750",
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": null,
+        "isInformed": false,
+        "isConfirmed": false
+      },
+      {
+        "questionAnswers": [],
+        "id": "1140801",
+        "title": "A Declarative Approach to Building Scalable Applications",
+        "description": "In the rush to ship features, we often fall into the \"Imperative Trap\": writing step-by-step instructions that manage every variable, timer, and state change manually. While this works for simple apps, it’s a recipe for disaster in enterprise-scale systems. The result? Fragile code, unpredictable race conditions, and a \"spaghetti\" architecture that scares away new developers.\r\n\r\nThere is a better way. By embracing Declarative Programming and Reactive Patterns, we can transform complex logic into predictable, readable, and maintainable data streams.\r\n\r\nIn this session, we will use Angular and RxJS as our laboratory to dissect the \"Imperative vs. Declarative\" debate. We’ll take a standard, bug-prone \"Live Search\" feature and refactor it in real-time into a robust, reactive stream. Along the way, we will explore:\r\n- The Cost of \"How\": Identifying why manual state management fails as systems grow.\r\n- The Power of \"What\": How declarative operators (like switchMap and distinctUntilChanged) eliminate entire classes of bugs.\r\n- Architectural Empathy: Writing code that is easier for your \"future self\" and your team to reason about.\r\n- The Framework Agnostic Truth: Why these patterns are the secret sauce of high-performing consultancies, whether you're using Angular, React, or Node.js.",
+        "startsAt": "2026-07-25T11:00:00",
+        "endsAt": "2026-07-25T12:00:00",
         "isServiceSession": false,
         "isPlenumSession": false,
         "speakers": [
           {
-            "id": "336671e4-3f17-4dbe-ab1c-20a8b38cc1a5",
-            "name": "Lovelesh Beeharry"
+            "id": "919f1100-e525-4aee-bcfe-48bd26e5709c",
+            "name": "Wayne Gakuo"
           }
         ],
         "categories": [],
-        "roomId": "58138",
-        "room": "Educator 2",
+        "roomId": "74750",
         "liveUrl": null,
         "recordingUrl": null,
         "status": "Accepted",
@@ -612,26 +986,21 @@
       },
       {
         "questionAnswers": [],
-        "id": "931801",
-        "title": "Dynamic LWCs with JSON: Designing Reusable and Configurable Components in Salesforce",
-        "description": "What if one LWC could serve ten different use cases, all driven by JSON and metadata?\r\n\r\nIn this session, we’ll explore how to build Lightning Web Components (LWCs) in Salesforce that accept JSON inputs to control both logic and UI dynamically. We’ll start with a simple example and then present a demo of the real-world, complex components created by the SFPEG framework on GitHub and widely used on our current Salesforce project, showcasing how JSON parameters, SOQL queries, and metadata fields can dramatically increase reusability and flexibility.\r\n\r\nThis session is ideal for intermediate Salesforce developers looking to build smarter, scalable components.",
-        "startsAt": "2025-07-25T12:00:00",
-        "endsAt": "2025-07-25T12:45:00",
+        "id": "1167818",
+        "title": "Juicing up Digital Payments",
+        "description": "I am super excited to have contacted the MCB & will be hosting an open discussion with two product leads for the Juice app 📱\r\n\r\nLovena Modelly – Product Owner\r\nMichael Bardin – Senior Product Owner\r\n\r\nWe will be discussing a number of topics on arguably, the most popular app on the island. 🇲🇺\r\n\r\n- Introductions: who are our guests\r\n- What is the history of MCB Juice?\r\n- What have been the the biggest challenges to date?\r\n- Tell us about what happened during COVID.\r\n- Juice on Android or Juice on iPhone?\r\n- Apple Pay arrived in May via Juice, can you tell us how this happened?\r\n- Can you tell us on the goals you have for the app?\r\n\r\nThis will be a recorded session & there will be plenty of time for questions to our guests which I will be carefully moderating. 🎤\r\n\r\nAs usual, I will ensure some form of limited goodies either from our illustrate guests or our usual great goodies sponsors One O One! 🎁",
+        "startsAt": "2026-07-25T11:00:00",
+        "endsAt": "2026-07-25T12:00:00",
         "isServiceSession": false,
         "isPlenumSession": false,
         "speakers": [
           {
-            "id": "bbc117b8-c13f-421d-8451-b7f7ba11acd0",
-            "name": "Sanjana Ramchurun"
-          },
-          {
-            "id": "32c9a82a-2d73-4148-808b-2efea03d07e3",
-            "name": "Veekesh Pydannah"
+            "id": "a52fead5-fedc-48da-94bf-192f1c171681",
+            "name": "Loic Forget"
           }
         ],
         "categories": [],
-        "roomId": "58139",
-        "room": "Accelerator",
+        "roomId": "74751",
         "liveUrl": null,
         "recordingUrl": null,
         "status": "Accepted",
@@ -640,22 +1009,21 @@
       },
       {
         "questionAnswers": [],
-        "id": "872600",
-        "title": "Eco-conception et site web, les bests practices",
-        "description": "Face à l’explosion des usages numériques et à leur impact environnemental grandissant, l’éco-conception web est devenue une nécessité. Ce talk s’adresse aux développeurs soucieux de réduire l’empreinte carbone de leurs applications tout en améliorant leur performance et leur accessibilité.\r\n\r\nNous explorerons les principes fondamentaux de l’éco-conception, en nous appuyant sur des études de cas concrets et des chiffres clés pour mesurer l’impact du web sur l’environnement. Nous aborderons des stratégies techniques précises, comme l’optimisation des images (formats WebP/AVIF), la minification des ressources, la gestion avancée du cache, et l’adoption de frameworks légers comme Astro et Svelte.\r\n\r\nL’accent sera mis sur l’optimisation des performances côté client et serveur : réduction des requêtes HTTP, structuration du CSS et du JavaScript, et choix d’un hébergement écoresponsable. Nous verrons également comment intégrer des outils comme Lighthouse, EcoIndex et WebsiteCarbon pour évaluer l’impact énergétique d’un site.\r\n\r\nEnfin, nous proposerons des solutions UX/UI adaptées à l’éco-conception, en minimisant l’utilisation d’animations énergivores et en privilégiant des designs épurés et fonctionnels.\r\n\r\nCe talk sera une opportunité unique pour les développeurs de découvrir des pratiques concrètes et actionnables, afin de concevoir des sites plus performants, durables et respectueux de l’environnement",
-        "startsAt": "2025-07-25T13:00:00",
-        "endsAt": "2025-07-25T13:45:00",
+        "id": "1171727",
+        "title": "Accelerating Development the Practical Way",
+        "description": "Modern development shouldn’t feel slow or overwhelming.\r\nYet many developers spend too much time setting up environments, wiring services together, and writing repetitive boilerplate before building anything meaningful.\r\n\r\nThis talk shows a practical way to move faster.\r\n\r\nThrough a fully live, demo-driven session, you’ll learn how to:\r\n- Launch production-ready services in minutes\r\n- Connect tools and systems without heavy custom integration\r\n- Test and iterate quickly\r\n- Focus on building real features instead of managing infrastructure\r\n\r\nThe goal is simple: help you build more, faster with less friction.\r\n\r\nYou’ll leave with a clear workflow and practical tools you can immediately use in coursework, hackathons, internships, and personal projects.\r\n\r\nPractical techniques/tools to help you develop smarter and more efficiently.",
+        "startsAt": "2026-07-25T11:00:00",
+        "endsAt": "2026-07-25T12:00:00",
         "isServiceSession": false,
         "isPlenumSession": false,
         "speakers": [
           {
-            "id": "1ad5cb40-0f33-4b33-ab8d-415a5febf690",
-            "name": "Vanessa V.Chellen"
+            "id": "c6290cf3-c046-41b7-9f5f-d47d05c55baf",
+            "name": "Mervyn Manilall"
           }
         ],
         "categories": [],
-        "roomId": "58137",
-        "room": "Educator 1",
+        "roomId": "74752",
         "liveUrl": null,
         "recordingUrl": null,
         "status": "Accepted",
@@ -664,11 +1032,34 @@
       },
       {
         "questionAnswers": [],
-        "id": "876115",
-        "title": "Ctrl+C & Ctrl+V Your Machine: Standardizing Dev Environments with Docker & VS Code",
-        "description": "Tired of your code working everywhere *except* where it needs to? Let's ditch the \"works on my machine\" chaos! We'll use Docker, think of it as tiny, self-contained boxes for your projects, and VS Code's Dev Containers to make those boxes play nice with your editor. Basically, we're building a coding playground that's exactly the same for everyone, so you can jump in and start building without any setup headaches.",
-        "startsAt": "2025-07-25T13:00:00",
-        "endsAt": "2025-07-25T13:45:00",
+        "id": "1144517",
+        "title": "From Alert to Action: Automated Threat Response with Wazuh",
+        "description": "Cyber threats are no longer limited to large enterprises - small and medium businesses are increasingly targeted due to limited detection capabilities and constrained security budgets. Traditional preventive controls alone are insufficient against modern attack techniques, requiring organizations to adopt continuous detection, vulnerability visibility, and security posture monitoring.\r\n\r\nThis advanced session explores how Wazuh, an open-source SIEM and XDR platform, enables deep threat detection, vulnerability intelligence, and Linux hardening governance across enterprise environments - while also automating large parts of the response lifecycle by default.\r\n\r\nThrough practical attack simulations, attendees will observe how adversarial techniques such as SSH brute force campaigns, privilege escalation, and unauthorized configuration changes are detected, correlated, and contextualized within a centralized detection platform. The session will demonstrate how detection signals evolve into actionable security events that can trigger automated containment workflows.\r\n\r\nExpanding beyond active attacks, the talk will examine Wazuh’s vulnerability detection engine, showing how CVE exposure, outdated packages, and patch gaps are continuously identified and operationalized into remediation prioritization strategies.\r\n\r\nKey areas covered include:\r\n- Behavioral threat detection across Linux workloads\r\n- Privilege escalation and insider activity monitoring\r\n- File Integrity Monitoring of critical system assets\r\n- Vulnerability detection leveraging CVE intelligence feeds\r\n- Patch exposure visibility and remediation prioritization\r\n- CIS benchmark compliance and hardening validation\r\n- Configuration drift detection and risk scoring\r\n- MITRE ATT&CK mapping and threat context enrichment\r\n- Built-in automated response and containment strategies\r\n\r\nBy the end of this session, participants will gain advanced insight into building detection-driven security operations using open-source technologies - enabling enterprise-grade visibility, accelerated response, and measurable infrastructure resilience without the cost barriers of proprietary SIEM platforms.\r\n\r\nThis session is designed for security engineers, SOC analysts, system administrators, and DevSecOps professionals seeking practical approaches to operationalizing threat detection, automated response, and vulnerability governance at scale.",
+        "startsAt": "2026-07-25T12:00:00",
+        "endsAt": "2026-07-25T13:00:00",
+        "isServiceSession": false,
+        "isPlenumSession": false,
+        "speakers": [
+          {
+            "id": "ba3958ec-7d08-4845-bcb5-2e1774318932",
+            "name": "Girish Mahabir"
+          }
+        ],
+        "categories": [],
+        "roomId": "74750",
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": "Accepted",
+        "isInformed": true,
+        "isConfirmed": true
+      },
+      {
+        "questionAnswers": [],
+        "id": "1171840",
+        "title": "Beyond Docker: Mastering Container Workflows with Podman, Skopeo & Buildah",
+        "description": "Containers have become the backbone of modern application deployment, yet many developers remain tethered to Docker as their sole container tooling. This session takes you beyond the basics and into the powerful, daemonless ecosystem of Podman, Skopeo, and Buildah — a trio of OCI-compliant tools that offer rootless containers, fine-grained image management, and streamlined CI/CD integration without requiring a persistent daemon. Whether you're running workloads on bare metal, in the cloud, or feeding into Kubernetes clusters, these tools give you greater security, flexibility, and control.\r\n\r\nAttendees will explore advanced Podman concepts including pod-based workflows that mirror Kubernetes pod semantics, rootless container networking, systemd integration for production-grade service management, and leveraging Podman Compose as a drop-in replacement for Docker Compose. We'll dive into Skopeo for inspecting and copying container images across registries without pulling them locally — a game-changer for multi-registry strategies and air-gapped environments. Buildah rounds out the toolkit with its scriptable, layer-by-layer image building approach that eliminates the need for Dockerfiles entirely when granular control is required.\r\n\r\nThe session blends live demonstrations with real-world scenarios drawn from production Linux environments, covering topics such as signing and verifying images, integrating these tools into CI/CD pipelines, migrating existing Docker workflows, and preparing container workloads for orchestration with Kubernetes. By the end, attendees will have a practical toolkit and the confidence to adopt a daemonless container strategy that is secure, portable, and production-ready.",
+        "startsAt": "2026-07-25T12:00:00",
+        "endsAt": "2026-07-25T13:00:00",
         "isServiceSession": false,
         "isPlenumSession": false,
         "speakers": [
@@ -682,8 +1073,7 @@
           }
         ],
         "categories": [],
-        "roomId": "58138",
-        "room": "Educator 2",
+        "roomId": "74751",
         "liveUrl": null,
         "recordingUrl": null,
         "status": "Accepted",
@@ -692,22 +1082,21 @@
       },
       {
         "questionAnswers": [],
-        "id": "876044",
-        "title": "The Shift towards passwordless authentication with Keycloak",
-        "description": "This talk will cover the evolution of authentication, from traditional passwords to modern passwordless solutions, with a focus on Keycloak and the FIDO2 open authentication standard. First it will address the basic concepts of authorization and keycloak. Then it will dive into the workings of FIDO2 (WebAuthN + FIDO2) and finally a demo of a passwordless login flow using Keycloak and FIDO2 compliant authenticators (depending on availability) or using Chrome's WebAuthN Emulator will be carried out.\r\n\r\nAudience Takeways\r\n- Learn core concepts of IAM and passwordless authentication and gain actionable steps to implement WebAuthN in Keycloak.",
-        "startsAt": "2025-07-25T13:00:00",
-        "endsAt": "2025-07-25T13:45:00",
+        "id": "1166266",
+        "title": "2 game jams, 15+ games developed, now what?",
+        "description": "In just two game jams, the Mauritian developer community has proven it has the grit to go from zero to a functional prototype in 48 hours or in a week, resulting in over 15 original games created on home soil. But a game jam is just a sprint—how do we turn that energy into a marathon?\r\n\r\n​In this session, Cedric Sookahet, founder of We are Geekin', dives into the data and the human stories behind these events. He will highlight the landmark success of a local developer chosen to represent Mauritius at an international game jam in France, demonstrating that the world is finally watching our talent.\r\n\r\nWhether you are a seasoned coder or a curious designer, this session is a blueprint for the next chapter of Mauritian tech: building an industry where we play our own games.",
+        "startsAt": "2026-07-25T12:00:00",
+        "endsAt": "2026-07-25T13:00:00",
         "isServiceSession": false,
         "isPlenumSession": false,
         "speakers": [
           {
-            "id": "9663a4be-c3f9-4256-840b-c582932561ba",
-            "name": "Ashvin Ramanjooloo"
+            "id": "bb67370e-df20-421e-83b9-6316a7c1a018",
+            "name": "Cedric Sookahet"
           }
         ],
         "categories": [],
-        "roomId": "58139",
-        "room": "Accelerator",
+        "roomId": "74752",
         "liveUrl": null,
         "recordingUrl": null,
         "status": "Accepted",
@@ -716,310 +1105,11 @@
       },
       {
         "questionAnswers": [],
-        "id": "875450",
-        "title": "Practical Guide to Technical Debt and How to Manage It",
-        "description": "Technical debt is often seen as an unavoidable part of software development, but if left unchecked, it can slow down feature delivery, increase system fragility, and create significant business risks. Engineering teams frequently struggle to balance rapid development with maintaining long-term code quality, leading to accumulating trade-offs that become bottlenecks in the future.\r\n\r\nIn this session, we will demystify technical debt by breaking it down into its different types (intentional vs. unintentional, design debt vs. code debt) and explore strategies to manage and reduce it without disrupting business operations. Rather than treating tech debt as an afterthought, we’ll discuss proactive approaches to integrating technical improvements into the development lifecycle without sacrificing velocity.\r\n\r\nWe’ll cover:\r\n✅ The different types of technical debt (planned vs. unintentional)\r\n✅ How to measure and prioritize tech debt with objective metrics\r\n✅ Strategies for gradual refactoring vs. full rewrites\r\n✅ Techniques to convince stakeholders to invest in tech debt reduction\r\n✅ Real-world case studies from my experience leading engineering teams\r\n\r\nWhether you’re an engineer struggling with legacy code, a tech lead planning long-term improvements, or a manager balancing business priorities, this session will equip you with practical strategies to take control of your software’s future.",
-        "startsAt": "2025-07-25T14:00:00",
-        "endsAt": "2025-07-25T14:45:00",
-        "isServiceSession": false,
-        "isPlenumSession": false,
-        "speakers": [
-          {
-            "id": "84b950ee-81ab-4aea-a5f2-f8cda15a69e8",
-            "name": "Nirvan Pagooah"
-          }
-        ],
-        "categories": [],
-        "roomId": "58137",
-        "room": "Educator 1",
-        "liveUrl": null,
-        "recordingUrl": null,
-        "status": "Accepted",
-        "isInformed": true,
-        "isConfirmed": true
-      },
-      {
-        "questionAnswers": [],
-        "id": "875478",
-        "title": "How does OpenShift make the developer experience easier?",
-        "description": "Red Hat OpenShift abstracts the complexities of Kubernetes, allowing developers to focus on coding rather than managing infrastructure. Let's explore that process a little, hands on.\r\n\r\nOpenShift supports a build-once, deploy-anywhere model. For developers, this means that instead of developing with tools like Podman, Docker Compose etc, we can run a lightweight version of OpenShift on our laptops, or use a developer sandbox in the cloud, which ensures that what we developed will work in production, no surprises.\r\n\r\nIt also offers pre-created app templates and source-to-image (S2I) builds, which means in many cases we don't even have to worry about writing Dockerfiles.\r\n\r\nWe will explore some of the many OpenShift dev tools, including IDE integration, pre-architected templates, continuous integration and continuous delivery (CI/CD) pipelines, and OpenShift Lightspeed, your AI powered virtual assistant.\r\n\r\nOverall, OpenShift enhances developer productivity by providing a more streamlined, secure, and scalable environment compared to other Kubernetes distributions.",
-        "startsAt": "2025-07-25T14:00:00",
-        "endsAt": "2025-07-25T14:45:00",
-        "isServiceSession": false,
-        "isPlenumSession": false,
-        "speakers": [
-          {
-            "id": "826f4157-067f-471d-bbcf-f9494cb70168",
-            "name": "Clifford Weinmann"
-          }
-        ],
-        "categories": [],
-        "roomId": "58138",
-        "room": "Educator 2",
-        "liveUrl": null,
-        "recordingUrl": null,
-        "status": "Accepted",
-        "isInformed": true,
-        "isConfirmed": true
-      },
-      {
-        "questionAnswers": [],
-        "id": "874842",
-        "title": "Building an E-Commerce Store That Can Handle Growth",
-        "description": "As an E-Commerce developer, it's crucial to build an online store that can scale and handle growth. Learn about the common challenges, risks of not scaling, and best practices such as caching, and load balancing. Discover how to leverage cloud hosting, CDNs, and other tools to improve performance and scalability of your store. Analyze successful case studies to learn growth strategies, challenges, and lessons learned. By the end of this session, you'll have a better understanding of the importance of scalability for your E-Commerce store and how to build a store that can handle growth with confidence.",
-        "startsAt": "2025-07-25T14:00:00",
-        "endsAt": "2025-07-25T14:45:00",
-        "isServiceSession": false,
-        "isPlenumSession": false,
-        "speakers": [
-          {
-            "id": "e4d51ad0-51f7-44bc-ade2-8c7250bb5400",
-            "name": "Nathan Mangar"
-          }
-        ],
-        "categories": [],
-        "roomId": "58139",
-        "room": "Accelerator",
-        "liveUrl": null,
-        "recordingUrl": null,
-        "status": "Accepted",
-        "isInformed": true,
-        "isConfirmed": true
-      },
-      {
-        "questionAnswers": [],
-        "id": "873835",
-        "title": "Shift-Left Testing: Bringing Teams into the QA Process with Azure DevOps",
-        "description": "Traditional testing processes often isolate QA from developers, leading to late-stage bug discovery, delays, and misalignment. But what if testing was a shared responsibility?\r\nIn this session, we’ll explore how Azure DevOps Test Plans enable a whole-team approach to testing, involving developers, testers, and even product owners. You'll learn:How Test Plans & Test Suites structure testing efforts efficientlyHow developers can write & run tests early in the dev cycleHow requirement-based testing aligns with agile user storiesHow manual, exploratory, and automated testing can be tracked in one placeReal-world strategies to break down silos between Dev and QA\r\nBy the end, you’ll walk away with practical tips to transform testing from a QA task into a team-wide practice, improving software quality and delivery speed.",
-        "startsAt": "2025-07-25T15:00:00",
-        "endsAt": "2025-07-25T15:45:00",
-        "isServiceSession": false,
-        "isPlenumSession": false,
-        "speakers": [
-          {
-            "id": "c6290cf3-c046-41b7-9f5f-d47d05c55baf",
-            "name": "Mervyn Manilall"
-          }
-        ],
-        "categories": [],
-        "roomId": "58137",
-        "room": "Educator 1",
-        "liveUrl": null,
-        "recordingUrl": null,
-        "status": "Accepted",
-        "isInformed": true,
-        "isConfirmed": true
-      },
-      {
-        "questionAnswers": [],
-        "id": "865724",
-        "title": "Harvester: The Solution To Your Virtualisation Needs",
-        "description": "After a certain virtualisation technology company got bought out and hiked prices overnight, many companies using the tech have found themselves dropped into the deep end, with rising infrastructure costs.\r\nIn comes Harvester, the Open Source solution for Hyperconverged Infrastructure (HCI) at scale.\r\n\r\nThis session will introduce Harvester and how it works, and will cover the potential it has as replacement for more... expensive options.\r\nFrom VMs to containers, with included networking and storage solutions, Harvester promises to make your infrastructure robust and scalable - meeting the demands of the modern internet.",
-        "startsAt": "2025-07-25T15:00:00",
-        "endsAt": "2025-07-25T15:45:00",
-        "isServiceSession": false,
-        "isPlenumSession": false,
-        "speakers": [
-          {
-            "id": "80c8f586-0d9c-45a7-ae05-037cc1dce4e7",
-            "name": "Alex Bissessur"
-          }
-        ],
-        "categories": [],
-        "roomId": "58138",
-        "room": "Educator 2",
-        "liveUrl": null,
-        "recordingUrl": null,
-        "status": "Accepted",
-        "isInformed": true,
-        "isConfirmed": true
-      },
-      {
-        "questionAnswers": [],
-        "id": "875074",
-        "title": "An Overview of Graph Algorithms and graph mining",
-        "description": "Introduction to graphs (data structures) and the related algorithms.\r\nOverview of graph mining techniques.",
-        "startsAt": "2025-07-25T15:00:00",
-        "endsAt": "2025-07-25T15:45:00",
-        "isServiceSession": false,
-        "isPlenumSession": false,
-        "speakers": [
-          {
-            "id": "2cfd825e-9a05-47b9-a7bf-d5c2f4f8b74a",
-            "name": "Marius Rabenarivo"
-          }
-        ],
-        "categories": [],
-        "roomId": "58139",
-        "room": "Accelerator",
-        "liveUrl": null,
-        "recordingUrl": null,
-        "status": "Accepted",
-        "isInformed": true,
-        "isConfirmed": true
-      }
-    ],
-    "isDefault": false
-  },
-  {
-    "groupId": 45864,
-    "groupName": "Saturday",
-    "sessions": [
-      {
-        "questionAnswers": [],
-        "id": "961766",
-        "title": "Opening Keynote (Axiz|Microsoft): 🚀 The Business Superpower: Unleashing Gen AI with MCPs, Agents & RAG",
-        "description": null,
-        "startsAt": "2025-07-26T09:00:00",
-        "endsAt": "2025-07-26T09:45:00",
-        "isServiceSession": true,
-        "isPlenumSession": true,
-        "speakers": [
-          {
-            "id": "395aaadd-d46b-47dc-80da-10b03d54c83d",
-            "name": "Joe van der Walt"
-          }
-        ],
-        "categories": [],
-        "roomId": "58137",
-        "room": "Educator 1",
-        "liveUrl": null,
-        "recordingUrl": null,
-        "status": null,
-        "isInformed": false,
-        "isConfirmed": false
-      },
-      {
-        "questionAnswers": [],
-        "id": "874500",
-        "title": "Web Development without headache using Nuxt & Vue",
-        "description": "Discover how Nuxt.js enhances Vue.js to create high-performance, SEO-friendly web applications. This session will explore the core benefits of Nuxt.js, including server-side rendering, static site generation, and improved development workflows, demonstrating how to leverage these features to build modern, scalable frontend solutions.",
-        "startsAt": "2025-07-26T10:00:00",
-        "endsAt": "2025-07-26T10:45:00",
-        "isServiceSession": false,
-        "isPlenumSession": false,
-        "speakers": [
-          {
-            "id": "4dc79966-a989-45ff-b2e7-6b6f3a5433d0",
-            "name": "Mahima Ramgolam"
-          }
-        ],
-        "categories": [],
-        "roomId": "58137",
-        "room": "Educator 1",
-        "liveUrl": null,
-        "recordingUrl": null,
-        "status": "Accepted",
-        "isInformed": true,
-        "isConfirmed": true
-      },
-      {
-        "questionAnswers": [],
-        "id": "980869",
-        "title": "Confirm your knowledge with a certification",
-        "description": "You probably graduated from university and you may hold some sort of degree in the field of IT or software engineering. Since then you working your daily job as a professional - either employed or freelancing. Over time you gain knowledge and valuable experience in the tools and programming languages you use. But do you know whether your knowledge and experience is \"up to standards\"? Or how you would compare to other professionals in the same technology stack? Certifications in the industry can help with that. They are standardized world wide and give you an indicator about yourself. During the session you are going to hear about my experience with various certification exams over the past years, and why a constant, probably daily, learning attitude is essential for your career and personal growth in the field. Lastly, you are going to learn how to stay motivated during the preparation for an exam and how to keep yourself accountable following the #100DaysOfExam approach.",
-        "startsAt": "2025-07-26T10:00:00",
-        "endsAt": "2025-07-26T10:45:00",
-        "isServiceSession": false,
-        "isPlenumSession": false,
-        "speakers": [
-          {
-            "id": "4c563acb-7ae8-4b4d-9ddf-11c19a02b813",
-            "name": "Jochen Kirstätter"
-          }
-        ],
-        "categories": [],
-        "roomId": "58138",
-        "room": "Educator 2",
-        "liveUrl": null,
-        "recordingUrl": null,
-        "status": "Accepted",
-        "isInformed": true,
-        "isConfirmed": true
-      },
-      {
-        "questionAnswers": [],
-        "id": "867065",
-        "title": "Behind the LinkedIn Curtain: How the Algorithm REALLY Works",
-        "description": "In this session, we’ll take a deep dive into the inner workings of LinkedIn's algorithm, revealing how content is ranked, recommended, and surfaced to users. We’ll explore the key factors that influence what shows up in your feed, from engagement signals to relevance scoring, and how LinkedIn's unique blend of AI and machine learning drives content discovery. Attendees will learn actionable insights into how they can optimize their profiles and posts to ensure maximum visibility and engagement, especially within professional networks.\r\n\r\nKey takeaways from this session include a clear understanding of how LinkedIn’s algorithm prioritizes content, how to capitalize on this knowledge to boost your reach, and practical strategies for developers, engineers, and tech professionals to stand out in a crowded digital space. By the end of the talk, participants will be equipped with the tools to fine-tune their LinkedIn presence for better career opportunities, networking, and community engagement. This session will be especially valuable for DevCon attendees who want to trigger the LinkedIn algorithm effectively, enhancing their online visibility and boosting the branding of their technical expertise.",
-        "startsAt": "2025-07-26T10:00:00",
-        "endsAt": "2025-07-26T10:45:00",
-        "isServiceSession": false,
-        "isPlenumSession": false,
-        "speakers": [
-          {
-            "id": "7a7c18c9-3908-4fd0-9b45-c01f3aac5137",
-            "name": "Keleena Moorghen"
-          },
-          {
-            "id": "7d500fb7-5189-407e-bf5f-39019dabf6f1",
-            "name": "Rachel Rajiah"
-          }
-        ],
-        "categories": [],
-        "roomId": "58139",
-        "room": "Accelerator",
-        "liveUrl": null,
-        "recordingUrl": null,
-        "status": "Accepted",
-        "isInformed": true,
-        "isConfirmed": true
-      },
-      {
-        "questionAnswers": [],
-        "id": "874447",
-        "title": "Web Browsers - History & Future",
-        "description": "In this session, we will look at the history of web browsers and the various epic moments that have happened since 1989. We will discover some very cool upcoming features as well, and take a look at efforts by Google and the web community at large to drive the web forward. \r\n\r\nWe will learn about Browser Engines, Interop, Baseline, upcoming CSS features and many more exciting things !",
-        "startsAt": "2025-07-26T11:00:00",
-        "endsAt": "2025-07-26T11:45:00",
-        "isServiceSession": false,
-        "isPlenumSession": false,
-        "speakers": [
-          {
-            "id": "d802c569-2764-4a8c-ac90-4dec8e3c3f41",
-            "name": "Sandeep Ramgolam"
-          }
-        ],
-        "categories": [],
-        "roomId": "58137",
-        "room": "Educator 1",
-        "liveUrl": null,
-        "recordingUrl": null,
-        "status": "Accepted",
-        "isInformed": true,
-        "isConfirmed": true
-      },
-      {
-        "questionAnswers": [],
-        "id": "835866",
-        "title": "Swift, Server-Side, Serverless",
-        "description": "Full stack developers hate to switch programming languages, tools, frameworks. It's a lost of time. What if you could use your front end favourite language - Swift - to build your backend resources, such as API, or any type of cloud-based processing ? And what if I add you don't even need to deploy a virtual machine to do so. Did you consider serverless, with no server to manage or to scale by yourself, and only paying for actual usage?\r\n\r\nIn this talk I will show you how to deploy your server-side Swift\r\napplications on AWS Lambda.\r\n\r\nThis talk is heavily based on demo and hands-on, with minimum slides. ",
-        "startsAt": "2025-07-26T11:00:00",
-        "endsAt": "2025-07-26T11:45:00",
-        "isServiceSession": false,
-        "isPlenumSession": false,
-        "speakers": [
-          {
-            "id": "107327be-a539-4fae-8253-9f18741812db",
-            "name": "Sebastien Stormacq"
-          }
-        ],
-        "categories": [],
-        "roomId": "58138",
-        "room": "Educator 2",
-        "liveUrl": null,
-        "recordingUrl": null,
-        "status": "Accepted",
-        "isInformed": true,
-        "isConfirmed": true
-      },
-      {
-        "questionAnswers": [],
-        "id": "841392",
-        "title": "Multi-Cloud CI/CD: From Azure to AWS",
-        "description": "In today's rapidly evolving tech landscape, organizations are heavily investing in CI/CD platforms to deploy applications across multiple cloud providers such as Azure, AWS, and GCP. However, managing multiple deployment pipelines across different platforms can introduce complexity, increase operational overhead, and drive up costs.\n\nThis session will provide insights into how you can streamline multi-cloud deployments using a unified CI/CD approach, eliminating the need for multiple platform-specific pipelines. We will explore a minimalistic yet powerful strategy to deploy applications seamlessly across various cloud providers, reducing licensing and maintenance costs while improving operational efficiency.\n\nJoin us to discover how Azure DevOps can serve as a centralized solution to achieve consistent, scalable, and cost-effective deployments across cloud environments. Learn how to optimize your DevOps workflows without the burden of managing multiple CI/CD platforms.",
-        "startsAt": "2025-07-26T11:00:00",
-        "endsAt": "2025-07-26T11:45:00",
+        "id": "1153969",
+        "title": "Preemptive Strike: Killing Your Systems Before They Kill You",
+        "description": "In today's distributed systems, failure isn't a matter of if—it's a matter of when. Yet most organizations wait for an outage to strike before discovering their blind spots. This reactive approach costs revenue, reputation, and engineering sanity. It's time to flip the script.\r\n\r\nPreemptive Strike is a philosophy rooted in chaos engineering: intentionally introducing failure into your systems to expose weaknesses before your users do. By simulating real-world outages—network latency, dependency failures, region outages, and resource exhaustion—you move from hoping for resilience to engineering it.\r\n\r\nIn this session, we'll move beyond theory into multi-cloud execution. You'll learn how to weaponize AWS Fault Injection Service (FIS) and Azure Chaos Studio to design, orchestrate, and learn from controlled chaos experiments across both platforms",
+        "startsAt": "2026-07-25T13:00:00",
+        "endsAt": "2026-07-25T14:00:00",
         "isServiceSession": false,
         "isPlenumSession": false,
         "speakers": [
@@ -1029,8 +1119,7 @@
           }
         ],
         "categories": [],
-        "roomId": "58139",
-        "room": "Accelerator",
+        "roomId": "74750",
         "liveUrl": null,
         "recordingUrl": null,
         "status": "Accepted",
@@ -1039,22 +1128,21 @@
       },
       {
         "questionAnswers": [],
-        "id": "882635",
-        "title": "Case Studies in Traffic Acquistion",
-        "description": "From SEO, to Social, to Paid and even some AI, Acquiring more traffic to your website is vital to doing business, especially if you are in the content game.  Learn from real world case studies from Ringier's portfolio of Media and Marketplace businesses on what worked and how you can bend Google to your will.",
-        "startsAt": "2025-07-26T12:00:00",
-        "endsAt": "2025-07-26T12:45:00",
+        "id": "1149805",
+        "title": "How (And Why) To Build a Cloud Service Provider From Scratch",
+        "description": "Everyone knows of the cloud giants which dominates markets around the world; with Azure, AWS, and GCP as global leaders. Some are familiar with smaller cloud service providers (CSPs) closer to home, including MyT and Cloud.mu.\r\n\r\nAfter attempting to run a workshop on Kubernetes, I had a burning question - how hard is it to just... make your own cloud service provider? One you could run from anywhere, be it from enterprise-grade gear in a datacenter, or from a handful of Raspberry Pi SBCs in your living room?\r\n\r\nThis talk will cover how Kubernetes is used to turn any generic cluster into a cloud service provider; one which minimises resource usage and preserves scalability, while not compromising on security or feature-set.\r\n\r\nAttendees can expect to gain insights on all kinds of challenges surrounding infrastructure, from hardware and virtualisation to networking and security. Additionally, expect a crash course on a number of cloud native technologies and how they are used for such a wild project!",
+        "startsAt": "2026-07-25T13:00:00",
+        "endsAt": "2026-07-25T14:00:00",
         "isServiceSession": false,
         "isPlenumSession": false,
         "speakers": [
           {
-            "id": "50f6bd48-8b68-4464-8a92-76292bf3f7dd",
-            "name": "Matthew Hood"
+            "id": "80c8f586-0d9c-45a7-ae05-037cc1dce4e7",
+            "name": "Alex Bissessur"
           }
         ],
         "categories": [],
-        "roomId": "58137",
-        "room": "Educator 1",
+        "roomId": "74751",
         "liveUrl": null,
         "recordingUrl": null,
         "status": "Accepted",
@@ -1063,22 +1151,25 @@
       },
       {
         "questionAnswers": [],
-        "id": "876063",
-        "title": ".NET Blazor + Firebase: Starting cheap",
-        "description": "This session could apply to any web development frameworks that produces static files on build, incl. the big players like Vue or React. In this case, the framework of choice is .NET Blazor (WASM) which is compiled into a static application that can run on a client browser.\r\n\r\nFirebase offers a no-cost/hassle-free entry into cloud development via simple offerings to cover the basic modern application needs - hosting, storage and business logic.\r\n\r\nThis session aims to walk the audience through:\r\n- Identifying what your application needs\r\n- Contrasting against Firebase and what it offers\r\n- .NET Blazor as a web framework choice\r\n- The Good: Making Blazor and Firebase play nice\r\n- The Bad: Avoidable friction from these choices\r\n- The Ugly: Things that just cannot be done",
-        "startsAt": "2025-07-26T12:00:00",
-        "endsAt": "2025-07-26T12:45:00",
+        "id": "1166267",
+        "title": "From Fixed to Growth: The Mindset IT Pro Need in the AI Era",
+        "description": "In an era where AI tools are transforming how software is designed, developed, and delivered, the biggest differentiator for developers is no longer just technical expertise , it’s mindset. As AI accelerates change across the tech industry, adaptability, curiosity, and continuous learning have become essential skills. \r\n \r\nThis talk explores how fixed vs growth mindset directly impacts a developer’s ability to evolve, collaborate with AI, and stay relevant in a fast-moving environment.\r\n \r\nThrough real-world examples from tech teams and organizational transformation, we’ll highlight why experimentation, resilience, and learning agility are key drivers of long-term success. \r\n\r\nParticipants will leave with practical strategies to future-proof their careers, work effectively alongside AI tools, and strengthen the human skills technology cannot replace.",
+        "startsAt": "2026-07-25T13:00:00",
+        "endsAt": "2026-07-25T14:00:00",
         "isServiceSession": false,
         "isPlenumSession": false,
         "speakers": [
           {
-            "id": "cf415be6-0558-4411-aa4d-dee4f0648547",
-            "name": "Vidush H. Namah"
+            "id": "7a7c18c9-3908-4fd0-9b45-c01f3aac5137",
+            "name": "Keleena Moorghen"
+          },
+          {
+            "id": "4a76785b-480a-4115-b01d-7646b027c200",
+            "name": "Rachel Rajiah"
           }
         ],
         "categories": [],
-        "roomId": "58138",
-        "room": "Educator 2",
+        "roomId": "74752",
         "liveUrl": null,
         "recordingUrl": null,
         "status": "Accepted",
@@ -1087,26 +1178,67 @@
       },
       {
         "questionAnswers": [],
-        "id": "866194",
-        "title": "Real-Time Data Processing with Kubernetes and Spark",
-        "description": "Combine the power of Kubernetes for scalable infrastructure and Apache Spark for real-time data processing.\r\n\r\nIn this session, we will demonstrate how to deploy Spark on Kubernetes for scalable, real-time analytics. Learn about:\r\n\t•\tDynamic Scaling: Managing Spark clusters with Kubernetes for optimal resource usage.\r\n\t•\tReal-Time Streaming: Processing live data feeds with Spark’s structured streaming.\r\n\t•\tCI/CD Integration: Automating deployment for data pipelines.\r\n\r\nIdeal for DevOps engineers, Data Scientists, Data Engineers, and Cloud Architects, this talk will include a live demo showcasing real-time data insights.\r\n",
-        "startsAt": "2025-07-26T12:00:00",
-        "endsAt": "2025-07-26T12:45:00",
+        "id": "1227927",
+        "title": "Mastering Retrieval-Augmented Generation with Gemini API's File Search Tool",
+        "description": "I first heard about Retrieval-Augmented Generation (RAG) when I was trying to get an AI agent to provide answers to questions pertaining to internal documents and not necessarily on the data it was trained on. Initially, I imagined it as how one would provide sensitive information only to authorized personnel or users; think company-level kind of access control or NDA-bound information. The goal is to ensure that the AI agent doesn't hallucinate.\r\n\r\nIn this session, I will be taking the participants through what RAG is and why it's considered as one of the most effective ways to build AI agents that provide better responses based on actual data. I will then take the participants through a codelab on how to do this in an Angular application, powered by Genkit as the AI orchestrator and the new Google File Search tool. File Search is a fully managed RAG system built directly into the Gemini API that abstracts away the retrieval pipeline so that one can focus on building great experiences.",
+        "startsAt": "2026-07-25T14:00:00",
+        "endsAt": "2026-07-25T15:00:00",
+        "isServiceSession": false,
+        "isPlenumSession": false,
+        "speakers": [
+          {
+            "id": "919f1100-e525-4aee-bcfe-48bd26e5709c",
+            "name": "Wayne Gakuo"
+          }
+        ],
+        "categories": [],
+        "roomId": "74750",
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": "Accepted",
+        "isInformed": true,
+        "isConfirmed": true
+      },
+      {
+        "questionAnswers": [],
+        "id": "1172211",
+        "title": "Ansible Without the Anxiety: Automation That Actually Works for Developers",
+        "description": "Automation tools have a reputation for steep learning curves and fragile configurations. While many Ansible examples, including my own, can be overwhelming, Ansible is only as complicated as you make it.\r\n\r\nAnsible's core design philosophy maps well to how developers already think. YAML is declarative, like writing a spec rather than a script. There's no agent to install, no daemon to babysit.\r\n\r\nThis session will cover the following topics:\r\n\r\n- You don't have to write it from scratch. Let's explore Ansible Galaxy, a huge library of community roles and collections that solve common problems out of the box\r\n- AI-Assisted authoring with Ansible Lightspeed, purpose built for generating syntactically correct, context-aware YAML\r\n- Practical patterns for developer workflows, including Ansible tools, and how it works together with existing tools like your favourite CI/CD pipeline to handle the surrounding infrastructure\r\n- Starting small and growing - a practical example of how to start small with one painful manual task, and expanding on that over time",
+        "startsAt": "2026-07-25T14:00:00",
+        "endsAt": "2026-07-25T15:00:00",
+        "isServiceSession": false,
+        "isPlenumSession": false,
+        "speakers": [
+          {
+            "id": "826f4157-067f-471d-bbcf-f9494cb70168",
+            "name": "Clifford Weinmann"
+          }
+        ],
+        "categories": [],
+        "roomId": "74751",
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": "Accepted",
+        "isInformed": true,
+        "isConfirmed": true
+      },
+      {
+        "questionAnswers": [],
+        "id": "1144770",
+        "title": "Powering Modern Warfare — Palantir Foundry",
+        "description": "Palantir’s software is often associated with military operations, intelligence agencies, and defense organizations. But beneath the headlines lies a powerful data platform designed to operate in environments where decisions matter and failure is not an option.\r\n\r\nIn this session, we will have an overview of how Palantir Foundry works by building a complete data application live. Using a localized, weather data, the demo will show how data flows from ingestion to transformation, ontology modeling, and finally into an operational application.\r\n\r\nThe talk explores how concepts born in defense — such as traceability, granular access control, and real-time decision support — can be applied to everyday problems like infrastructure planning, disaster response, and resource allocation.",
+        "startsAt": "2026-07-25T14:00:00",
+        "endsAt": "2026-07-25T15:00:00",
         "isServiceSession": false,
         "isPlenumSession": false,
         "speakers": [
           {
             "id": "dde46c59-2d2b-4840-b7a1-131c373e556d",
             "name": "Aditya Bholah"
-          },
-          {
-            "id": "a189d971-edd8-46d2-a69a-d561a20c681e",
-            "name": "Chittesh Sham"
           }
         ],
         "categories": [],
-        "roomId": "58139",
-        "room": "Accelerator",
+        "roomId": "74752",
         "liveUrl": null,
         "recordingUrl": null,
         "status": "Accepted",
@@ -1115,174 +1247,16 @@
       },
       {
         "questionAnswers": [],
-        "id": "857708",
-        "title": "We need to talk about Google's Jax",
-        "description": "JAX has emerged as a powerful and increasingly essential tool in the world of machine learning, particularly for high-performance numerical computation and large-scale model training.  This session dives deep into JAX, exploring its core functionalities and showcasing its potential to revolutionize your ML workflows.\r\n\r\nWe'll start by understanding what makes JAX unique: its functional programming paradigm, automatic differentiation capabilities (both forward and reverse), and the ability to seamlessly target various hardware accelerators (GPUs, TPUs). We'll unpack how these features combine to enable efficient and scalable computation.\r\n\r\nBeyond the fundamentals, we'll delve into practical applications.  This session will demonstrate how JAX empowers researchers and practitioners to build and train complex models with ease.  We'll explore real-world use cases, including an examination of how JAX plays a crucial role in powering cutting-edge solutions like Google's Gemini.  \r\n\r\nThis session is designed for those with a foundational understanding of machine learning and some familiarity with Python.  While prior experience with JAX isn't required, a willingness to explore new concepts and a passion for pushing the boundaries of ML are essential.  Join us to discover why \"We Need to Talk About Google's JAX\" and how it can unlock the next generation of your AI projects.",
-        "startsAt": "2025-07-26T13:00:00",
-        "endsAt": "2025-07-26T13:45:00",
-        "isServiceSession": false,
-        "isPlenumSession": false,
-        "speakers": [
-          {
-            "id": "0834ce8d-76cf-489b-b778-61ff8fa6ed5e",
-            "name": "Noor Yadallee"
-          }
-        ],
-        "categories": [],
-        "roomId": "58137",
-        "room": "Educator 1",
-        "liveUrl": null,
-        "recordingUrl": null,
-        "status": "Accepted",
-        "isInformed": true,
-        "isConfirmed": true
-      },
-      {
-        "questionAnswers": [],
-        "id": "867083",
-        "title": "Unlock the Power of AI: Build Smart Apps with .NET and DeepSeek R1",
-        "description": "The DeepSeek R1 model has been receiving significant attention recently. A frequently asked question is whether it can be integrated into .NET applications. The answer is unequivocally yes. This presentation will provide a detailed walkthrough on utilizing the Microsoft.Extensions.AI (MEAI) library with DeepSeek R1 on GitHub Models.\r\n\r\nThe objective of this session is to demonstrate how .NET developers can seamlessly integrate the DeepSeek R1 model into their applications using the Microsoft.Extensions.AI (MEAI) library. With the increasing demand for AI-powered solutions, it is essential to leverage efficient and scalable tools that enhance development workflows. MEAI provides a standardized approach to integrating AI models, making it easier to work with DeepSeek R1 and other AI services. By the end of this session, attendees will have a solid understanding of how to integrate DeepSeek R1 into their projects, optimize performance, and leverage its capabilities effectively.",
-        "startsAt": "2025-07-26T13:00:00",
-        "endsAt": "2025-07-26T13:45:00",
-        "isServiceSession": false,
-        "isPlenumSession": false,
-        "speakers": [
-          {
-            "id": "1b125e8e-6f6f-41e2-a123-1d1f5fbd9c4a",
-            "name": "Kelly Quirin"
-          },
-          {
-            "id": "a74e488a-4c89-4f94-b1a2-60230c88f3aa",
-            "name": "Samanta Luchoo"
-          }
-        ],
-        "categories": [],
-        "roomId": "58138",
-        "room": "Educator 2",
-        "liveUrl": null,
-        "recordingUrl": null,
-        "status": "Accepted",
-        "isInformed": true,
-        "isConfirmed": true
-      },
-      {
-        "questionAnswers": [],
-        "id": "875336",
-        "title": "Understanding Identity and Access Management (IAM) in Google Cloud Platform (GCP)",
-        "description": "Google Cloud Platform (GCP) uses Identity and Access Management (IAM) to define who (identity) has what permissions (access) to which resources. IAM helps manage roles and permissions efficiently across an organization.\r\n\r\nDuring the presentation, we will explore the Google Cloud Platform’s (GCP) Identity and Access Management (IAM) system, detailing how it controls access to resources securely and efficiently. We will cover key IAM components, including identities, roles, policies, and hierarchical access control. Additionally, we’ll discuss best practices for implementing IAM, ensuring the principle of least privilege, and leveraging IAM conditions for enhanced security.",
-        "startsAt": "2025-07-26T13:00:00",
-        "endsAt": "2025-07-26T13:45:00",
-        "isServiceSession": false,
-        "isPlenumSession": false,
-        "speakers": [
-          {
-            "id": "6661274d-3550-469e-a5e5-50c77a435c04",
-            "name": "Eddy Lareine"
-          }
-        ],
-        "categories": [],
-        "roomId": "58139",
-        "room": "Accelerator",
-        "liveUrl": null,
-        "recordingUrl": null,
-        "status": "Accepted",
-        "isInformed": true,
-        "isConfirmed": true
-      },
-      {
-        "questionAnswers": [],
-        "id": "837198",
-        "title": "Emojis Emojis Everywhere with POV",
-        "description": "An interview with POV to gather his thoughts on the rise of Emojis use in our personal lives & how it impacts our culture.\r\n\r\nAs one of the leading caricaturist on the island for l'Express newspaper. I thought it would be interesting to get his perspective on the introduction & the evolution of emogis.\r\n\r\nThe evolution of the ❤️ emoji, how strength is now represented by 🦾, how talking about ones parents is represented 🙄 or maybe how our excitement is represented with 🔥.\r\n\r\nWe'll try to make this talk as visual as possible. Please also see reply from Chat GPT when asked REASONED response on the question: \r\n\r\nAre emojis a form of language?\r\n\r\n\"... So, in summary, while emojis aren’t a language in the traditional sense, they do function as a communicative tool with language-like qualities, especially in digital communication. They add nuance and emotional depth to our messages, making our everyday interactions richer and often more engaging.\"\r\n\r\n⚠️ IMPORTANT \r\n\r\nWe will attempt a LIVE caricature of ONE lucky participant! We'll organise the competition during the session.\r\n\r\nAlso, we'll attempt to have some goodies from One O One as always! 📦",
-        "startsAt": "2025-07-26T14:00:00",
-        "endsAt": "2025-07-26T14:45:00",
-        "isServiceSession": false,
-        "isPlenumSession": false,
-        "speakers": [
-          {
-            "id": "a52fead5-fedc-48da-94bf-192f1c171681",
-            "name": "Loic Forget"
-          }
-        ],
-        "categories": [],
-        "roomId": "58137",
-        "room": "Educator 1",
-        "liveUrl": null,
-        "recordingUrl": null,
-        "status": "Accepted",
-        "isInformed": true,
-        "isConfirmed": true
-      },
-      {
-        "questionAnswers": [],
-        "id": "965084",
-        "title": "Code & Concepts: A Developer's Deep Dive into Gen AI's Power Plays",
-        "description": "Building on the strategic vision of \"The Business Superpower,\" this session gets under the hood of the generative AI revolution. We'll move from the 'what' and 'why' to the 'how,' with a developer-focused exploration of Mixture of Experts (MoE), AI Agents, and Retrieval-Augmented Generation (RAG). Prepare for a code-intensive journey through architectural patterns, implementation strategies, and the practical challenges of building intelligent, enterprise-grade AI systems. We will dissect PyTorch implementations of MoE, construct AI agents with LangChain, and build a complete RAG pipeline in Python. This is your opportunity to translate high-level concepts into production-ready skills.",
-        "startsAt": "2025-07-26T14:00:00",
-        "endsAt": "2025-07-26T14:45:00",
-        "isServiceSession": false,
-        "isPlenumSession": false,
-        "speakers": [
-          {
-            "id": "395aaadd-d46b-47dc-80da-10b03d54c83d",
-            "name": "Joe van der Walt"
-          }
-        ],
-        "categories": [],
-        "roomId": "58138",
-        "room": "Educator 2",
-        "liveUrl": null,
-        "recordingUrl": null,
-        "status": "Accepted",
-        "isInformed": true,
-        "isConfirmed": true
-      },
-      {
-        "questionAnswers": [],
-        "id": "874469",
-        "title": "Building a Zero-Trust Access Management with Teleport",
-        "description": "Teleport is an open-source access management solution developed by Teleport (formerly Gravitational). It unifies security across servers, Kubernetes clusters, and databases by using short-lived certificates instead of static keys, thereby reducing the attack surface and simplifying the authentication process.\r\n\r\nIn this session, I will give an overview of how Teleport is set up and demonstrate its core functionalities. Expect a practical walkthrough on configuring Teleport, managing access via short-lived certificates, and leveraging its features to ensure a more efficient and secure environment.",
-        "startsAt": "2025-07-26T14:00:00",
-        "endsAt": "2025-07-26T14:45:00",
-        "isServiceSession": false,
-        "isPlenumSession": false,
-        "speakers": [
-          {
-            "id": "ba3958ec-7d08-4845-bcb5-2e1774318932",
-            "name": "Girish Mahabir"
-          }
-        ],
-        "categories": [],
-        "roomId": "58139",
-        "room": "Accelerator",
-        "liveUrl": null,
-        "recordingUrl": null,
-        "status": "Accepted",
-        "isInformed": true,
-        "isConfirmed": true
-      },
-      {
-        "questionAnswers": [],
-        "id": "980865",
-        "title": "Campsite Fire Chat: Digital Adoption & Transformation",
+        "id": "141cc570-9635-4aab-83e9-fb655ff1484a",
+        "title": "Campsite Fire Chat",
         "description": null,
-        "startsAt": "2025-07-26T15:00:00",
-        "endsAt": "2025-07-26T15:45:00",
+        "startsAt": "2026-07-25T15:00:00",
+        "endsAt": "2026-07-25T16:00:00",
         "isServiceSession": true,
-        "isPlenumSession": false,
-        "speakers": [
-          {
-            "id": "4c563acb-7ae8-4b4d-9ddf-11c19a02b813",
-            "name": "Jochen Kirstätter"
-          },
-          {
-            "id": "cf415be6-0558-4411-aa4d-dee4f0648547",
-            "name": "Vidush H. Namah"
-          }
-        ],
+        "isPlenumSession": true,
+        "speakers": [],
         "categories": [],
-        "roomId": "58137",
-        "room": "Educator 1",
+        "roomId": "74750",
         "liveUrl": null,
         "recordingUrl": null,
         "status": null,
@@ -1291,24 +1265,22 @@
       },
       {
         "questionAnswers": [],
-        "id": "850bd572-7a30-41f2-a3e2-9116661b3281",
+        "id": "41c096d7-abd9-4460-888f-8bf48e002ecc",
         "title": "Closing Session",
         "description": null,
-        "startsAt": "2025-07-26T16:00:00",
-        "endsAt": "2025-07-26T17:00:00",
+        "startsAt": "2026-07-25T16:00:00",
+        "endsAt": "2026-07-25T17:00:00",
         "isServiceSession": true,
-        "isPlenumSession": false,
+        "isPlenumSession": true,
         "speakers": [],
         "categories": [],
-        "roomId": "58137",
-        "room": "Educator 1",
+        "roomId": "74750",
         "liveUrl": null,
         "recordingUrl": null,
         "status": null,
         "isInformed": false,
         "isConfirmed": false
       }
-    ],
-    "isDefault": false
+    ]
   }
 ]
