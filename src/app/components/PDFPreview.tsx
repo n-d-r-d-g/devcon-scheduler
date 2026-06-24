@@ -1,7 +1,7 @@
 "use client";
 
 import { EXPORT_TIME_FORMAT, MSCC_WEBSITE_AGENDA_URL } from "@/constants";
-import { retrieveSortedSessionsByDay } from "@/functions";
+import { retrieveConfYear, retrieveSortedSessionsByDay } from "@/functions";
 import { Session } from "@/types";
 import { Card, CardBody, Link } from "@heroui/react";
 import dayjs from "dayjs";
@@ -9,6 +9,8 @@ import utc from "dayjs/plugin/utc";
 import { useCallback } from "react";
 
 dayjs.extend(utc);
+
+const confYear = retrieveConfYear();
 
 type Props = {
   sessionsByDay: Map<string, Map<string, Session>>;
@@ -23,7 +25,7 @@ export function PDFPreview({ sessionsByDay }: Props) {
   return (
     <div className="hidden print:block w-full">
       <h1 className="text-3xl font-bold mb-2">
-        MSCC Developers Conference 2025 Agenda
+        MSCC Developers Conference {confYear} Agenda
       </h1>
       <div className="flex flex-row items-baseline gap-4 mb-12">
         <Link

@@ -1,8 +1,14 @@
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
+import sessionsData from "./data/sessions.json";
 import { Session } from "./types";
 
 dayjs.extend(utc);
+
+export function retrieveConfYear(format = "YYYY") {
+  const firstStartsAt = sessionsData[0]?.sessions[0]?.startsAt;
+  return firstStartsAt ? dayjs.utc(firstStartsAt).format(format) : "";
+}
 
 export function retrieveSortedSessionsByDay(sessions: Map<string, Session>) {
   const sortedSessions = [...sessions.values()]?.sort((sessionA, sessionB) => {

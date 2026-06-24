@@ -5,17 +5,13 @@ import { Inter } from "next/font/google";
 import Image from "next/image";
 import { FaGithub, FaHeart } from "react-icons/fa6";
 import { ThemeSwitch } from "./components/ThemeSwitch";
-import sessionsData from "../data/sessions.json";
-import dayjs from "dayjs";
-import utc from "dayjs/plugin/utc";
+import { retrieveConfYear } from "@/functions";
 import "./globals.css";
-
-dayjs.extend(utc);
 
 const inter = Inter({ subsets: ["latin"] });
 
-const firstStartsAt = sessionsData[0]?.sessions[0]?.startsAt;
-const yearLabel = firstStartsAt ? `${dayjs.utc(firstStartsAt).format("YY")}'` : "";
+const shortYear = retrieveConfYear("YY");
+const yearLabel = shortYear ? `${shortYear}'` : "";
 
 export const metadata: Metadata = {
   title: "DevConMU Scheduler",
