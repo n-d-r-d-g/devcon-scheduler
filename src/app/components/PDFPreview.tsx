@@ -1,6 +1,10 @@
 "use client";
 
-import { EXPORT_TIME_FORMAT, MSCC_WEBSITE_AGENDA_URL } from "@/constants";
+import {
+  EXPORT_DATE_FORMAT,
+  EXPORT_TIME_FORMAT,
+  MSCC_WEBSITE_AGENDA_URL,
+} from "@/constants";
 import { retrieveConfYear, retrieveSortedSessionsByDay } from "@/functions";
 import { Session } from "@/types";
 import { Card, CardBody, Link } from "@heroui/react";
@@ -48,11 +52,18 @@ export function PDFPreview({ sessionsByDay }: Props) {
       <div className="flex flex-col gap-12">
         {[...sessionsByDay.entries()].map(([day, sessions]) => {
           if (sessions.size === 0) return null;
+          const sortedSessions = retrieveSortedSessionsByDay(sessions);
+          const dayDate = sortedSessions[0]
+            ? dayjs.utc(sortedSessions[0].startsAt).format(EXPORT_DATE_FORMAT)
+            : "";
           return (
             <div key={day} className="flex flex-col gap-4">
-              <h2 className="text-xl font-bold uppercase">{day}</h2>
+              <h2 className="text-xl font-bold uppercase">
+                {day}
+                {dayDate && `, ${dayDate}`}
+              </h2>
               <div className={`flex flex-col items-start gap-4`}>
-                {retrieveSortedSessionsByDay(sessions).map((session) => (
+                {sortedSessions.map((session) => (
                   <Card
                     key={session.id}
                     className="max-w-full border-1 break-inside-avoid"

@@ -3,6 +3,7 @@
 import {
   AGENDA_DARK_THEME,
   AGENDA_LIGHT_THEME,
+  EXPORT_DATE_FORMAT,
   EXPORT_TIME_FORMAT,
 } from "@/constants";
 import { ConfDay, Room, Session, SessionsByDay } from "@/types";
@@ -181,9 +182,16 @@ export function Agenda({
       }
 
       isFirstActiveSession = false;
-      nextDisplay += `<<<<<<< ${day.toUpperCase()} >>>>>>>\n`;
+      const sortedSessions = retrieveSortedSessionsByDay(sessionsByDay);
+      const dayDate = sortedSessions[0]
+        ? `, ${dayjs
+            .utc(sortedSessions[0].startsAt)
+            .format(EXPORT_DATE_FORMAT)
+            .toUpperCase()}`
+        : "";
+      nextDisplay += `<<<<<<< ${day.toUpperCase()}${dayDate} >>>>>>>\n`;
       let sessionIndex = 0;
-      retrieveSortedSessionsByDay(sessionsByDay).forEach((session) => {
+      sortedSessions.forEach((session) => {
         nextDisplay += `\n${session.title}`;
         nextDisplay += `\n${session.room}`;
         nextDisplay += `\n${dayjs
