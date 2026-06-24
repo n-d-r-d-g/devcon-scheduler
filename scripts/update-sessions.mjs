@@ -67,6 +67,7 @@ function mapSession(session) {
     speakers: session.speakers ?? [],
     categories: session.categories ?? [],
     roomId: String(session.roomId),
+    room: session.room,
     liveUrl: session.liveUrl ?? null,
     recordingUrl: session.recordingUrl ?? null,
     status: session.status ?? null,
