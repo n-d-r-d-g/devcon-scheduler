@@ -5,9 +5,17 @@ import { Inter } from "next/font/google";
 import Image from "next/image";
 import { FaGithub, FaHeart } from "react-icons/fa6";
 import { ThemeSwitch } from "./components/ThemeSwitch";
+import sessionsData from "../data/sessions.json";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
 import "./globals.css";
 
+dayjs.extend(utc);
+
 const inter = Inter({ subsets: ["latin"] });
+
+const firstStartsAt = sessionsData[0]?.sessions[0]?.startsAt;
+const yearLabel = firstStartsAt ? `${dayjs.utc(firstStartsAt).format("YY")}'` : "";
 
 export const metadata: Metadata = {
   title: "DevConMU Scheduler",
@@ -29,9 +37,13 @@ export default function RootLayout({
             <nav className="print:hidden sticky top-0 z-10 mx-auto flex w-[120rem] max-w-full flex-row items-center justify-between border-b border-slate-200 bg-white p-3 dark:border-neutral-700 dark:bg-neutral-950">
               <Link
                 href={"/"}
-                className="flex flex-row items-center gap-2 rounded text-sm font-bold text-slate-700 grayscale hover:text-black hover:no-underline hover:grayscale-0 focus-visible:text-black focus-visible:no-underline focus-visible:!outline-offset-8 focus-visible:grayscale-0 motion-safe:transition motion-safe:duration-300 dark:text-slate-300 dark:hover:text-white dark:focus-visible:text-white dark:focus-visible:ring-blue-500 dark:focus-visible:ring-offset-slate-900"
+                style={{ "--year": `"${yearLabel}"` } as React.CSSProperties}
+                className="group flex flex-row items-center gap-2 relative rounded text-sm font-bold text-slate-700 hover:text-black hover:no-underline focus-visible:text-black focus-visible:no-underline focus-visible:!outline-offset-8 motion-safe:transition motion-safe:duration-300 dark:text-slate-300 dark:hover:text-white dark:focus-visible:text-white dark:focus-visible:ring-blue-500 dark:focus-visible:ring-offset-slate-900 after:content-[var(--year)] after:absolute after:bottom-[0.75lh] after:right-[-1ch] after:text-[0.9em] after:font-mono after:text-green-700 dark:after:text-green-500"
               >
-                <span aria-hidden>
+                <span
+                  aria-hidden
+                  className="grayscale group-hover:grayscale-0 group-focus-visible:grayscale-0 motion-safe:transition motion-safe:duration-300"
+                >
                   <Image
                     src="/logo.svg"
                     alt="MUDOCS"
