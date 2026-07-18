@@ -2,6 +2,7 @@ import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import sessionsData from "./data/sessions.json";
 import { Session } from "./types";
+import { ACTIVE_SESSIONS_SEARCH_PARAM_KEY } from "./constants";
 
 dayjs.extend(utc);
 
@@ -21,4 +22,10 @@ export function retrieveSortedSessionsByDay(sessions: Map<string, Session>) {
   });
 
   return sortedSessions;
+}
+
+export function setActiveSessionsInUrl(stringifiedActiveSessions: string) {
+  const url = new URL(window.location.href);
+  url.searchParams.set(ACTIVE_SESSIONS_SEARCH_PARAM_KEY, btoa(stringifiedActiveSessions));
+  window.history.replaceState({}, "", url.toString());
 }

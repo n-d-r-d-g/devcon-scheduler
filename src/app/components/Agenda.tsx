@@ -1,6 +1,8 @@
 "use client";
 
 import {
+  ACTIVE_SESSIONS_SEARCH_PARAM_KEY,
+  ACTIVE_SESSIONS_STORAGE_KEY,
   AGENDA_DARK_THEME,
   AGENDA_LIGHT_THEME,
   EXPORT_DATE_FORMAT,
@@ -23,7 +25,7 @@ import { PDFPreview } from "./PDFPreview";
 import { RoomName } from "./RoomName";
 import { SessionCard } from "./SessionCard";
 import { Timeline } from "./Timeline";
-import { retrieveSortedSessionsByDay } from "@/functions";
+import { retrieveSortedSessionsByDay, setActiveSessionsInUrl } from "@/functions";
 
 dayjs.extend(utc);
 
@@ -112,7 +114,17 @@ export function Agenda({
   const { resolvedTheme } = useTheme();
 
   useLayoutEffect(() => {
-    const storedActiveSessions = localStorage.getItem("activeSessions");
+    const url = new URL(window.location.href);
+    const sharedActiveSessions = url.searchParams.get(
+      ACTIVE_SESSIONS_SEARCH_PARAM_KEY
+    );
+    let storedActiveSessions: string | null = null;
+
+    if (sharedActiveSessions) {
+      storedActiveSessions = JSON.stringify(JSON.parse(atob(sharedActiveSessions)));
+    } else {
+      storedActiveSessions = localStorage.getItem(ACTIVE_SESSIONS_STORAGE_KEY);
+    }
 
     if (storedActiveSessions) {
       const parsedActiveSessions = JSON.parse(storedActiveSessions) as Record<
@@ -328,10 +340,14 @@ export function Agenda({
                       };
                     }
 
+                    const stringifiedActiveSessionIds = JSON.stringify(activeSessionIds);
+
                     localStorage.setItem(
-                      "activeSessions",
-                      JSON.stringify(activeSessionIds)
+                      ACTIVE_SESSIONS_STORAGE_KEY,
+                      stringifiedActiveSessionIds
                     );
+
+                    setActiveSessionsInUrl(stringifiedActiveSessionIds);
                     setActiveSessions(newActiveSessions);
                     setSessionsData(newSessionsData);
                   }}

@@ -4,6 +4,7 @@ import { ThemeProvider } from "next-themes";
 import { Inter } from "next/font/google";
 import Image from "next/image";
 import { FaHeart } from "react-icons/fa6";
+import { ShareButton } from "./components/ShareButton";
 import { GitHubButton } from "./components/GitHubButton";
 import { ThemeSwitch } from "./components/ThemeSwitch";
 import { retrieveConfYear } from "@/functions";
@@ -35,7 +36,7 @@ export default function RootLayout({
               <Link
                 href={"/"}
                 style={{ "--year": `"${yearLabel}"` } as React.CSSProperties}
-                className="group flex flex-row items-center gap-2 relative rounded text-sm font-bold text-slate-700 hover:text-black hover:no-underline focus-visible:text-black focus-visible:no-underline focus-visible:!outline-offset-8 motion-safe:transition motion-safe:duration-300 dark:text-slate-300 dark:hover:text-white dark:focus-visible:text-white dark:focus-visible:ring-blue-500 dark:focus-visible:ring-offset-slate-900 after:content-[var(--year)] after:absolute after:bottom-[0.75lh] after:right-[-1ch] after:text-[0.9em] after:font-mono after:text-green-700 dark:after:text-green-500"
+                className="group flex flex-row items-center gap-2 rounded text-sm font-bold text-slate-700 hover:text-black hover:no-underline focus-visible:text-black focus-visible:no-underline focus-visible:!outline-offset-8 motion-safe:transition motion-safe:duration-300 dark:text-slate-300 dark:hover:text-white dark:focus-visible:text-white dark:focus-visible:ring-blue-500 dark:focus-visible:ring-offset-slate-900"
               >
                 <span
                   aria-hidden
@@ -50,9 +51,10 @@ export default function RootLayout({
                     priority
                   />
                 </span>{" "}
-                DevConMU Scheduler
+                <span className="relative leading-4 after:content-[var(--year)] after:absolute after:top-[-2ex] after:left-0 after:text-[0.9em] after:font-mono after:text-green-700 dark:after:text-green-500">DevConMU Scheduler</span>
               </Link>
               <aside className="flex flex-row items-center gap-1">
+                <ShareButton />
                 <GitHubButton />
                 <ThemeSwitch />
               </aside>
