@@ -3,21 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint",
     "test": "jest",
     "test:watch": "jest --watch",
     "update:sessions": "node scripts/update-sessions.mjs"
   },
   "dependencies": {
-    "@heroui/react": "^2.7.11",
+    "@heroui/react": "2.7.11",
     "dayjs": "^1.11.12",
     "framer-motion": "^11.3.7",
-    "html2pdf.js": "^0.10.2",
-    "next": "14.2.35",
-    "next-themes": "^0.3.0",
+    "next": "^16.2.10",
+    "next-themes": "^0.4.6",
     "planby": "^1.1.7",
     "react": "^18",
     "react-dom": "^18",
@@ -32,15 +31,19 @@
     "@types/node": "^20",
     "@types/react": "^18.3.23",
     "@types/react-dom": "^18.3.7",
-    "cypress": "^14.5.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.35",
+    "cypress": "^15.18.1",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.2.10",
     "jest": "^30.0.4",
     "jest-environment-jsdom": "^30.0.4",
-    "postcss": "^8",
+    "jiti": "^2.7.0",
+    "postcss": "^8.5.10",
     "tailwindcss": "^3.4.1",
     "ts-jest": "^29.4.0",
     "ts-node": "^10.9.2",
     "typescript": "^5"
+  },
+  "overrides": {
+    "postcss": "^8.5.10"
   }
 }
