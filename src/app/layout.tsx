@@ -1,9 +1,10 @@
-import { Button, Link, Tooltip } from "@heroui/react";
+import { Link, Tooltip } from "@heroui/react";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Inter } from "next/font/google";
 import Image from "next/image";
-import { FaGithub, FaHeart } from "react-icons/fa6";
+import { FaHeart } from "react-icons/fa6";
+import { GitHubButton } from "./components/GitHubButton";
 import { ThemeSwitch } from "./components/ThemeSwitch";
 import { retrieveConfYear } from "@/functions";
 import "./globals.css";
@@ -52,21 +53,7 @@ export default function RootLayout({
                 DevConMU Scheduler
               </Link>
               <aside className="flex flex-row items-center gap-1">
-                <Tooltip content="GitHub link">
-                  <Button
-                    size="md"
-                    radius="full"
-                    variant="light"
-                    as={Link}
-                    href="https://github.com/n-d-r-d-g/devcon-scheduler"
-                    aria-label="GitHub link"
-                    className="!text-default-foreground focus-visible:!ring-transparent data-[focus-visible=true]:!-outline-offset-2"
-                    isIconOnly
-                    isExternal
-                  >
-                    <FaGithub size={16} />
-                  </Button>
-                </Tooltip>
+                <GitHubButton />
                 <ThemeSwitch />
               </aside>
             </nav>
