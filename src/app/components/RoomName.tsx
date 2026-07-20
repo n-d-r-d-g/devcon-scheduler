@@ -13,7 +13,7 @@ export const RoomName = ({ channel }: ChannelItemProps) => {
       {...position}
       className="border-r-1 border-default-50 shadow-lg dark:shadow-2xl"
     >
-      <p className="w-full text-end [writing-mode:sideways-lr] font-mono text-sm uppercase tracking-[0.2em] px-2 text-default-600">{title}</p>
+      <p className="w-full [writing-mode:sideways-lr] supports-[not(writing-mode:sideways-lr)]:[writing-mode:vertical-rl] supports-[not(writing-mode:sideways-lr)]:rotate-180 font-mono text-sm uppercase tracking-[0.2em] px-2 text-default-600">{title}</p>
     </ChannelBox>
   );
 };
