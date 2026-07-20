@@ -9,7 +9,7 @@ import {
   EXPORT_TIME_FORMAT,
 } from "@/constants";
 import { ConfDay, Room, Session, SessionsByDay } from "@/types";
-import { addToast, Button, ButtonGroup, HeroUIProvider, ToastProvider } from "@heroui/react";
+import { addToast, Button, ButtonGroup, ToastProvider } from "@heroui/react";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import { useTheme } from "next-themes";
@@ -268,7 +268,7 @@ export function Agenda({
   }, []);
 
   return (
-    <HeroUIProvider>
+    <>
       <ToastProvider placement="top-center" />
       <div className="print:hidden max-w-full flex flex-row justify-center items-center gap-2 px-3 pt-2">
         <Days days={days.current} activeDay={activeDay} onClick={onDayChange} />
@@ -381,6 +381,6 @@ export function Agenda({
         </div>
       </div>
       <PDFPreview sessionsByDay={activeSessions} />
-    </HeroUIProvider>
+    </>
   );
 }
