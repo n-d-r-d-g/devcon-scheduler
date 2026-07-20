@@ -190,7 +190,7 @@ export function Agenda({
     channels: rooms.current,
     epg: sessionsData[activeDay] as Array<Program>,
     dayWidth: 3000,
-    sidebarWidth: 102,
+    sidebarWidth: 40,
     itemHeight: 164,
     isSidebar: true,
     isTimeline: true,
