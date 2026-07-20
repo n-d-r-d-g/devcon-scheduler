@@ -9,13 +9,13 @@ import {
   EXPORT_TIME_FORMAT,
 } from "@/constants";
 import { ConfDay, Room, Session, SessionsByDay } from "@/types";
-import { Button, ButtonGroup, HeroUIProvider } from "@heroui/react";
+import { addToast, Button, ButtonGroup, HeroUIProvider, ToastProvider } from "@heroui/react";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import { useTheme } from "next-themes";
 import { Epg, Layout, Program, ProgramItem, useEpg } from "planby";
 import { Position } from "planby/dist/Epg/helpers/types";
-import { useCallback, useLayoutEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import {
   LuCheckCheck as LuCheckCheckIcon,
   LuCopy as LuCopyIcon,
@@ -55,7 +55,7 @@ function Days({ days, activeDay, onClick }: DaysProps) {
   );
 
   return (
-    <ButtonGroup fullWidth disableAnimation>
+    <ButtonGroup disableAnimation>
       {days.map((day) => (
         <Button
           key={day.name.long}
@@ -115,15 +115,16 @@ export function Agenda({
 
   useLayoutEffect(() => {
     const url = new URL(window.location.href);
-    const sharedActiveSessions = url.searchParams.get(
+    const activeSessionsFromUrl = url.searchParams.get(
       ACTIVE_SESSIONS_SEARCH_PARAM_KEY
     );
     let storedActiveSessions: string | null = null;
+    const activeSessionsFromLocalStorage = localStorage.getItem(ACTIVE_SESSIONS_STORAGE_KEY);
 
-    if (sharedActiveSessions) {
-      storedActiveSessions = JSON.stringify(JSON.parse(atob(sharedActiveSessions)));
+    if (activeSessionsFromUrl) {
+      storedActiveSessions = JSON.stringify(JSON.parse(atob(activeSessionsFromUrl)));
     } else {
-      storedActiveSessions = localStorage.getItem(ACTIVE_SESSIONS_STORAGE_KEY);
+      storedActiveSessions = activeSessionsFromLocalStorage;
     }
 
     if (storedActiveSessions) {
@@ -156,6 +157,23 @@ export function Agenda({
       setActiveSessions(newActiveSessions);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    const url = new URL(window.location.href);
+    const activeSessionsFromUrl = url.searchParams.get(
+      ACTIVE_SESSIONS_SEARCH_PARAM_KEY
+    );
+    const activeSessionsFromLocalStorage = localStorage.getItem(ACTIVE_SESSIONS_STORAGE_KEY);
+
+    if (activeSessionsFromUrl && activeSessionsFromLocalStorage) {
+      addToast({
+        title: "Attention!",
+        description: "Sessions you add/remove will be remembered by your browser.",
+        color: "warning",
+        timeout: Infinity,
+      });
+    }
   }, []);
 
   const noSessionsSelected = useCallback(() => {
@@ -251,6 +269,7 @@ export function Agenda({
 
   return (
     <HeroUIProvider>
+      <ToastProvider placement="top-center" />
       <div className="print:hidden max-w-full flex flex-row justify-center items-center gap-2 px-3 pt-2">
         <Days days={days.current} activeDay={activeDay} onClick={onDayChange} />
         <Button
