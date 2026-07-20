@@ -9,7 +9,7 @@ import {
   EXPORT_TIME_FORMAT,
 } from "@/constants";
 import { ConfDay, Room, Session, SessionsByDay } from "@/types";
-import { Button, ButtonGroup } from "@heroui/react";
+import { Button, ButtonGroup, HeroUIProvider } from "@heroui/react";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import { useTheme } from "next-themes";
@@ -250,8 +250,8 @@ export function Agenda({
   }, []);
 
   return (
-    <>
-      <div className="print:hidden max-w-full flex flex-row items-center gap-2 sm:mx-auto px-3 pt-2">
+    <HeroUIProvider>
+      <div className="print:hidden max-w-full flex flex-row justify-center items-center gap-2 px-3 pt-2">
         <Days days={days.current} activeDay={activeDay} onClick={onDayChange} />
         <Button
           type="button"
@@ -362,6 +362,6 @@ export function Agenda({
         </div>
       </div>
       <PDFPreview sessionsByDay={activeSessions} />
-    </>
+    </HeroUIProvider>
   );
 }
