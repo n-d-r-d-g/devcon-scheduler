@@ -100,9 +100,8 @@ export const SessionCard = ({
                   </div>
                 </Tooltip>
                 <ProgramText className="mb-1 text-gray-300">
-                  {startTime} - {endTime}
+                  {startTime} - {endTime} → {room}
                 </ProgramText>
-                <ProgramText className="mb-1 text-gray-300">{room}</ProgramText>
                 {speakers.length > 0 && (
                   <ProgramText className="mb-1 text-gray-300">
                     {speakers.join(", ")}

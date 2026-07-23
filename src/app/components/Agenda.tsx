@@ -191,7 +191,7 @@ export function Agenda({
     epg: sessionsData[activeDay] as Array<Program>,
     dayWidth: 3000,
     sidebarWidth: 40,
-    itemHeight: 164,
+    itemHeight: 144,
     isSidebar: true,
     isTimeline: true,
     isLine: false,
