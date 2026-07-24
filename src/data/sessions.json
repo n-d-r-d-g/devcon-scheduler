@@ -2,7 +2,7 @@
   {
     "groupId": 20260723,
     "groupName": "Thursday",
-    "isDefault": true,
+    "isDefault": false,
     "sessions": [
       {
         "questionAnswers": [],
@@ -25,21 +25,26 @@
       },
       {
         "questionAnswers": [],
-        "id": "c271c698-dd47-40d4-8cf6-b055d705f9ff",
-        "title": "Keynote: SWAN",
+        "id": "1285917",
+        "title": "Keynote: The cheese has moved",
         "description": null,
         "startsAt": "2026-07-23T10:00:00",
         "endsAt": "2026-07-23T11:00:00",
-        "isServiceSession": true,
+        "isServiceSession": false,
         "isPlenumSession": true,
-        "speakers": [],
+        "speakers": [
+          {
+            "id": "64a4daa3-3ded-48aa-b882-edd2e290a130",
+            "name": "Sujit Woozageer"
+          }
+        ],
         "categories": [],
         "roomId": "74750",
         "room": "Educator 1",
         "liveUrl": null,
         "recordingUrl": null,
-        "status": null,
-        "isInformed": false,
+        "status": "Accepted",
+        "isInformed": true,
         "isConfirmed": false
       },
       {
@@ -487,7 +492,7 @@
   {
     "groupId": 20260724,
     "groupName": "Friday",
-    "isDefault": false,
+    "isDefault": true,
     "sessions": [
       {
         "questionAnswers": [],
@@ -526,10 +531,6 @@
           {
             "id": "4f0841a9-53e1-4034-ab51-f6cfc69e019a",
             "name": "Medhavi Pareanen"
-          },
-          {
-            "id": "cfeb4255-8f21-4035-8c6c-d278196af487",
-            "name": "Madhav Ramdin"
           }
         ],
         "categories": [],
@@ -567,28 +568,33 @@
       },
       {
         "questionAnswers": [],
-        "id": "1493b0e8-4212-4697-837c-6926d69e21e3",
-        "title": "Keynote: Mauritius Telecom",
+        "id": "1285912",
+        "title": "Keynote: Redefining Mauritius: From Digital Island to Sovereign AI Hub",
         "description": null,
         "startsAt": "2026-07-24T10:00:00",
         "endsAt": "2026-07-24T11:00:00",
-        "isServiceSession": true,
+        "isServiceSession": false,
         "isPlenumSession": true,
-        "speakers": [],
+        "speakers": [
+          {
+            "id": "53878656-3d00-43b3-8753-10def2a16970",
+            "name": "Veemal Gungadin"
+          }
+        ],
         "categories": [],
         "roomId": "74750",
         "room": "Educator 1",
         "liveUrl": null,
         "recordingUrl": null,
-        "status": null,
-        "isInformed": false,
+        "status": "Accepted",
+        "isInformed": true,
         "isConfirmed": false
       },
       {
         "questionAnswers": [],
         "id": "1167895",
-        "title": "Panel Discussion: Open Source in Africa and the Indian Ocean — Community, Contribution, and Career",
-        "description": "Open source software powers the majority of the world's digital infrastructure, yet contributors from Africa and the Indian Ocean region remain significantly underrepresented in global open source communities. With growing developer populations across the continent and increasing internet access, the potential for meaningful participation has never been higher. So what's holding us back — and what's already working?\r\n\r\nThis panel gathers open source contributors, community organisers, and technology professionals from the region to discuss the state of open source participation locally and across Africa. We'll explore the barriers to contribution, the role of local communities and conferences in nurturing talent, how open source involvement translates into career opportunities, and what maintainers and foundations can do to be more inclusive. If you've ever wondered how to go from user to contributor — or how to build a local open source culture — this discussion is for you.",
+        "title": "Panel Discussion — Sovereign by Design: Building Africa's Data, Cloud and AI Future",
+        "description": "Almost every organisation on the continent runs on infrastructure it does not own — foreign clouds, foreign platforms, foreign models, and cables and compute controlled elsewhere. Sovereignty is usually reduced to a question of data residency: keep the servers onshore and the problem is solved. It isn't. If the analytics layer, the models, the distribution and the talent all sit outside the region, ownership of the storage is a technicality. The harder questions are the ones companies rarely put on a slide — what actually breaks if a vendor changes its terms, whether \"compliant\" means anything three suppliers deep, whether an enterprise is anywhere near data-ready for the AI strategy its board has already announced, and what any of this is worth if it cannot be secured.\r\n\r\nThis panel takes those questions to four people who deal with them in practice rather than in theory. Anousha Mahadea (General Manager, Currimjee Informatics Ltd) brings the boardroom view of data, governance and where the budget actually goes. Dylan Harbour (Director of Technology, Ringier South Africa) speaks to platform dependency and what sovereignty costs at the architecture level. Dante Sassenberg (Head of Pentesting, Integrity360) spends his working life finding out what holds under test and what doesn't. Naveesh Doolhur (Head of AI & Data Analytics, Mauritius Telecom) sits where national infrastructure meets applied AI. Across five rounds — dependency, risk and regulation, AI strategy, and execution — the session moves from diagnosis to what an organisation can actually do about it on Monday morning. Audience Q&A follows.",
         "startsAt": "2026-07-24T11:00:00",
         "endsAt": "2026-07-24T13:00:00",
         "isServiceSession": false,
@@ -610,17 +616,21 @@
       },
       {
         "questionAnswers": [],
-        "id": "1170593",
-        "title": "Onboarding AI: How to Recruit, Train & Manage Your AI Workforce",
-        "description": "What if building an AI agent was less like writing code and more like hiring a new employee?\r\nIn this talk, we explore the emerging reality of digital workers — AI agents that don't just answer questions but autonomously execute tasks, make decisions, and collaborate across enterprise systems. Using the familiar metaphor of the employee lifecycle, we'll walk through what it actually takes to go from experimenting with LLMs to deploying a reliable, governed AI workforce in a real enterprise environment.\r\nWe'll cover the full journey: recruiting the right AI stack for your needs, onboarding agents into your existing systems and data, training them to understand your domain, managing them with guardrails and human oversight, running performance reviews to measure real business impact, and knowing when to scale the team — or let an agent go.\r\nThis is not a demo-driven fairy tale. Expect honest lessons from the trenches — what works, what breaks, and what nobody warns you about when you start treating AI agents as part of your workforce.\r\nWhether you're a developer building agents, a tech lead evaluating frameworks, or a decision-maker exploring AI strategy, you'll walk away with a practical, battle-tested playbook for bringing digital workers into your organization.\r\nKey takeaways:\r\n\r\nA practical framework for thinking about AI agents as digital workers\r\nArchitecture patterns and tool choices for enterprise-grade agents\r\nHow to implement guardrails, governance, and human-in-the-loop oversight\r\nEvaluation strategies — measuring what actually matters\r\nLessons learned from deploying AI agents in a regulated enterprise",
+        "id": "1171840",
+        "title": "Beyond Docker: Mastering Container Workflows with Podman, Skopeo & Buildah",
+        "description": "Containers have become the backbone of modern application deployment, yet many developers remain tethered to Docker as their sole container tooling. This session takes you beyond the basics and into the powerful, daemonless ecosystem of Podman, Skopeo, and Buildah — a trio of OCI-compliant tools that offer rootless containers, fine-grained image management, and streamlined CI/CD integration without requiring a persistent daemon. Whether you're running workloads on bare metal, in the cloud, or feeding into Kubernetes clusters, these tools give you greater security, flexibility, and control.\r\n\r\nAttendees will explore advanced Podman concepts including pod-based workflows that mirror Kubernetes pod semantics, rootless container networking, systemd integration for production-grade service management, and leveraging Podman Compose as a drop-in replacement for Docker Compose. We'll dive into Skopeo for inspecting and copying container images across registries without pulling them locally — a game-changer for multi-registry strategies and air-gapped environments. Buildah rounds out the toolkit with its scriptable, layer-by-layer image building approach that eliminates the need for Dockerfiles entirely when granular control is required.\r\n\r\nThe session blends live demonstrations with real-world scenarios drawn from production Linux environments, covering topics such as signing and verifying images, integrating these tools into CI/CD pipelines, migrating existing Docker workflows, and preparing container workloads for orchestration with Kubernetes. By the end, attendees will have a practical toolkit and the confidence to adopt a daemonless container strategy that is secure, portable, and production-ready.",
         "startsAt": "2026-07-24T13:00:00",
         "endsAt": "2026-07-24T14:00:00",
         "isServiceSession": false,
         "isPlenumSession": false,
         "speakers": [
           {
-            "id": "e461d377-a8f7-4e6a-99bd-8e13d844c4cb",
-            "name": "Naveesh Doolhur"
+            "id": "f72d6333-ba68-43df-be79-0e42c7162631",
+            "name": "Om Gokhool"
+          },
+          {
+            "id": "e587887c-dd0a-4517-9271-2ab116e282df",
+            "name": "Neervesh Gokhool"
           }
         ],
         "categories": [],
@@ -760,7 +770,7 @@
         "questionAnswers": [],
         "id": "1193748",
         "title": "Claude Better: Months of Learnings in Minutes",
-        "description": "I haven't written a line of code in 6 months. In that time, I've shipped more than in the previous 3 years combined. Human driven, AI implemented. This talk shares how a few tips took Claude from good to unbelievably great.\r\n\r\nMost people using Claude are leaving value on the table. This is a curated set of practical tips: things that are easy to overlook, under-use, or haven't had the spotlight they deserve. Each tip is drawn from real production use, not theory.\r\n\r\nThe draft list:\r\n\r\n1. Context management and visibility  \r\n2. Sub-agent and agent team workflows  \r\n3. Setting up projects for success (progressive disclosure, constitution files)  \r\n4. Rewinding history and resetting  \r\n5. Intentional compaction  \r\n6. The research-plan-implement pattern  \r\n7. Desktop and mobile handoff  \r\n8. Telemetry visibility and token/usage window management  \r\n9. Skills as reusable workflow building blocks  \r\n10. Meta prompting frameworks\r\n\r\nThe list may evolve before the conference as the space moves quickly. It may also reduce slightly to give more time per item and go deeper rather than wider. But the core idea stays the same: specific, practical ways to get dramatically more value from every conversation.\r\n\r\nAll levels could benefit, but is geared more towards the Intermediate + Advanced Levels. ",
+        "description": "I haven't written a line of code in 10 months. In that time, I've shipped more than in the previous 3 years combined. Human driven, AI implemented.\r\n\r\nAfter rolling out coding harnesses like Claude and Codex into multiple teams and projects, I've seen how some people excel while others just keep up. If the tools and subscriptions are the same, why does the leverage differ?\r\n\r\nThis talk highlights the things that I believe make a difference, both in mindset and in practice. I'll share my way of thinking, the places where the human element is irreplaceable, some of my regular resources and the priority AI harness controls you should pay attention to if you want to be an effective AI harness driver.\r\n\r\nWhile most of my time has been spent on Claude, I've also gone deeper into Codex over the last few months. The content applies just as well to Codex and other similar harnesses.",
         "startsAt": "2026-07-24T15:00:00",
         "endsAt": "2026-07-24T16:00:00",
         "isServiceSession": false,
@@ -985,22 +995,27 @@
       },
       {
         "questionAnswers": [],
-        "id": "a6597cd9-ff78-41f6-924b-48fc80a973f0",
-        "title": "Keynote: Google",
+        "id": "1285895",
+        "title": "Keynote: Google's Building for Africa",
         "description": null,
         "startsAt": "2026-07-25T10:00:00",
         "endsAt": "2026-07-25T11:00:00",
-        "isServiceSession": true,
+        "isServiceSession": false,
         "isPlenumSession": true,
-        "speakers": [],
+        "speakers": [
+          {
+            "id": "23c698d1-e6bc-4fe7-8716-dd461db60d36",
+            "name": "John Kimani"
+          }
+        ],
         "categories": [],
         "roomId": "74750",
         "room": "Educator 1",
         "liveUrl": null,
         "recordingUrl": null,
-        "status": null,
-        "isInformed": false,
-        "isConfirmed": false
+        "status": "Accepted",
+        "isInformed": true,
+        "isConfirmed": true
       },
       {
         "questionAnswers": [],
@@ -1030,7 +1045,7 @@
         "questionAnswers": [],
         "id": "1167818",
         "title": "Juicing up Digital Payments",
-        "description": "I am super excited to have contacted the MCB & will be hosting an open discussion with two product leads for the Juice app 📱\r\n\r\nLovena Modelly – Product Owner\r\nMichael Bardin – Senior Product Owner\r\n\r\nWe will be discussing a number of topics on arguably, the most popular app on the island. 🇲🇺\r\n\r\n- Introductions: who are our guests\r\n- What is the history of MCB Juice?\r\n- What have been the biggest challenges to date?\r\n- Tell us about what happened during COVID.\r\n- Juice on Android or Juice on iPhone?\r\n- Apple Pay arrived in May via Juice, can you tell us how this happened?\r\n- Can you tell us on the goals you have for the app?\r\n\r\nThis will be a recorded session & there will be plenty of time for questions to our guests which I will be carefully moderating. 🎤\r\n\r\nAs usual, I will ensure some form of limited goodies either from our illustrate guests or our usual great goodies sponsors One O One! 🎁",
+        "description": "I am super excited to have contacted the MCB & will be hosting an open discussion with two product leads for the Juice app 📱\r\n\r\nLovena Modelly – Product Owner\r\nMichael Bardin – Senior Product Owner\r\n\r\nWe will be discussing a number of topics on arguably, the most popular app on the island. 🇲🇺\r\n\r\n- Introductions: who are our guests\r\n- What is the history of MCB Juice?\r\n- What have been the the biggest challenges to date?\r\n- Tell us about what happened during COVID.\r\n- Juice on Android or Juice on iPhone?\r\n- Apple Pay arrived in May via Juice, can you tell us how this happened?\r\n- Can you tell us on the goals you have for the app?\r\n\r\nThis will be a recorded session & there will be plenty of time for questions to our guests which I will be carefully moderating. 🎤\r\n\r\nAs usual, I will ensure some form of limited goodies either from our illustrate guests or our usual great goodies sponsors One O One! 🎁",
         "startsAt": "2026-07-25T11:00:00",
         "endsAt": "2026-07-25T12:00:00",
         "isServiceSession": false,
@@ -1100,21 +1115,17 @@
       },
       {
         "questionAnswers": [],
-        "id": "1171840",
-        "title": "Beyond Docker: Mastering Container Workflows with Podman, Skopeo & Buildah",
-        "description": "Containers have become the backbone of modern application deployment, yet many developers remain tethered to Docker as their sole container tooling. This session takes you beyond the basics and into the powerful, daemonless ecosystem of Podman, Skopeo, and Buildah — a trio of OCI-compliant tools that offer rootless containers, fine-grained image management, and streamlined CI/CD integration without requiring a persistent daemon. Whether you're running workloads on bare metal, in the cloud, or feeding into Kubernetes clusters, these tools give you greater security, flexibility, and control.\r\n\r\nAttendees will explore advanced Podman concepts including pod-based workflows that mirror Kubernetes pod semantics, rootless container networking, systemd integration for production-grade service management, and leveraging Podman Compose as a drop-in replacement for Docker Compose. We'll dive into Skopeo for inspecting and copying container images across registries without pulling them locally — a game-changer for multi-registry strategies and air-gapped environments. Buildah rounds out the toolkit with its scriptable, layer-by-layer image building approach that eliminates the need for Dockerfiles entirely when granular control is required.\r\n\r\nThe session blends live demonstrations with real-world scenarios drawn from production Linux environments, covering topics such as signing and verifying images, integrating these tools into CI/CD pipelines, migrating existing Docker workflows, and preparing container workloads for orchestration with Kubernetes. By the end, attendees will have a practical toolkit and the confidence to adopt a daemonless container strategy that is secure, portable, and production-ready.",
+        "id": "1170593",
+        "title": "Onboarding AI: How to Recruit, Train & Manage Your AI Workforce",
+        "description": "What if building an AI agent was less like writing code and more like hiring a new employee?\r\nIn this talk, we explore the emerging reality of digital workers — AI agents that don't just answer questions but autonomously execute tasks, make decisions, and collaborate across enterprise systems. Using the familiar metaphor of the employee lifecycle, we'll walk through what it actually takes to go from experimenting with LLMs to deploying a reliable, governed AI workforce in a real enterprise environment.\r\nWe'll cover the full journey: recruiting the right AI stack for your needs, onboarding agents into your existing systems and data, training them to understand your domain, managing them with guardrails and human oversight, running performance reviews to measure real business impact, and knowing when to scale the team — or let an agent go.\r\nThis is not a demo-driven fairy tale. Expect honest lessons from the trenches — what works, what breaks, and what nobody warns you about when you start treating AI agents as part of your workforce.\r\nWhether you're a developer building agents, a tech lead evaluating frameworks, or a decision-maker exploring AI strategy, you'll walk away with a practical, battle-tested playbook for bringing digital workers into your organization.\r\nKey takeaways:\r\n\r\nA practical framework for thinking about AI agents as digital workers\r\nArchitecture patterns and tool choices for enterprise-grade agents\r\nHow to implement guardrails, governance, and human-in-the-loop oversight\r\nEvaluation strategies — measuring what actually matters\r\nLessons learned from deploying AI agents in a regulated enterprise",
         "startsAt": "2026-07-25T12:00:00",
         "endsAt": "2026-07-25T13:00:00",
         "isServiceSession": false,
         "isPlenumSession": false,
         "speakers": [
           {
-            "id": "f72d6333-ba68-43df-be79-0e42c7162631",
-            "name": "Om Gokhool"
-          },
-          {
-            "id": "e587887c-dd0a-4517-9271-2ab116e282df",
-            "name": "Neervesh Gokhool"
+            "id": "e461d377-a8f7-4e6a-99bd-8e13d844c4cb",
+            "name": "Naveesh Doolhur"
           }
         ],
         "categories": [],
