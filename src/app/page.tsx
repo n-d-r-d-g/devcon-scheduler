@@ -9,7 +9,6 @@ import { Agenda } from "./components/Agenda";
 dayjs.extend(utc);
 
 export default async function Home() {
-  let defaultConfDay: undefined | string;
   const sessionsByDay: SessionsByDay = {};
   const confDays: Array<ConfDay> = [];
   const roomMap: Record<string, string> = {};
@@ -31,10 +30,6 @@ export default async function Home() {
 
   sessionsData.forEach((dayWithSessions) => {
     const currConfDay = dayWithSessions.groupName;
-
-    if (!defaultConfDay && dayWithSessions.isDefault) {
-      defaultConfDay = dayWithSessions.groupName;
-    }
 
     confDays.push({
       name: {
@@ -124,7 +119,7 @@ export default async function Home() {
       stringifiedRooms={stringifiedRooms}
       stringifiedDays={stringifiedConfDays}
       stringifiedTimelineRangeByDay={stringifiedTimelineRangeByDay}
-      defaultDay={defaultConfDay}
+      defaultDay={confDays[0]?.name.long}
     />
   );
 }

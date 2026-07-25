@@ -25,7 +25,11 @@ import { PDFPreview } from "./PDFPreview";
 import { RoomName } from "./RoomName";
 import { SessionCard } from "./SessionCard";
 import { Timeline } from "./Timeline";
-import { retrieveSortedSessionsByDay, setActiveSessionsInUrl } from "@/functions";
+import {
+  retrieveDefaultConfDay,
+  retrieveSortedSessionsByDay,
+  setActiveSessionsInUrl,
+} from "@/functions";
 
 dayjs.extend(utc);
 
@@ -157,6 +161,11 @@ export function Agenda({
       setActiveSessions(newActiveSessions);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useLayoutEffect(() => {
+    const defaultConfDay = retrieveDefaultConfDay(days.current);
+    if (defaultConfDay) setActiveDay(defaultConfDay);
   }, []);
 
   useEffect(() => {

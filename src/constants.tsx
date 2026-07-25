@@ -10,6 +10,7 @@ export const ACTIVE_SESSIONS_SEARCH_PARAM_KEY = "share";
 export const SESSION_WRAPPER_SELECTOR = "a.session__wrapper";
 export const MSCC_WEBSITE_AGENDA_URL = "https://conference.mscc.mu/agenda/";
 export const AGENDA_DATE_TIME_FORMAT = "YYYY-MM-DDTHH:mm:ss";
+export const CONFERENCE_TIMEZONE = "Indian/Mauritius";
 export const EXPORT_TIME_FORMAT = "HH:mm";
 export const EXPORT_DATE_FORMAT = "DD MMMM";
 export const AGENDA_LIGHT_THEME: Theme = {
